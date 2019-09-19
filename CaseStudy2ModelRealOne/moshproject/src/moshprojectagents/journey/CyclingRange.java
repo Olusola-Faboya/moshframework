@@ -8,7 +8,7 @@ public class CyclingRange extends JourneyType {
 	
 	public double cyclingDistRange() {
 		 double lower= 0.0;
-		 double upper =10.0;
+		 double upper =9.0;
 			double  cyclingRange = RandomHelper.nextDoubleFromTo(lower, upper);
 			return cyclingRange;
 	}
