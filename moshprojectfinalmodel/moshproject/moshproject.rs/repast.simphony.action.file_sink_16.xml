@@ -1,0 +1,15 @@
+<repast.simphony.data2.engine.FileSinkDescriptor>
+  <name>AllModePhysical Counts File Sink</name>
+  <dataSet>AllModePhysicalCount Data Set</dataSet>
+  <delimiter>,</delimiter>
+  <format>TABULAR</format>
+  <sourceIds class="linked-hash-set">
+    <string>tick</string>
+    <string>Cycle Physical Counts</string>
+    <string>Private Physical Counts</string>
+    <string>Public Physical Counts</string>
+    <string>Walking Physical Counts</string>
+  </sourceIds>
+  <fileName>AllModePhysical.txt</fileName>
+  <addTimeStamp>true</addTimeStamp>
+</repast.simphony.data2.engine.FileSinkDescriptor>

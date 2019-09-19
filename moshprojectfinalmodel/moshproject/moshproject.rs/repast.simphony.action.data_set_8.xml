@@ -1,0 +1,130 @@
+<repast.simphony.data2.engine.DataSetDescriptor>
+  <name>AllModeUnpleasantLevelAPCCount Data Set</name>
+  <type>AGGREGATE</type>
+  <inclTick>true</inclTick>
+  <inclBatchRun>false</inclBatchRun>
+  <inclRandomSeed>false</inclRandomSeed>
+  <scheduleParams>
+    <start>1.0</start>
+    <interval>1.0</interval>
+    <priority>-Infinity</priority>
+    <pType>LAST</pType>
+    <duration>-1.0</duration>
+    <frequency>REPEAT</frequency>
+    <hashCode>732168361</hashCode>
+  </scheduleParams>
+  <atEnd>false</atEnd>
+  <methodDataSources class="linked-hash-map">
+    <entry>
+      <string>Cycle Unpleasant Affective</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Cycle Unpleasant Affective</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getCycleSatisfactionUnpleasantAffectiveCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Private Unpleasant Affective</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Private Unpleasant Affective</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getPrivateSatisfactionUnpleasantAffectiveCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Public Unpleasant Affective</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Public Unpleasant Affective</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getPublicSatisfactionUnpleasantAffectiveCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Walking Unpleasant Affective</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Walking Unpleasant Affective</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getWalkingSatisfactionUnpleasantAffectiveCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Cycle Unpleasant Physical</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Cycle Unpleasant Physical</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getCycleSatisfactionUnpleasantPhysicalCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Private Unpleasant Physical</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Private Unpleasant Physical</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getPrivateSatisfactionUnpleasantPhysicalCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Public Unpleasant Physical</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Public Unpleasant Physical</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getPublicSatisfactionUnpleasantPhysicalCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Walking Unpleasant Physical</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Walking Unpleasant Physical</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getWalkingSatisfactionUnpleasantPhysicalCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Cycle Unpleasant Cognitive</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Cycle Unpleasant Cognitive</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getCycleSatisfactionUnpleasantCognitiveCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Private Unpleasant Cognitive</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Private Unpleasant Cognitive</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getPrivateSatisfactionUnpleasantCognitiveCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Public Unpleasant Cognitive</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Public Unpleasant Cognitive</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getPublicSatisfactionUnpleasantCognitiveCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Walking Unpleasant Cognitive</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Walking Unpleasant Cognitive</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getWalkingSatisfactionUnpleasantCognitiveCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+  </methodDataSources>
+  <countSources class="linked-hash-map"/>
+  <customNADataSources class="linked-hash-map"/>
+  <customAggDataSources class="linked-hash-map"/>
+</repast.simphony.data2.engine.DataSetDescriptor>

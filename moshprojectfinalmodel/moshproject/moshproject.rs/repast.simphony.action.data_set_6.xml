@@ -1,0 +1,130 @@
+<repast.simphony.data2.engine.DataSetDescriptor>
+  <name>AllModePleasantLevelAPCCount Data Set</name>
+  <type>AGGREGATE</type>
+  <inclTick>true</inclTick>
+  <inclBatchRun>false</inclBatchRun>
+  <inclRandomSeed>false</inclRandomSeed>
+  <scheduleParams>
+    <start>1.0</start>
+    <interval>1.0</interval>
+    <priority>-Infinity</priority>
+    <pType>LAST</pType>
+    <duration>-1.0</duration>
+    <frequency>REPEAT</frequency>
+    <hashCode>1370025368</hashCode>
+  </scheduleParams>
+  <atEnd>false</atEnd>
+  <methodDataSources class="linked-hash-map">
+    <entry>
+      <string>Cycle Pleasant Affective count</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Cycle Pleasant Affective count</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getCycleSatisfactionPleasantAffectiveCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Private Pleasant Affective Count</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Private Pleasant Affective Count</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getPrivateSatisfactionPleasantAffectiveCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Public Pleasant Affective Count</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Public Pleasant Affective Count</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getPublicSatisfactionPleasantAffectiveCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Walking Pleasant Affective Count</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Walking Pleasant Affective Count</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getWalkingSatisfactionPleasantAffectiveCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Cycle Pleasant Physical count</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Cycle Pleasant Physical count</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getCycleSatisfactionPleasantPhysicalCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Private Pleasant Physical count</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Private Pleasant Physical count</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getPrivateSatisfactionPleasantPhysicalCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Public Pleasant Physical count</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Public Pleasant Physical count</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getPublicSatisfactionPleasantPhysicalCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Walking Pleasant Physical count</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Walking Pleasant Physical count</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getWalkingSatisfactionPleasantPhysicalCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Cycle Pleasant Cognitive count</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Cycle Pleasant Cognitive count</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getCycleSatisfactionPleasantCognitiveCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Private Pleasant Cognitive Count</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Private Pleasant Cognitive Count</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getPrivateSatisfactionPleasantCognitiveCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Public Pleasant Cognitive Count</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Public Pleasant Cognitive Count</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getPublicSatisfactionPleasantCognitiveCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Walking Pleasant Cognitive Count</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Walking Pleasant Cognitive Count</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getWalkingSatisfactionPleasantCognitiveCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+  </methodDataSources>
+  <countSources class="linked-hash-map"/>
+  <customNADataSources class="linked-hash-map"/>
+  <customAggDataSources class="linked-hash-map"/>
+</repast.simphony.data2.engine.DataSetDescriptor>

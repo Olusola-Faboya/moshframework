@@ -1,0 +1,5 @@
+package moshproject.agents.passenger;
+
+public abstract class Passengers {
+
+}

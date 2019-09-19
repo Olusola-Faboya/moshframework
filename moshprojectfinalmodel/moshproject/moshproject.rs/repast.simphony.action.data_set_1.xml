@@ -1,0 +1,58 @@
+<repast.simphony.data2.engine.DataSetDescriptor>
+  <name>TRAVELLERS Data Set</name>
+  <type>AGGREGATE</type>
+  <inclTick>true</inclTick>
+  <inclBatchRun>false</inclBatchRun>
+  <inclRandomSeed>false</inclRandomSeed>
+  <scheduleParams>
+    <start>1.0</start>
+    <interval>1.0</interval>
+    <priority>-Infinity</priority>
+    <pType>LAST</pType>
+    <duration>-1.0</duration>
+    <frequency>REPEAT</frequency>
+    <hashCode>-1295539301</hashCode>
+  </scheduleParams>
+  <atEnd>false</atEnd>
+  <methodDataSources class="linked-hash-map">
+    <entry>
+      <string>CYCLISTS</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>CYCLISTS</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>cyle</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>CARUSERS</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>CARUSERS</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>personalVehicle</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>PUBLICUSERS</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>PUBLICUSERS</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>publicTrans</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>PEDESTRIANS</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>PEDESTRIANS</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>walking</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+  </methodDataSources>
+  <countSources class="linked-hash-map"/>
+  <customNADataSources class="linked-hash-map"/>
+  <customAggDataSources class="linked-hash-map"/>
+</repast.simphony.data2.engine.DataSetDescriptor>

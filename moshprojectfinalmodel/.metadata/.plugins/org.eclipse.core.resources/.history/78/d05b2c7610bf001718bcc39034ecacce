@@ -1,0 +1,41 @@
+package moshproject.agents.passenger;
+
+import moshproject.agents.mode.Mode;
+import repast.simphony.random.RandomHelper;
+import repast.simphony.space.continuous.ContinuousSpace;
+import repast.simphony.space.grid.Grid;
+
+public class Passenger {
+	private ContinuousSpace<Object> space;
+	private Grid<Object> grid;
+		
+	public Passengers passengerType;
+	public Mode prefferedMode;
+	
+	private boolean socialAgreeability; 
+	private double socialSatisfaction;
+	private double assumedMaximumDifference;
+	private double uncertaintyTolerance;
+	private double aspirationLevel;
+	private double uncertainty;
+	
+	public Passenger(ContinuousSpace<Object> space, Grid<Object> grid) {
+		this.space = space;
+		this.grid = grid;	
+		
+		socialAgreeability =false; 
+		socialSatisfaction =0.0;
+		assumedMaximumDifference =0.5;	
+	}
+	
+	public void initialize(){
+		uncertaintyTolerance = RandomHelper.nextDoubleFromTo(0.1, 0.9);
+		aspirationLevel = RandomHelper.nextDoubleFromTo(0.2, 1.0);
+		uncertainty = passengerType.allUncertainty();
+		
+	}
+	
+	
+	
+
+}

@@ -1,0 +1,58 @@
+<repast.simphony.data2.engine.DataSetDescriptor>
+  <name>AllModeAffectiveCount Set</name>
+  <type>AGGREGATE</type>
+  <inclTick>true</inclTick>
+  <inclBatchRun>false</inclBatchRun>
+  <inclRandomSeed>false</inclRandomSeed>
+  <scheduleParams>
+    <start>1.0</start>
+    <interval>1.0</interval>
+    <priority>-Infinity</priority>
+    <pType>LAST</pType>
+    <duration>-1.0</duration>
+    <frequency>REPEAT</frequency>
+    <hashCode>1370025368</hashCode>
+  </scheduleParams>
+  <atEnd>false</atEnd>
+  <methodDataSources class="linked-hash-map">
+    <entry>
+      <string>Cycle Affective Counts</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Cycle Affective Counts</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getCycleSatisfactionAffectiveCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Private Affective Counts</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Private Affective Counts</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getPrivateSatisfactionAffectiveCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Public Affective Counts</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Public Affective Counts</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getPublicSatisfactionAffectiveCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Walking Affective Counts</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Walking Affective Counts</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getWalkingSatisfactionAffectiveCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+  </methodDataSources>
+  <countSources class="linked-hash-map"/>
+  <customNADataSources class="linked-hash-map"/>
+  <customAggDataSources class="linked-hash-map"/>
+</repast.simphony.data2.engine.DataSetDescriptor>

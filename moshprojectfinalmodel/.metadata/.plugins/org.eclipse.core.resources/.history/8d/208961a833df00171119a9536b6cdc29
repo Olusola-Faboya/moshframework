@@ -1,0 +1,412 @@
+package moshproject.agents.mode;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import repast.simphony.random.RandomHelper;
+
+public class PersonalVehicle extends Mode {
+
+	double cognitiveConsideration;
+	double physicalConsideration;
+	double affectiveConsideration;
+	
+	public PersonalVehicle() {
+		evalu
+		addAttribute("infoReliability");
+		addAttribute("easeOfInfoAccess");
+		addAttribute("easeOfgettingToMainMode");
+		addAttribute("easeToDestinationOnTime");
+		addAttribute("easeOfgettingOnOffMainMode");
+		addAttribute("distanceToMainMode");
+		addAttribute("modeFrequency");
+		addAttribute("parkingSpaceConcern");
+		addAttribute("delays");
+		addAttribute("security");
+		addAttribute("safety");
+		addAttribute("roadSignAvailabilty");
+		addAttribute("othersAttitude");
+		addAttribute("walkingToDestination");
+		addAttribute("protectionFromElement");
+		/////		
+		addAttribute("physicalConsideration");
+		setPhysicalConsideration();
+		addAttribute("cognitiveConsideration");
+		setCognitiveConsideration();
+		addAttribute("affectiveConsideration");
+		setAffectiveConsideration();
+		//
+	}
+		
+	List<ModeAttribute> subAttributes;
+	
+	
+/*	public void setInfoReliability() {		
+		double r = rand.nextDouble();
+		if(r<=0.2){			
+			setValueToAttribute("infoReliability", RandomHelper.nextDoubleFromTo(0.0,0.25));
+		}else if (r<=0.2+0.14){		
+			setValueToAttribute("infoReliability", RandomHelper.nextDoubleFromTo(-0.83333,0.666667));
+		}else if (r<=0.2+0.14+0.20){
+			setValueToAttribute("infoReliability",3.33333);
+		}else if (r<=0.2+0.14+0.20+0.32){
+			setValueToAttribute("infoReliability",RandomHelper.nextDoubleFromTo(0.33333,0.5));
+		}else if (r<=0.2+0.14+0.20+0.32+0.14){
+			setValueToAttribute("infoReliability",RandomHelper.nextDoubleFromTo(0.25, 0.5));
+		}			
+	}
+	
+	public void setEaseOfInfoAccess(){
+		double r = rand.nextDouble();
+		if(r<=0.2){			
+			setValueToAttribute("easeOfInfoAccess", RandomHelper.nextDoubleFromTo(0.473071,0.850936));
+		}else if (r<=0.2+0.14){		
+			setValueToAttribute("easeOfInfoAccess", RandomHelper.nextDoubleFromTo(0.405945,0.850936));
+		}else if (r<=0.2+0.14+0.20){
+			setValueToAttribute("easeOfInfoAccess",RandomHelper.nextDoubleFromTo(0.21441,0.5468));
+		}else if (r<=0.2+0.14+0.20+0.32){
+			setValueToAttribute("easeOfInfoAccess",RandomHelper.nextDoubleFromTo(0.25468,0.255357));
+		}else if (r<=0.2+0.14+0.20+0.32+0.14){
+			setValueToAttribute("easeOfInfoAccess",RandomHelper.nextDoubleFromTo(0.325468,0.976299));
+		}			
+	}
+	
+	public double setEaseOfGettingToMainMode(){
+		double r = rand.nextDouble();
+		if(r<=0.2){			
+			setValueToAttribute("easeOfgettingToMainMode", 0.25);
+		}else if (r<=0.2+0.14){		
+			setValueToAttribute("easeOfgettingToMainMode", RandomHelper.nextDoubleFromTo(0.25,0.35));
+		}else if (r<=0.2+0.14+0.20){
+			setValueToAttribute("easeOfgettingToMainMode",0.35);
+		}else if (r<=0.2+0.14+0.20+0.32){
+			setValueToAttribute("easeOfgettingToMainMode",0.75);
+		}else if (r<=0.2+0.14+0.20+0.32+0.14){
+			setValueToAttribute("easeOfgettingToMainMode", 0.10);
+		}
+		return 0;			
+	}
+	
+	public void setEaseToDestinationOnTime(){
+		double r = rand.nextDouble();
+		if(r<=0.2){			
+			setValueToAttribute("easeToDestinationOnTime", RandomHelper.nextDoubleFromTo(0.0,0.25));
+		}else if (r<=0.2+0.14){		
+			setValueToAttribute("easeToDestinationOnTime", RandomHelper.nextDoubleFromTo(-0.83333, 0.666667));
+		}else if (r<=0.2+0.14+0.20){
+			setValueToAttribute("easeToDestinationOnTime",3.33333);
+		}else if (r<=0.2+0.14+0.20+0.32){
+			setValueToAttribute("easeToDestinationOnTime",RandomHelper.nextDoubleFromTo(0.33333,0.5));
+		}else if (r<=0.2+0.14+0.20+0.32+0.14){
+			setValueToAttribute("easeToDestinationOnTime",RandomHelper.nextDoubleFromTo(0.5, 0.55));
+		}			
+					
+	}
+	
+	public  void setEaseOfGettingOnOffMainMode(){
+		double r = rand.nextDouble();
+		if(r<=0.2){			
+			setValueToAttribute("easeOfgettingOnOffMainMode", RandomHelper.nextDoubleFromTo(0.473071,0.850936));
+		}else if (r<=0.2+0.14){		
+			setValueToAttribute("easeOfgettingOnOffMainMode", RandomHelper.nextDoubleFromTo(0.405945,0.850936));
+		}else if (r<=0.2+0.14+0.20){
+			setValueToAttribute("easeOfgettingOnOffMainMode",RandomHelper.nextDoubleFromTo(0.21441,0.525468));
+		}else if (r<=0.2+0.14+0.20+0.32){
+			setValueToAttribute("easeOfgettingOnOffMainMode",RandomHelper.nextDoubleFromTo(0.225468,0.55357));
+		}else if (r<=0.2+0.14+0.20+0.32+0.14){
+			setValueToAttribute("easeOfgettingOnOffMainMode",RandomHelper.nextDoubleFromTo(0.25468,0.976299));
+		}			
+	}
+	
+	public  void setDistanceToMainMode(){
+		double r = rand.nextDouble();
+		if(r<=0.2){			
+			setValueToAttribute("distanceToMainMode", 0.25);
+		}else if (r<=0.2+0.14){		
+			setValueToAttribute("distanceToMainMode", RandomHelper.nextDoubleFromTo(0.25,0.5));
+		}else if (r<=0.2+0.14+0.20){
+			setValueToAttribute("distanceToMainMode",0.5);
+		}else if (r<=0.2+0.14+0.20+0.32){
+			setValueToAttribute("distanceToMainMode",0.75);
+		}else if (r<=0.2+0.14+0.20+0.32+0.14){
+			setValueToAttribute("distanceToMainMode", 0.56);
+		}			
+	}
+	
+	public void setModeFrequency(){
+		double r = rand.nextDouble();
+		if(r<=0.2){			
+			setValueToAttribute("modeFrequency", 0.35);
+		}else if (r<=0.2+0.14){		
+			setValueToAttribute("modeFrequency", RandomHelper.nextDoubleFromTo(0.25,0.65));
+		}else if (r<=0.2+0.14+0.20){
+			setValueToAttribute("modeFrequency",-0.25);
+		}else if (r<=0.2+0.14+0.20+0.32){
+			setValueToAttribute("modeFrequency",0.75);
+		}else if (r<=0.2+0.14+0.20+0.32+0.14){
+			setValueToAttribute("modeFrequency", -0.25);
+		}			
+	}
+	
+	public void setParkingSpaceConcern(){
+		double r = rand.nextDouble();
+		if(r<=0.2){			
+			setValueToAttribute("parkingSpaceConcern", 0.25);
+		}else if (r<=0.2+0.14){		
+			setValueToAttribute("parkingSpaceConcern", RandomHelper.nextDoubleFromTo(0.25,0.45));
+		}else if (r<=0.2+0.14+0.20){
+			setValueToAttribute("parkingSpaceConcern",0.75);
+		}else if (r<=0.2+0.14+0.20+0.32){
+			setValueToAttribute("parkingSpaceConcern",-0.34);
+		}else if (r<=0.2+0.14+0.20+0.32+0.14){
+			setValueToAttribute("parkingSpaceConcern", -0.23);
+		}			
+	}
+	
+	public void setDelays(){
+		double r = rand.nextDouble();
+		if(r<=0.2){			
+			setValueToAttribute("delays", 0.25);
+		}else if (r<=0.2+0.14){		
+			setValueToAttribute("delays", RandomHelper.nextDoubleFromTo(-075,0.5));
+		}else if (r<=0.2+0.14+0.20){
+			setValueToAttribute("delays",-0.25);
+		}else if (r<=0.2+0.14+0.20+0.32){
+			setValueToAttribute("delays",0.75);
+		}else if (r<=0.2+0.14+0.20+0.32+0.14){
+			setValueToAttribute("delays", 0.5);
+		}			
+	}
+	
+	public void setSecurity(){
+		double r = rand.nextDouble();
+		if(r<=0.2){			
+			setValueToAttribute("security", 0.25);
+		}else if (r<=0.2+0.14){		
+			setValueToAttribute("security", RandomHelper.nextDoubleFromTo(0.45,1));
+		}else if (r<=0.2+0.14+0.20){
+			setValueToAttribute("security",0.5);
+		}else if (r<=0.2+0.14+0.20+0.32){
+			setValueToAttribute("security",-0.75);
+		}else if (r<=0.2+0.14+0.20+0.32+0.14){
+			setValueToAttribute("security", -0.5);
+		}			
+	}
+	
+	public void setSafety(){
+		double r = rand.nextDouble();
+		if(r<=0.2){			
+			setValueToAttribute("safety", 0.25);
+		}else if (r<=0.2+0.14){		
+			setValueToAttribute("safety", RandomHelper.nextDoubleFromTo(-0.25,0.5));
+		}else if (r<=0.2+0.14+0.20){
+			setValueToAttribute("safety",0.5);
+		}else if (r<=0.2+0.14+0.20+0.32){
+			setValueToAttribute("safety",0.75);
+		}else if (r<=0.2+0.14+0.20+0.32+0.14){
+			setValueToAttribute("safety", 1);
+		}			
+	}
+	
+	public void setRoadSignAvailability(){
+		double r = rand.nextDouble();
+		if(r<=0.2){			
+			setValueToAttribute("roadSignAvailabilty", 0.25);
+		}else if (r<=0.2+0.14){		
+			setValueToAttribute("roadSignAvailabilty", RandomHelper.nextDoubleFromTo(-0.89,0.5));
+		}else if (r<=0.2+0.14+0.20){
+			setValueToAttribute("roadSignAvailabilty",0.5);
+		}else if (r<=0.2+0.14+0.20+0.32){
+			setValueToAttribute("roadSignAvailabilty",0.75);
+		}else if (r<=0.2+0.14+0.20+0.32+0.14){
+			setValueToAttribute("roadSignAvailabilty", 0.5);
+		}			
+	}
+	
+	public void setOthersAttitude(){
+		double r = rand.nextDouble();
+		if(r<=0.2){			
+			setValueToAttribute("othersAttitude", -076);
+		}else if (r<=0.2+0.14){		
+			setValueToAttribute("othersAttitude", RandomHelper.nextDoubleFromTo(0.25,0.5));
+		}else if (r<=0.2+0.14+0.20){
+			setValueToAttribute("othersAttitude",0.5);
+		}else if (r<=0.2+0.14+0.20+0.32){
+			setValueToAttribute("othersAttitude",0.75);
+		}else if (r<=0.2+0.14+0.20+0.32+0.14){
+			setValueToAttribute("othersAttitude", 0.5);
+		}			
+	}
+
+	public void setProtectionFromElement(){
+		double r = rand.nextDouble();
+		if(r<=0.2){			
+			setValueToAttribute("protectionFromElement", 0.25);
+		}else if (r<=0.2+0.14){		
+			setValueToAttribute("protectionFromElement", RandomHelper.nextDoubleFromTo(0.25,0.5));
+		}else if (r<=0.2+0.14+0.20){
+			setValueToAttribute("protectionFromElement",0.5);
+		}else if (r<=0.2+0.14+0.20+0.32){
+			setValueToAttribute("protectionFromElement",0.75);
+		}else if (r<=0.2+0.14+0.20+0.32+0.14){
+			setValueToAttribute("protectionFromElement", 0.5);
+		}			
+	}
+	public  void setWalkingToDestination(){
+		double r = rand.nextDouble();
+		if(r<=0.2){			
+			setValueToAttribute("walkingToDestination", 1);
+		}else if (r<=0.2+0.14){		
+			setValueToAttribute("walkingToDestination", RandomHelper.nextDoubleFromTo(0.25,0.5));
+		}else if (r<=0.2+0.14+0.20){
+			setValueToAttribute("walkingToDestination",0.5);
+		}else if (r<=0.2+0.14+0.20+0.32){
+			setValueToAttribute("walkingToDestination",0.75);
+		}else if (r<=0.2+0.14+0.20+0.32+0.14){
+			setValueToAttribute("walkingToDestination", 1);
+		}			
+	}
+	
+	public void setPhysicalConsideration(){	
+			subAttributes = new ArrayList<ModeAttribute>();	
+			subAttributes.add(getAttribute("easeOfgettingToMainMode"));	
+			subAttributes.add(getAttribute("easeOfgettingOnOffMainMode"));	
+			subAttributes.add(getAttribute("distanceToMainMode"));
+			subAttributes.add(getAttribute("roadSignAvailabilty"));	
+			subAttributes.add(getAttribute("walkingToDestination"));
+			
+			setEaseOfGettingToMainMode();
+			setEaseOfGettingOnOffMainMode();			
+			setDistanceToMainMode();
+			setRoadSignAvailability();
+			setWalkingToDestination();
+			
+			
+			for (ModeAttribute attr : subAttributes){	
+				attr.value = getValueOfAttribute(attr.name);
+				setValueToAttribute(attr.name, attr.value);	
+				subAttributeList.add(attr);
+				}
+//		
+//			for (ModeAttribute attr1 : subAttributeList){	
+//				System.out.print("the name is "+ attr1.name+
+//						"and"+ "value is"+ attr1.value);			
+//				}
+			
+			physicalConsideration = evaluateHigherAbstraction(subAttributeList);
+			setValueToAttribute("physicalConsideration", physicalConsideration);	
+		//return physicalConsideration;
+		}
+
+	
+	public void setCognitiveConsideration(){
+		subAttributes = new ArrayList<ModeAttribute>();	
+		subAttributes.add(getAttribute("infoReliability"));	
+		subAttributes.add(getAttribute("modeFrequency"));	
+		subAttributes.add(getAttribute("easeOfInfoAccess"));
+		subAttributes.add(getAttribute("easeToDestinationOnTime"));
+		subAttributes.add(getAttribute("roadSignAvailabilty"));	
+		subAttributes.add(getAttribute("parkingSpaceConcern"));
+		
+		setInfoReliability();
+		setModeFrequency();
+		setEaseOfInfoAccess();
+		setEaseToDestinationOnTime();
+		setRoadSignAvailability();
+		setParkingSpaceConcern();
+					
+		for (ModeAttribute attr : subAttributes){	
+			attr.value = getValueOfAttribute(attr.name);
+			setValueToAttribute(attr.name, attr.value);	
+			subAttributeList.add(attr);
+			}		
+		cognitiveConsideration = evaluateHigherAbstraction(subAttributeList);
+		setValueToAttribute("cognitiveConsideration", cognitiveConsideration);
+		
+		//return cognitiveConsideration;
+		
+	}
+	
+	
+	
+	public void setAffectiveConsideration(){
+		subAttributes = new ArrayList<ModeAttribute>();	
+		subAttributes.add(getAttribute("infoReliability"));	
+		subAttributes.add(getAttribute("modeFrequency"));	
+		subAttributes.add(getAttribute("easeOfInfoAccess"));
+		subAttributes.add(getAttribute("easeToDestinationOnTime"));
+		subAttributes.add(getAttribute("roadSignAvailabilty"));	
+		subAttributes.add(getAttribute("parkingSpaceConcern"));		
+		subAttributes.add(getAttribute("easeOfgettingToMainMode"));	
+		subAttributes.add(getAttribute("easeOfgettingOnOffMainMode"));	
+		subAttributes.add(getAttribute("distanceToMainMode"));	
+		subAttributes.add(getAttribute("walkingToDestination"));///
+		subAttributes.add(getAttribute("delays"));		
+		subAttributes.add(getAttribute("security"));	
+		subAttributes.add(getAttribute("safety"));	
+		subAttributes.add(getAttribute("othersAttitude"));	
+		subAttributes.add(getAttribute("protectionFromElement"));/////
+			
+		setInfoReliability();
+		setModeFrequency();
+		setEaseOfInfoAccess();
+		setEaseToDestinationOnTime();
+		setRoadSignAvailability();
+		setParkingSpaceConcern();
+		setEaseOfGettingToMainMode();
+		setEaseOfGettingOnOffMainMode();			
+		setDistanceToMainMode();		
+		setWalkingToDestination();
+		setOthersAttitude();
+		setSecurity();
+		setSafety();
+		setDelays();
+		setProtectionFromElement();
+					
+		for (ModeAttribute attr : subAttributes){	
+			attr.value = getValueOfAttribute(attr.name);
+			setValueToAttribute(attr.name, attr.value);	
+			subAttributeList.add(attr);
+			}		
+		affectiveConsideration = evaluateHigherAbstraction(subAttributeList);
+		setValueToAttribute("affectiveConsideration", affectiveConsideration);
+		
+		//return affectiveConsideration;
+		
+	}*/	
+	
+
+	public  void setPhysicalConsideration(){
+		double r = rand.nextDouble();
+		if(r<=0.34){			
+			setValueToAttribute("physicalConsideration", RandomHelper.nextDoubleFromTo(0.0,0.5));
+		}else if (r<=0.34+0.20){		
+			setValueToAttribute("physicalConsideration", RandomHelper.nextDoubleFromTo(0.5,0.51));
+		}else if (r<=0.34+0.20+0.46){
+			setValueToAttribute("physicalConsideration",RandomHelper.nextDoubleFromTo(0.75,0.93));
+		}		
+	}
+
+	public  void setCognitiveConsideration(){
+		double r = rand.nextDouble();
+		if(r<=0.34){			
+			setValueToAttribute("cognitiveConsideration", RandomHelper.nextDoubleFromTo(0.0,0.5));
+		}else if (r<=0.34+0.20){		
+			setValueToAttribute("cognitiveConsideration", RandomHelper.nextDoubleFromTo(0.67,0.68));
+		}else if (r<=0.34+0.20+0.46){
+			setValueToAttribute("cognitiveConsideration",RandomHelper.nextDoubleFromTo(0.67,0.75));
+		}		
+	}
+	
+	public  void setAffectiveConsideration(){
+		double r = rand.nextDouble();
+		if(r<=0.34){			
+			setValueToAttribute("affectiveConsideration", RandomHelper.nextDoubleFromTo(0.30,0.5));
+		}else if (r<=0.34+0.20){		
+			setValueToAttribute("affectiveConsideration", RandomHelper.nextDoubleFromTo(0.6,0.7));
+		}else if (r<=0.34+0.20+0.46){
+			setValueToAttribute("affectiveConsideration",RandomHelper.nextDoubleFromTo(0.67, 0.69));
+		}		
+	}
+	
+}

@@ -1,0 +1,55 @@
+<repast.simphony.data2.engine.DataSetDescriptor>
+  <name>AllModeSatisfaction Data Set</name>
+  <type>NON_AGGREGATE</type>
+  <sourceType>moshproject.agents.passenger.Passenger</sourceType>
+  <inclTick>true</inclTick>
+  <inclBatchRun>false</inclBatchRun>
+  <inclRandomSeed>false</inclRandomSeed>
+  <scheduleParams>
+    <start>1.0</start>
+    <interval>1.0</interval>
+    <priority>-Infinity</priority>
+    <pType>LAST</pType>
+    <duration>-1.0</duration>
+    <frequency>REPEAT</frequency>
+    <hashCode>88083079</hashCode>
+  </scheduleParams>
+  <atEnd>false</atEnd>
+  <methodDataSources class="linked-hash-map">
+    <entry>
+      <string>CycleModeSatisfaction</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>CycleModeSatisfaction</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getCycleModeSatisfaction</methodName>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>PrivateModeSatisfaction</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>PrivateModeSatisfaction</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getPrivateModeSatisfaction</methodName>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>WalkingSatisfaction</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>WalkingSatisfaction</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getWalkingSatisfaction</methodName>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>PublicTransModeSatisfaction</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>PublicTransModeSatisfaction</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getPublicTransModeSatisfaction</methodName>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+  </methodDataSources>
+  <countSources class="linked-hash-map"/>
+  <customNADataSources class="linked-hash-map"/>
+  <customAggDataSources class="linked-hash-map"/>
+</repast.simphony.data2.engine.DataSetDescriptor>

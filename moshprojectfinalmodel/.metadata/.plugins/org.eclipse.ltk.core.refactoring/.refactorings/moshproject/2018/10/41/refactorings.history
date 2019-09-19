@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;moshproject.agents.passenger.Walker&apos; to &apos;Pedestrian&apos;&#x0D;&#x0A;- Original project: &apos;moshproject&apos;&#x0D;&#x0A;- Original element: &apos;moshproject.agents.passenger.Walker&apos;&#x0D;&#x0A;- Renamed element: &apos;moshproject.agents.passenger.Pedestrian&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Walker&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;moshproject.agents.passenger{Walker.java[Walker" matchStrategy="1" name="Pedestrian" qualified="false" references="true" similarDeclarations="false" stamp="1539553462448" textual="false" version="1.0"/>
+</session>

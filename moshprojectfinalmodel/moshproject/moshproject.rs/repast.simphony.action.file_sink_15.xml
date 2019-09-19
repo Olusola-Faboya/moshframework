@@ -1,0 +1,15 @@
+<repast.simphony.data2.engine.FileSinkDescriptor>
+  <name>AllModeCognitive Counts File Sink</name>
+  <dataSet>AllModeCognitiveCount Data Set</dataSet>
+  <delimiter>,</delimiter>
+  <format>TABULAR</format>
+  <sourceIds class="linked-hash-set">
+    <string>tick</string>
+    <string>Cycle Cognitve Counts</string>
+    <string>Private Cognitve Counts</string>
+    <string>Public Cognitive Counts</string>
+    <string>Walking Cognitive Counts</string>
+  </sourceIds>
+  <fileName>AllModeCognitiveCount.txt</fileName>
+  <addTimeStamp>true</addTimeStamp>
+</repast.simphony.data2.engine.FileSinkDescriptor>

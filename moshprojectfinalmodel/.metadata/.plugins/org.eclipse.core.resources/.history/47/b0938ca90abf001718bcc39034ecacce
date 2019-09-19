@@ -1,0 +1,23 @@
+package moshproject.agents.passenger;
+
+import moshproject.agents.mode.Mode;
+import repast.simphony.space.continuous.ContinuousSpace;
+import repast.simphony.space.grid.Grid;
+
+public class Passenger {
+	private ContinuousSpace<Object> space;
+	private Grid<Object> grid;
+	
+	public Passengers passengerType;
+	public Mode prefferedMode;
+	
+	
+	
+	public Passenger(ContinuousSpace<Object> space, Grid<Object> grid) {
+		this.space = space;
+		this.grid = grid;
+		
+		
+	}
+
+}

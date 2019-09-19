@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;comformistNumber&apos; in &apos;moshproject.agents.passenger.Passenger&apos; to &apos;comformistValue&apos;&#x0D;&#x0A;- Original project: &apos;moshproject&apos;&#x0D;&#x0A;- Original element: &apos;moshproject.agents.passenger.Passenger.comformistNumber&apos;&#x0D;&#x0A;- Renamed element: &apos;moshproject.agents.passenger.Passenger.comformistValue&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;comformistNumber&apos;" flags="589826" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;moshproject.agents.passenger{Passenger.java[Passenger^comformistNumber" name="comformistValue" references="true" setter="false" stamp="1541873707734" textual="false" version="1.0"/>
+</session>

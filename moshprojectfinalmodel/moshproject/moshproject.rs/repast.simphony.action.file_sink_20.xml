@@ -1,0 +1,23 @@
+<repast.simphony.data2.engine.FileSinkDescriptor>
+  <name>AllModeAPCSatisfactionFile Sink</name>
+  <dataSet>AllModeAPCSatisfactionData Set</dataSet>
+  <delimiter>,</delimiter>
+  <format>TABULAR</format>
+  <sourceIds class="linked-hash-set">
+    <string>tick</string>
+    <string>CycleModeAffectiveSatisfaction</string>
+    <string>CycleModeCognitiveSatisfaction</string>
+    <string>CycleModePhysicalSatisfaction</string>
+    <string>PrivateModeAffectiveSatisfaction</string>
+    <string>PrivateModeCognitiveSatisfaction</string>
+    <string>PrivateModePhysicalSatisfaction</string>
+    <string>PublicModeAffectiveSatisfaction</string>
+    <string>PublicModeCognitiveSatisfaction</string>
+    <string>PublicModePhysicalSatisfaction</string>
+    <string>WalkingModeAffectiveSatisfaction</string>
+    <string>WalkingModeCognitiveSatisfaction</string>
+    <string>WalkingModePhysicalSatisfaction</string>
+  </sourceIds>
+  <fileName>AllModeAPCSatisfaction.txt</fileName>
+  <addTimeStamp>true</addTimeStamp>
+</repast.simphony.data2.engine.FileSinkDescriptor>

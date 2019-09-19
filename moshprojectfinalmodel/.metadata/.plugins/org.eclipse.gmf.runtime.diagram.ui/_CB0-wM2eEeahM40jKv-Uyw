@@ -1,0 +1,19 @@
+#Thu Sep 13 11:27:23 BST 2018
+rulergrid.snaptogeometry=true
+zoom=0.75
+print.margin.right=0.5
+rulergrid.rulerunit=0
+rulergrid.snaptogrid=true
+print.page.size=A4
+print.margin.left=0.5
+print.page.width=8.26771654
+rulergrid.viewgrid=true
+print.page.height=11.6929134
+rulergrid.gridlinecolor=12632256
+print.margin.bottom=0.5
+rulergrid.gridlinestyle=1
+rulergrid.gridlevel=false
+print.margin.top=0.5
+print.useMillim=true
+print.usePortrait=true
+viewport.y=0

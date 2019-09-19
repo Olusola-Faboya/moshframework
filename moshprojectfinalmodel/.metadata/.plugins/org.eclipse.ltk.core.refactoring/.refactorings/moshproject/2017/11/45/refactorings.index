@@ -1,0 +1,41 @@
+1510069105092	Rename method 'updateTransition'
+1510069207841	Rename method 'addmodeStatisfaction'
+1510079554015	Rename method 'personalSatisfaction'
+1510085017841	Move compilation unit
+1510085036459	Move compilation unit
+1510085048812	Delete element
+1510085057461	Delete element
+1510085082383	Move compilation unit
+1510085106095	Move compilation unit
+1510085392772	Delete element
+1510085690022	Move compilation unit
+1510085702511	Move compilation unit
+1510085755293	Rename package 'moshproject.fuzzycollections.fuzzyCollections'
+1510086299025	Delete element
+1510086776600	Delete element
+1510090031472	Delete element
+1510090064868	Delete element
+1510090406560	Delete element
+1510091420723	Move compilation unit
+1510091446684	Move files
+1510091452392	Delete element
+1510092928444	Delete element
+1510092934081	Delete element
+1510093140341	Delete element
+1510244021809	Rename field 'passengerType'
+1510246345820	Rename field 'levelOfneedsSatisfaction'
+1510249162020	Rename method 'allUncertainty'
+1510250628012	Rename field 'levelOfNeedSatisfaction'
+1510252540496	Rename field 'modeSatisfactionList'
+1510252705283	Rename field 'neigbourModeSatisfactionList'
+1510252728770	Rename method 'neigbourModeStatisfaction'
+1510252793667	Rename field 'modeSatisfactionList'
+1510319749790	Move files
+1510346028931	Rename field 'myPassenger'
+1510353675156	Rename type 'Passengers'
+1510405874009	Rename method 'prefferedModeSatisfaction'
+1510436849404	Rename method 'imitationInteractee'
+1510436922755	Rename method 'updatePassenger'
+1510474097110	Rename method 'inquiringInteractee'
+1510491707145	Rename method 'Inquiring'
+1510493264471	Rename method 'updateTransitionBehaviour'

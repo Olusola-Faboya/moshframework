@@ -1,0 +1,15 @@
+<repast.simphony.data2.engine.FileSinkDescriptor>
+  <name>BEHAVIOUR File Sink</name>
+  <dataSet>BEHAVIOUR Data Set</dataSet>
+  <delimiter>,</delimiter>
+  <format>TABULAR</format>
+  <sourceIds class="linked-hash-set">
+    <string>tick</string>
+    <string>IMITATING</string>
+    <string>INQUIRING</string>
+    <string>OPTIMISING</string>
+    <string>REPEATING</string>
+  </sourceIds>
+  <fileName>BEHAVIOUROutput.txt</fileName>
+  <addTimeStamp>true</addTimeStamp>
+</repast.simphony.data2.engine.FileSinkDescriptor>

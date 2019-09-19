@@ -1,0 +1,253 @@
+package moshproject.agent.mode.attributes;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Vector;
+
+import moshproject.agents.mode.Cycle;
+import moshproject.agents.mode.Mode;
+import moshproject.agents.mode.PublicTransport;
+import moshproject.agents.mode.Walking;
+import moshproject.agents.passenger.Passenger;
+import moshproject.common.Constants;
+import moshproject.common.FuzzyDecisionVariables;
+import moshproject.fuzzycollections.ThreeVariablesDecisionGenerator;
+
+public class ModeFrequency {
+	Passenger passenger;
+	Mode prefferedMode;
+	FuzzyDecisionVariables pca;
+	ThreeVariablesDecisionGenerator  evaluateThreeVariablesSatisfaction;	
+	private Vector modeFrequencyDecisionVariables;
+	Map<String, List<Double>> otherVariables;
+	private ArrayList<Double> physical;
+	private ArrayList<Double> affective;
+	private ArrayList<Double> frequencyAffectiveList;
+	private ArrayList<Double> cognitive;
+	private ArrayList<Double> frequencyPhysicalList;
+	private ArrayList<Double> frequencyCognitiveList;
+	
+	public Mode getPrefferedMode() {
+		return prefferedMode;
+	}
+	private double modeFrequencyPhysical;
+	private double modeFrequencyCognitive;
+	private double publicModeFrequencyCognitive;
+	private double modeFrequencyAffective;
+	private double publicModeFrequencyAffective;
+	private double modeFrequency;
+	private double publicModeFrequency;
+	private ArrayList<Double> frequencyUnpleasentCognitiveList;
+	private ArrayList<Double> frequencyNeitherNorPleasantCognitiveList;
+	private ArrayList<Double> frequencyPleasantCognitiveList;
+	private ArrayList<Double> frequencyUnpleasentPhysicalList; 
+	
+	public ModeFrequency(Mode preferredMode){
+		this.prefferedMode=preferredMode;
+		pca= new FuzzyDecisionVariables();		
+		 updateModeFrequency() ;
+	}
+
+	
+	private double updateModeFrequencyPhysical() {			
+		return modeFrequencyPhysical = prefferedMode.setValueToAttribute(Constants.modeFrequencyPhysical, 0);													
+		}	
+		
+	public double updateModeFrequencyCognitive() {					
+		 if (prefferedMode instanceof PublicTransport){
+			modeFrequencyCognitive = prefferedMode.getValueOfAttribute(Constants.modeFrequencyPerception);											
+		}else if (prefferedMode instanceof Cycle){
+			modeFrequencyCognitive = prefferedMode.getValueOfAttribute(Constants.modeFrequencyPerception);								
+		}else if (prefferedMode instanceof Walking){
+			modeFrequencyCognitive = prefferedMode.getValueOfAttribute(Constants.modeFrequencyPerception);													
+		}	
+		return modeFrequencyCognitive;			
+	}
+	
+	public double getModeFrequencyCognitive() {
+		return modeFrequencyCognitive;
+	}
+	
+	public double getPublicModeFrequencyCognitive(){
+		if(prefferedMode instanceof PublicTransport){
+			publicModeFrequencyCognitive = this.getModeFrequencyCognitive();
+		}				
+		return publicModeFrequencyCognitive;
+	}
+	
+	public double updateModeFrequencyAffective() {					
+		 if (prefferedMode instanceof PublicTransport){
+			modeFrequencyAffective = prefferedMode.getValueOfAttribute(Constants.modeFrequencyAffective);											
+		}else if (prefferedMode instanceof Cycle){
+			modeFrequencyAffective = prefferedMode.getValueOfAttribute(Constants.modeFrequencyAffective);								
+		}else if (prefferedMode instanceof Walking){
+			modeFrequencyAffective = prefferedMode.getValueOfAttribute(Constants.modeFrequencyAffective);													
+		}		
+		return modeFrequencyAffective;			
+	}			
+	
+	public double getModeFrequencyAffective() {
+		return modeFrequencyAffective;
+	}
+	
+	public double getPublicModeFrequencyAffective(){
+		if(prefferedMode instanceof PublicTransport){
+			publicModeFrequencyAffective = this.getModeFrequencyAffective();
+		}				
+		return publicModeFrequencyAffective;
+	}
+	
+//	public double updateModeFrequency() {	
+//		evaluateThreeVariablesSatisfaction= new ThreeVariablesDecisionGenerator();			
+//			updateModeFrequencyPhysical();
+//			 updateModeFrequencyCognitive();
+//			 updateModeFrequencyAffective();	
+//	//		 modeFrequency= evaluateThreeVariablesSatisfaction.getTip(updateModeFrequencyPhysical(),updateModeFrequencyCognitive(),updateModeFrequencyAffective());
+//	 return modeFrequency;
+//	}
+	
+	public double getModeFrequency() {
+		return modeFrequency;
+	}
+	
+	public double getPublicModeFrequency(){
+		if(prefferedMode instanceof PublicTransport){
+			publicModeFrequency = this.getModeFrequency();					
+		}	
+	//	System.out.println("public Mode Frequency is:"+publicModeFrequency);
+		return publicModeFrequency;
+	}
+////The mode frequency decision evaluation			
+//	@SuppressWarnings("unchecked")////Add conditions for Cyclist later
+	private Vector modeFrequencyValues() {
+			evaluateThreeVariablesSatisfaction= new ThreeVariablesDecisionGenerator();			
+			updateModeFrequencyPhysical();
+			 updateModeFrequencyCognitive();
+			 updateModeFrequencyAffective();				
+		return modeFrequencyDecisionVariables =	evaluateThreeVariablesSatisfaction.getTip(updateModeFrequencyPhysical(),updateModeFrequencyCognitive(),updateModeFrequencyAffective());
+	}
+	
+	public Vector getModeFrequencyDecisionVariables(){
+		return modeFrequencyDecisionVariables;
+	}
+	
+	public double updateModeFrequency() {
+		modeFrequencyValues();	
+		modeFrequency =(double)getModeFrequencyDecisionVariables().get(0);
+		System.out.println( " The Mode Frequecny"+ modeFrequency); 				 
+		return modeFrequency;		
+	}	
+	////
+	public ArrayList<Double> firedModeFrequencyCognitive() {
+		frequencyCognitiveList = new ArrayList<>();
+		otherVariables = (Map<String, List<Double>>)getModeFrequencyDecisionVariables().get(1);
+		frequencyCognitiveList = (ArrayList<Double>)pca.uNboundledMapPCACognitive(otherVariables);
+		System.out.println("The Frequency Cognitive Values:");
+		for (Double antecedents :frequencyCognitiveList){
+			System.out.println(antecedents);
+		} 				 
+		return frequencyCognitiveList;			
+	}		
+///////
+	public ArrayList<Double> firedModeFrequencyUnpleasantCognitive() {				
+		frequencyUnpleasentCognitiveList = new ArrayList<>();
+		otherVariables = (Map<String, List<Double>>) getModeFrequencyDecisionVariables().get(1);				
+		frequencyUnpleasentCognitiveList = (ArrayList<Double>)pca.uNboundledMapUnpleasantCognitive(otherVariables);
+		System.out.println("The Unpleasant Frequency Cognitive Values:");
+		for (Double antecedents :frequencyUnpleasentCognitiveList){
+			System.out.println(antecedents);
+		} 			 
+		return frequencyUnpleasentCognitiveList;			
+	}
+
+	public ArrayList<Double> firedModeFrequencyNeitherNorPleasantCognitive() {				
+		frequencyNeitherNorPleasantCognitiveList = new ArrayList<>();
+		otherVariables = (Map<String, List<Double>>) getModeFrequencyDecisionVariables().get(1);				
+		frequencyNeitherNorPleasantCognitiveList = (ArrayList<Double>)pca.uNboundledMapNeitherNorPleasantCognitive(otherVariables);
+		System.out.println("The Neither pleasant nor unpleasant Frequency Cognitive Values:");
+		for (Double antecedents :frequencyNeitherNorPleasantCognitiveList){
+			System.out.println(antecedents);
+		} 				 
+		return frequencyNeitherNorPleasantCognitiveList;			
+	}
+	
+	public ArrayList<Double> firedModeFrequencyPleasantCognitive() {				
+		frequencyPleasantCognitiveList = new ArrayList<>();
+		otherVariables = (Map<String, List<Double>>) getModeFrequencyDecisionVariables().get(1);				
+		frequencyPleasantCognitiveList = (ArrayList<Double>)pca.uNboundledMapPleasantCognitive(otherVariables);
+		System.out.println("The Pleasant Frequency Cognitive Values:");
+		for (Double antecedents :frequencyPleasantCognitiveList){
+			System.out.println(antecedents);
+		} 				 
+		return frequencyPleasantCognitiveList;			
+	}
+		
+///////The following are the list of individual level of PCA-PHYSICAL
+			public ArrayList<Double> firedModeFrequencyUnpleasantPhysical() {				
+				frequencyUnpleasentPhysicalList = new ArrayList<>();
+				otherVariables = (Map<String, List<Double>>) getModeFrequencyDecisionVariables().get(1);				
+				frequencyUnpleasentPhysicalList = (ArrayList<Double>)pca.uNboundledMapUnpleasantCognitive(otherVariables);
+				System.out.println("The Unpleasant Frequency Physical Values:");
+				for (Double antecedents :frequencyUnpleasentPhysicalList){
+				System.out.println(antecedents);
+				} 			 
+				return frequencyUnpleasentPhysicalList;			
+			}
+				
+			public ArrayList<Double> firedModeReliabilityNeitherNorPleasantPhysical() {				
+				reliabilityNeitherNorPleasantPhysicalList = new ArrayList<>();
+				otherVariables = (Map<String, List<Double>>) getModeReliabilityDecisionVariables().get(1);				
+				reliabilityNeitherNorPleasantPhysicalList = (ArrayList<Double>)pca.uNboundledMapNeitherNorPleasantCognitive(otherVariables);
+				System.out.println("The Neither pleasant nor unpleasant Reliability Physical Values:");
+				for (Double antecedents :reliabilityNeitherNorPleasantPhysicalList){
+				System.out.println(antecedents);
+				} 				 
+				return reliabilityNeitherNorPleasantPhysicalList;			
+			}
+					
+			public ArrayList<Double> firedModeReliabilityPleasantPhysical() {				
+				reliabilityPleasantPhysicalList = new ArrayList<>();
+				otherVariables = (Map<String, List<Double>>) getModeReliabilityDecisionVariables().get(1);				
+				reliabilityPleasantPhysicalList = (ArrayList<Double>)pca.uNboundledMapPleasantCognitive(otherVariables);
+				System.out.println("The Pleasant Reliability Physical Values:");
+				for (Double antecedents :reliabilityPleasantPhysicalList){
+				System.out.println(antecedents);
+				} 				 
+				return reliabilityPleasantPhysicalList	;			
+			}
+					
+///////The following are the list of individual level of PCA-AFFECTIVE
+			public ArrayList<Double> firedModeReliabilityUnpleasantAffective() {				
+				reliabilityUnpleasentAffectiveList = new ArrayList<>();
+				otherVariables = (Map<String, List<Double>>) getModeReliabilityDecisionVariables().get(1);				
+				reliabilityUnpleasentAffectiveList = (ArrayList<Double>)pca.uNboundledMapUnpleasantCognitive(otherVariables);
+				System.out.println("The Unpleasant Reliability Affective Values:");
+				for (Double antecedents :reliabilityUnpleasentAffectiveList){
+				System.out.println(antecedents);
+				} 			 
+				return reliabilityUnpleasentAffectiveList;			
+			}
+								
+			public ArrayList<Double> firedModeReliabilityNeitherNorPleasantAffective() {				
+				reliabilityNeitherNorPleasantAffectiveList = new ArrayList<>();
+				otherVariables = (Map<String, List<Double>>) getModeReliabilityDecisionVariables().get(1);				
+				reliabilityNeitherNorPleasantAffectiveList  = (ArrayList<Double>)pca.uNboundledMapNeitherNorPleasantCognitive(otherVariables);
+				System.out.println("The Neither pleasant nor unpleasant Reliability Affective Values:");
+				for (Double antecedents :reliabilityNeitherNorPleasantAffectiveList ){
+				System.out.println(antecedents);
+				} 				 
+				return reliabilityNeitherNorPleasantAffectiveList ;			
+			}
+									
+			public ArrayList<Double> firedModeReliabilityPleasantAffective() {				
+				reliabilityPleasantAffectiveList = new ArrayList<>();
+				otherVariables = (Map<String, List<Double>>) getModeReliabilityDecisionVariables().get(1);				
+				reliabilityPleasantAffectiveList = (ArrayList<Double>)pca.uNboundledMapPleasantCognitive(otherVariables);
+				System.out.println("The Pleasant Reliability Affective Values:");
+				for (Double antecedents :reliabilityPleasantAffectiveList){
+				System.out.println(antecedents);
+				} 				 
+				return reliabilityPleasantAffectiveList	;			
+			}
+}

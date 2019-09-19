@@ -1,0 +1,1310 @@
+package moshproject.agents.passenger;
+
+import java.util.ArrayList;
+
+import moshproject.agents.mode.Cycle;
+import moshproject.agents.mode.Mode;
+import moshproject.agents.mode.ModeAttribute;
+import moshproject.agents.mode.PersonalVehicle;
+import moshproject.agents.mode.PublicTransport;
+import moshproject.agents.mode.Walking;
+import moshproject.common.Constants;
+import moshproject.fuzzycollections.ThreeVariablesDecisionGenerator;
+import moshproject.fuzzycollections.TwoVariablesDecisionGenerator;
+
+
+
+public class ModeAttributesPerceptions {
+	////This perception class evaluates passengers perceptions on mode's attributes 
+	// based on the Values and Priotity Measures as the metrics
+	Passenger passenger;
+	Mode prefferedMode;
+	
+	public Mode getPrefferedMode() {
+		return prefferedMode;
+	}
+		
+	private ArrayList<ModeAttribute> subAttributesValue;
+	// This section returns Decision attributes i.e. Efficiency, Convenience and Safety
+	private double modeSafety;			
+	public double getModeSafety() {
+		return this.modeSafety;
+	}
+	private double modeEfficiency;	
+	public double getModeEfficiency() {
+		return modeEfficiency;
+	}
+	private double modeConveniency;
+	
+	public double getModeConveniency() {
+		return modeConveniency;
+	}
+	///Declaration and getters of Decision Attribute Weights	
+	private double attrConveniencyWeight;
+	public double getAttrConveniencyWeight() {
+		return attrConveniencyWeight;
+	}
+	
+	private double attrEfficiencyWeight;
+	public double getAttrEfficiencyWeight() {
+		return attrEfficiencyWeight;
+	}
+	private double attrSafetyWeight;
+	public double getAttrSafetyWeight() {
+		return attrSafetyWeight;
+	}
+///////// Declaration and Getters of Mode's Attributes
+	private double modeFrequency;	
+	public double getModeFrequency() {
+		return modeFrequency;
+	}
+
+	private double modeReliability;
+	
+	public double getModeReliability() {
+		return modeReliability;
+	}
+
+	private double modeJourneyTime;
+	
+	public double getModeJourneyTime() {
+		return modeJourneyTime;
+	}
+
+	private double modeRouteMgt;
+	
+	public double getModeRouteMgt() {
+		return modeRouteMgt;
+	}
+
+	private double modeParkingAndStorage;
+	
+	public double getModeParkingAndStorage() {
+		return modeParkingAndStorage;
+	}
+
+	private double personalMobility;
+	public double getPersonalMobility() {
+		return personalMobility;
+	}
+
+	private double personalAutonomy;
+	public double getPersonalAutonomy() {
+		return personalAutonomy;
+	}
+
+	private double journeyControl;
+	public double getJourneyControl() {
+		return journeyControl;
+	}
+
+	private double protectionFromElements;
+	public double getProtectionFromElements() {
+		return protectionFromElements;
+	}
+
+	private double othersAttitude;
+	public double getOthersAttitude() {
+		return othersAttitude;
+	}
+
+	private double personalSecurity;
+	public double getPersonalSecurity() {
+		return personalSecurity;
+	}
+	private double personalSafety;
+	public double getPersonalSafety() {
+		return personalSafety;
+	}
+	
+	/// PCA contributions' declaration and getter for Mode's attributes
+	private double modeFrequencyCognitive;
+	private double modeFrequencyAffective;
+	private double modeFrequencyPhysical;
+	public double getModeFrequencyCognitive() {
+		return modeFrequencyCognitive;
+	}
+	public double getModeFrequencyAffective() {
+		return modeFrequencyAffective;
+	}
+	public double getModeFrequencyPhysical() {
+		return modeFrequencyPhysical;
+	}	
+	///
+	private double modeReliabilityCognitive;
+	private double modeReliabilityAffective;
+	private double modeReliabilityPhysical;
+	public double getModeReliabilityCognitive() {
+		return modeReliabilityCognitive;
+	}
+	public double getModeReliabilityAffective() {
+		return modeReliabilityAffective;
+	}
+	public double getModeReliabilityPhysical() {
+		return modeReliabilityPhysical;
+	}	
+	///
+	private double modeJourneyTimeCognitive;
+	private double modeJourneyTimeAffective;
+	private double modeJourneyTimePhysical;
+	public double getModeJourneyTimeCognitive() {
+		return modeJourneyTimeCognitive;
+	}
+	public double getModeJourneyTimeAffective() {
+		return modeJourneyTimeAffective;
+	}
+	public double getModeJourneyTimePhysical() {
+		return modeJourneyTimePhysical;
+	}	
+	////
+	private double modeRouteManagementCognitive;
+	private double modeRouteManagementAffective;
+	private double modeRouteManagementPhysical;
+	public double getModeRouteManagementCognitive() {
+		return modeRouteManagementCognitive;
+	}
+	public double getModeRouteManagementAffective() {
+		return modeRouteManagementAffective;
+	}
+	public double getModeRouteManagementPhysical() {
+		return modeRouteManagementPhysical;
+	}	
+	///
+	private double parkingAndStorageCognitive;
+	private double parkingAndStorageAffective;
+	private double parkingAndStoragePhysical;
+	public double getParkingAndStorageCognitive() {
+		return parkingAndStorageCognitive;
+	}
+	public double getParkingAndStorageAffective() {
+		return parkingAndStorageAffective;
+	}
+	public double getParkingAndStoragePhysical() {
+		return parkingAndStoragePhysical;
+	}	
+	//
+	private double personalMobilityCognitive;
+	private double personalMobilityAffective;	
+	private double personalMobilityPhysical;
+	public double getPersonalMobilityCognitive() {
+		return personalMobilityCognitive;
+	}
+	public double getPersonalMobilityAffective() {
+		return personalMobilityAffective;
+	}
+	public double getPersonalMobilityPhysical() {
+		return personalMobilityPhysical;
+	}	
+	///
+	private double personalAutonomyCognitive;
+	private double personalAutonomyAffective;
+	private double personalAutonomyPhysical;
+	public double getPersonalAutonomyCognitive() {
+		return personalAutonomyCognitive;
+	}
+	public double getPersonalAutonomyAffective() {
+		return personalAutonomyAffective;
+	}
+	public double getPersonalAutonomyPhysical() {
+		return personalAutonomyPhysical;
+	}	
+	///
+	private double journeyControlCognitive;
+	private double journeyControlAffective;
+	private double journeyControlPhysical;
+	public double getJourneyControlCognitive() {
+		return journeyControlCognitive;
+	}
+	public double getJourneyControlAffective() {
+		return journeyControlAffective;
+	}
+	public double getJourneyControlPhysical() {
+		return journeyControlPhysical;
+	}
+	/////	
+	private double protectionFromElementsCognitive;
+	private double protectionFromElementsAffective;
+	private double protectionFromElementsPhysical;
+	public double getProtectionFromElementsCognitive() {
+		return protectionFromElementsCognitive;
+	}
+	public double getProtectionFromElementsAffective() {
+		return protectionFromElementsAffective;
+	}
+	public double getProtectionFromElementsPhysical() {
+		return protectionFromElementsPhysical;
+	}
+	///	
+	private double othersAttitudeCognitive;
+	private double othersAttitudeAffective;
+	private double othersAttitudePhysical;
+	public double getOthersAttitudeCognitive() {
+		return othersAttitudeCognitive;
+	}
+	public double getOthersAttitudeAffective() {
+		return othersAttitudeAffective;
+	}
+	public double getOthersAttitudePhysical() {
+		return othersAttitudePhysical;
+	}
+	///	
+	private double personalSecurityCognitive;
+	private double personalSecurityAffective;
+	private double personalSecurityPhysical;
+	public double getPersonalSecurityCognitive() {
+		return personalSecurityCognitive;
+	}
+	public double getPersonalSecurityAffective() {
+		return personalSecurityAffective;
+	}
+	public double getPersonalSecurityPhysical() {
+		return personalSecurityPhysical;
+	}
+	///	
+	private double personalSafetyCognitive;
+	public double getPersonalSafetyCognitive() {
+		return personalSafetyCognitive;
+	}
+	public double getPersonalSafetyAffective() {
+		return personalSafetyAffective;
+	}
+	public double getPersonalSafetyPhysical() {
+		return personalSafetyPhysical;
+	}
+	private double personalSafetyAffective;
+	private double personalSafetyPhysical;
+	
+//// this section if for main decision variables PCA
+	private double modeEfficiencyAffective;	
+	public double getModeEfficiencyAffective() {
+		return modeEfficiencyAffective;
+	}
+	
+	private double modeEfficiencyCognitive;
+	public double getModeEfficiencyCognitive() {
+		return modeEfficiencyCognitive;
+	}
+	private double modeEfficiencyPhysical;
+	public double getModeEfficiencyPhysical() {
+		return modeEfficiencyPhysical;
+	}
+	private double modeConveniencyAffective;
+	private double modeConveniencyPhysical;
+	private double modeConveniencyCognitive;
+	public double getModeConveniencyAffective() {
+		return modeConveniencyAffective;
+	}
+	public double getModeConveniencyPhysical() {
+		return modeConveniencyPhysical;
+	}
+	public double getModeConveniencyCognitive() {
+		return modeConveniencyCognitive;
+	}	
+	private double modeSafetyAffective;
+	private double modeSafetyCognitive;
+	private double modeSafetyPhysical;
+
+	
+	public double getModeSafetyAffective() {
+		return modeSafetyAffective;
+	}
+	public double getModeSafetyCognitive() {
+		return modeSafetyCognitive;
+	}
+	public double getModeSafetyPhysical() {
+		return modeSafetyPhysical;
+	}
+	///
+	private double privateVehEfficiency;
+
+	private double routeManagementCognitive;
+
+	private double routeManagementPhysical;	
+	public double getPrivateVehEfficiency() {
+		return privateVehEfficiency;
+	}
+	public void setPrivateVehEfficiency(double privateVehEfficiency) {
+		this.privateVehEfficiency = privateVehEfficiency;
+	}
+	
+
+
+	ThreeVariablesDecisionGenerator  evaluateThreeVariablesSatisfaction;
+	TwoVariablesDecisionGenerator  evaluateTwoVariablesSatisfaction;
+	
+	public ModeAttributesPerceptions(Mode preferredMode){
+		this.prefferedMode = preferredMode;
+		evaluateThreeVariablesSatisfaction= new ThreeVariablesDecisionGenerator();
+		evaluateTwoVariablesSatisfaction = new TwoVariablesDecisionGenerator();
+		
+		modeSafety =updateSafety();
+		modeEfficiency=updateEfficiency();
+		modeConveniency=updateConveniency();
+		/////
+		attrEfficiencyWeight=updateEfficiencyWeight();
+		attrConveniencyWeight= updateConveniencyWeight();
+		attrSafetyWeight= updateSafetyWeight();
+		////
+		modeEfficiencyAffective=updateEfficiencyAffective();
+		modeEfficiencyCognitive=updateEfficiencyCognitive();
+		modeEfficiencyPhysical=updateEfficiencyPhysical();
+		/////
+		modeConveniencyAffective=updateConveniencyAffective();
+		modeConveniencyCognitive=updateConveniencyCognitive();
+		modeConveniencyPhysical=updateConveniencyPhysical();
+		////
+		modeSafetyAffective=updateSafetyAffective();
+		modeSafetyCognitive=updateSafetyCognitive();
+		modeSafetyPhysical=updateSafetyPhysical();		
+	}
+	/// This section evaluate and set the decision attributes weights 
+			public double updateEfficiencyWeight() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					attrEfficiencyWeight = prefferedMode.getValueOfAttribute(Constants.efficiencyWeight);				
+				}else if (prefferedMode instanceof PublicTransport){
+					attrEfficiencyWeight = prefferedMode.getValueOfAttribute(Constants.efficiencyWeight);											
+				}else if (prefferedMode instanceof Cycle){
+					attrEfficiencyWeight = prefferedMode.getValueOfAttribute(Constants.efficiencyWeight);								
+				}else if (prefferedMode instanceof Walking){
+					attrEfficiencyWeight = prefferedMode.getValueOfAttribute(Constants.efficiencyWeight);													
+				}
+				attrEfficiencyWeight = ((attrEfficiencyWeight +1)/2);
+				return attrEfficiencyWeight;
+			}	
+
+			public double updateConveniencyWeight() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					attrConveniencyWeight = prefferedMode.getValueOfAttribute(Constants.conveniencyWeight);				
+				}else if (prefferedMode instanceof PublicTransport){
+					attrConveniencyWeight = prefferedMode.getValueOfAttribute(Constants.conveniencyWeight);											
+				}else if (prefferedMode instanceof Cycle){
+					attrConveniencyWeight = prefferedMode.getValueOfAttribute(Constants.conveniencyWeight);								
+				}else if (prefferedMode instanceof Walking){
+					attrConveniencyWeight = prefferedMode.getValueOfAttribute(Constants.conveniencyWeight);													
+				}
+				attrConveniencyWeight = ((attrConveniencyWeight +1)/2);
+				return attrConveniencyWeight;			
+			}	
+			public double updateSafetyWeight() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					attrSafetyWeight = prefferedMode.getValueOfAttribute(Constants.safetyWeight);				
+				}else if (prefferedMode instanceof PublicTransport){
+					attrSafetyWeight = prefferedMode.getValueOfAttribute(Constants.safetyWeight);											
+				}else if (prefferedMode instanceof Cycle){
+					attrSafetyWeight = prefferedMode.getValueOfAttribute(Constants.safetyWeight);								
+				}else if (prefferedMode instanceof Walking){
+					attrSafetyWeight = prefferedMode.getValueOfAttribute(Constants.safetyWeight);													
+				}
+				attrSafetyWeight = ((attrSafetyWeight +1)/2);
+				return attrSafetyWeight;			
+			}	
+	// This section evaluate passengers satisfaction on the variables
+	
+			private double updateModeFrequencyCognitive() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					modeFrequencyCognitive = prefferedMode.getValueOfAttribute(Constants.modeFrequencyCognitive);				
+				}else if (prefferedMode instanceof PublicTransport){
+					modeFrequencyCognitive = prefferedMode.getValueOfAttribute(Constants.modeFrequencyCognitive);											
+				}else if (prefferedMode instanceof Cycle){
+					modeFrequencyCognitive = prefferedMode.getValueOfAttribute(Constants.modeFrequencyCognitive);								
+				}else if (prefferedMode instanceof Walking){
+					modeFrequencyCognitive = prefferedMode.getValueOfAttribute(Constants.modeFrequencyCognitive);													
+				}
+				 modeFrequencyCognitive = ((modeFrequencyCognitive +1)/2);
+				return modeFrequencyCognitive;			
+			}
+			
+			private double updateModeFrequencyAffective() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					modeFrequencyAffective = prefferedMode.getValueOfAttribute(Constants.modeFrequencyAffective);				
+				}else if (prefferedMode instanceof PublicTransport){
+					modeFrequencyAffective = prefferedMode.getValueOfAttribute(Constants.modeFrequencyAffective);											
+				}else if (prefferedMode instanceof Cycle){
+					modeFrequencyAffective = prefferedMode.getValueOfAttribute(Constants.modeFrequencyAffective);								
+				}else if (prefferedMode instanceof Walking){
+					modeFrequencyAffective = prefferedMode.getValueOfAttribute(Constants.modeFrequencyAffective);													
+				}
+				modeFrequencyAffective = ((modeFrequencyAffective +1)/2);
+				return modeFrequencyAffective;			
+			}
+			
+			private double updateModeFrequencyPhysical() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					modeFrequencyPhysical = prefferedMode.getValueOfAttribute(Constants.modeFrequencyPhysical);				
+				 if (prefferedMode instanceof PublicTransport){
+					modeFrequencyPhysical = prefferedMode.getValueOfAttribute(Constants.modeFrequencyPhysical);											
+				}else if (prefferedMode instanceof Cycle){
+					modeFrequencyPhysical = prefferedMode.getValueOfAttribute(Constants.modeFrequencyPhysical);								
+				}else if (prefferedMode instanceof Walking){
+					modeFrequencyPhysical = prefferedMode.getValueOfAttribute(Constants.modeFrequencyPhysical);													
+				}
+				modeFrequencyPhysical = ((modeFrequencyPhysical +1)/2);
+				return modeFrequencyPhysical;			
+				}
+			}
+			public double updateModeFrequency() {								
+				return modeFrequency =	evaluateTwoVariablesSatisfaction.getTip(updateModeFrequencyCognitive(),updateModeFrequencyAffective());		
+			}
+			
+			private double updateModeReliabilityCognitive() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					modeReliabilityCognitive = prefferedMode.getValueOfAttribute(Constants.infoReliabilityCognitive);				
+				}else if (prefferedMode instanceof PublicTransport){
+					modeReliabilityCognitive = prefferedMode.getValueOfAttribute(Constants.infoReliabilityCognitive);											
+				}else if (prefferedMode instanceof Cycle){
+					modeReliabilityCognitive = prefferedMode.getValueOfAttribute(Constants.infoReliabilityCognitive);								
+				}else if (prefferedMode instanceof Walking){
+					modeReliabilityCognitive = prefferedMode.getValueOfAttribute(Constants.infoReliabilityCognitive);													
+				}
+				modeReliabilityCognitive = ((modeReliabilityCognitive +1)/2);
+				return modeReliabilityCognitive;			
+			}
+			
+			private double updateModeReliabilityAffective() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					modeReliabilityAffective = prefferedMode.getValueOfAttribute(Constants.infoReliabilityAffective);				
+				}else if (prefferedMode instanceof PublicTransport){
+					modeReliabilityAffective = prefferedMode.getValueOfAttribute(Constants.infoReliabilityAffective);											
+				}else if (prefferedMode instanceof Cycle){
+					modeReliabilityAffective = prefferedMode.getValueOfAttribute(Constants.infoReliabilityAffective);								
+				}else if (prefferedMode instanceof Walking){
+					modeReliabilityAffective = prefferedMode.getValueOfAttribute(Constants.infoReliabilityAffective);													
+				}
+				modeReliabilityAffective = ((modeReliabilityAffective +1)/2);
+				return modeReliabilityAffective;			
+			}
+			
+			private double updateModeReliabilityPhysical() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					modeReliabilityPhysical = prefferedMode.getValueOfAttribute(Constants.infoReliabilityPhysical);				
+				}else if (prefferedMode instanceof PublicTransport){
+					modeReliabilityPhysical = prefferedMode.getValueOfAttribute(Constants.infoReliabilityPhysical);											
+				}else if (prefferedMode instanceof Cycle){
+					modeReliabilityPhysical = prefferedMode.getValueOfAttribute(Constants.infoReliabilityPhysical);								
+				}else if (prefferedMode instanceof Walking){
+					modeReliabilityPhysical = prefferedMode.getValueOfAttribute(Constants.infoReliabilityPhysical);													
+				}
+				modeReliabilityPhysical = ((modeReliabilityPhysical +1)/2);
+				return modeReliabilityPhysical;			
+			}
+		
+		public double updateModeReliability(){	
+			evaluateThreeVariablesSatisfaction= new DecisionGenerator();
+				return modeReliability =	evaluateThreeVariablesSatisfaction.getTip(updateModeReliabilityPhysical(),updateModeReliabilityCognitive(),updateModeReliabilityAffective());
+			}
+			
+			private double updateModeJourneyTimeCognitive() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					modeJourneyTimeCognitive = prefferedMode.getValueOfAttribute(Constants.timelinessCognitive);				
+				}else if (prefferedMode instanceof PublicTransport){
+					modeJourneyTimeCognitive = prefferedMode.getValueOfAttribute(Constants.timelinessCognitive);											
+				}else if (prefferedMode instanceof Cycle){
+					modeJourneyTimeCognitive = prefferedMode.getValueOfAttribute(Constants.timelinessCognitive);								
+				}else if (prefferedMode instanceof Walking){
+					modeJourneyTimeCognitive = prefferedMode.getValueOfAttribute(Constants.timelinessCognitive);													
+				}
+				modeJourneyTimeCognitive= ((modeJourneyTimeCognitive +1)/2);
+				return modeJourneyTimeCognitive;			
+			}
+			
+			private double updateModeJourneyTimeAffective() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					modeJourneyTimeAffective = prefferedMode.getValueOfAttribute(Constants.timelinessAffective);				
+				}else if (prefferedMode instanceof PublicTransport){
+					modeJourneyTimeAffective = prefferedMode.getValueOfAttribute(Constants.timelinessAffective);											
+				}else if (prefferedMode instanceof Cycle){
+					modeJourneyTimeAffective = prefferedMode.getValueOfAttribute(Constants.timelinessAffective);								
+				}else if (prefferedMode instanceof Walking){
+					modeJourneyTimeAffective = prefferedMode.getValueOfAttribute(Constants.timelinessAffective);													
+				}
+				modeJourneyTimeAffective = ((modeJourneyTimeAffective +1)/2);
+				return modeJourneyTimeAffective;			
+			}
+			private double updateModeJourneyTimePhysical() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					modeJourneyTimePhysical = prefferedMode.getValueOfAttribute(Constants.timelinessPhysical);				
+				}else if (prefferedMode instanceof PublicTransport){
+					modeJourneyTimePhysical = prefferedMode.getValueOfAttribute(Constants.timelinessPhysical);											
+				}else if (prefferedMode instanceof Cycle){
+					modeJourneyTimePhysical = prefferedMode.getValueOfAttribute(Constants.timelinessPhysical);								
+				}else if (prefferedMode instanceof Walking){
+					modeJourneyTimePhysical = prefferedMode.getValueOfAttribute(Constants.timelinessPhysical);													
+				}
+				modeJourneyTimePhysical = ((modeJourneyTimePhysical +1)/2);
+				return modeJourneyTimePhysical;			
+			}
+			
+			public void updateModeJourneyTime(){
+				evaluateThreeVariablesSatisfaction= new DecisionGenerator();
+				modeJourneyTime =	evaluateThreeVariablesSatisfaction.getTip(updateModeJourneyTimePhysical(),updateModeJourneyTimeCognitive(),updateModeJourneyTimeAffective());
+			}
+		
+			private double updateModeRouteManagementCognitive() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					modeRouteManagementCognitive = prefferedMode.getValueOfAttribute(Constants.routeMgtCognitive);				
+				}else if (prefferedMode instanceof PublicTransport){
+					modeRouteManagementCognitive = prefferedMode.getValueOfAttribute(Constants.routeMgtCognitive);											
+				}else if (prefferedMode instanceof Cycle){
+					modeRouteManagementCognitive = prefferedMode.getValueOfAttribute(Constants.routeMgtCognitive);								
+				}else if (prefferedMode instanceof Walking){
+					modeRouteManagementCognitive = prefferedMode.getValueOfAttribute(Constants.routeMgtCognitive);													
+				}
+				modeRouteManagementCognitive= ((modeRouteManagementCognitive +1)/2);
+				return modeRouteManagementCognitive;			
+			}
+			
+			private double updateModeRouteManagementAffective() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					modeRouteManagementAffective = prefferedMode.getValueOfAttribute(Constants.routeMgtAffective);				
+				}else if (prefferedMode instanceof PublicTransport){
+					modeRouteManagementAffective = prefferedMode.getValueOfAttribute(Constants.routeMgtAffective);											
+				}else if (prefferedMode instanceof Cycle){
+					modeRouteManagementAffective = prefferedMode.getValueOfAttribute(Constants.routeMgtAffective);								
+				}else if (prefferedMode instanceof Walking){
+					modeRouteManagementAffective = prefferedMode.getValueOfAttribute(Constants.routeMgtAffective);													
+				}
+				modeRouteManagementAffective = ((modeRouteManagementAffective +1)/2);
+				return modeRouteManagementAffective;			
+			}
+			
+			private double updateModeRouteManagementPhysical() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					modeRouteManagementPhysical = prefferedMode.getValueOfAttribute(Constants.routeMgtPhysical);				
+				}else if (prefferedMode instanceof PublicTransport){
+					modeRouteManagementPhysical = prefferedMode.getValueOfAttribute(Constants.routeMgtPhysical);											
+				}else if (prefferedMode instanceof Cycle){
+					modeRouteManagementPhysical = prefferedMode.getValueOfAttribute(Constants.routeMgtPhysical);								
+				}else if (prefferedMode instanceof Walking){
+					modeRouteManagementPhysical = prefferedMode.getValueOfAttribute(Constants.routeMgtPhysical);													
+				}
+				modeRouteManagementPhysical = ((modeRouteManagementPhysical +1)/2);
+				return modeRouteManagementPhysical;			
+			}
+		
+			public void updateModeRouteManagement(){
+				evaluateThreeVariablesSatisfaction= new DecisionGenerator();
+				modeRouteMgt =	evaluateThreeVariablesSatisfaction.getTip(updateModeRouteManagementPhysical(),updateModeRouteManagementCognitive(),updateModeRouteManagementAffective());
+			}
+			
+			private double updateParkingAndStorageCognitive() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					parkingAndStorageCognitive = prefferedMode.getValueOfAttribute(Constants.parkingSpaceConcernCognitive);				
+				}else if (prefferedMode instanceof PublicTransport){
+					parkingAndStorageCognitive = prefferedMode.getValueOfAttribute(Constants.parkingSpaceConcernCognitive);											
+				}else if (prefferedMode instanceof Cycle){
+					parkingAndStorageCognitive = prefferedMode.getValueOfAttribute(Constants.parkingSpaceConcernCognitive);								
+				}else if (prefferedMode instanceof Walking){
+					parkingAndStorageCognitive = prefferedMode.getValueOfAttribute(Constants.parkingSpaceConcernCognitive);													
+				}
+				parkingAndStorageCognitive = ((parkingAndStorageCognitive +1)/2);
+				return parkingAndStorageCognitive;			
+			}
+			
+			private double updateParkingAndStorageAffective() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					parkingAndStorageAffective = prefferedMode.getValueOfAttribute(Constants.parkingSpaceConcernAffective);				
+				}else if (prefferedMode instanceof PublicTransport){
+					parkingAndStorageAffective = prefferedMode.getValueOfAttribute(Constants.parkingSpaceConcernAffective);											
+				}else if (prefferedMode instanceof Cycle){
+					parkingAndStorageAffective = prefferedMode.getValueOfAttribute(Constants.parkingSpaceConcernAffective);								
+				}else if (prefferedMode instanceof Walking){
+					parkingAndStorageAffective = prefferedMode.getValueOfAttribute(Constants.parkingSpaceConcernAffective);													
+				}
+				parkingAndStorageAffective  = ((parkingAndStorageAffective  +1)/2);
+				return parkingAndStorageAffective;			
+			}
+			
+			private double updateParkingAndStoragePhysical() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					parkingAndStoragePhysical = prefferedMode.getValueOfAttribute(Constants.parkingSpaceConcernPhysical);					
+				}else if (prefferedMode instanceof PublicTransport){
+					parkingAndStoragePhysical = prefferedMode.getValueOfAttribute(Constants.parkingSpaceConcernPhysical);											
+				}else if (prefferedMode instanceof Cycle){
+					parkingAndStoragePhysical = prefferedMode.getValueOfAttribute(Constants.parkingSpaceConcernPhysical);								
+				}else if (prefferedMode instanceof Walking){
+					parkingAndStoragePhysical = prefferedMode.getValueOfAttribute(Constants.parkingSpaceConcernPhysical);													
+				}
+				parkingAndStoragePhysical = ((parkingAndStoragePhysical +1)/2);
+				return parkingAndStoragePhysical;			
+			}
+		
+			public void updateParkingAndStorage(){
+				evaluateThreeVariablesSatisfaction= new DecisionGenerator();
+				modeParkingAndStorage =	evaluateThreeVariablesSatisfaction.getTip(updateParkingAndStoragePhysical(),updateParkingAndStorageCognitive(),updateParkingAndStorageAffective());
+			}
+					
+			private double updatePersonalMobilityCognitive() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					personalMobilityCognitive = prefferedMode.getValueOfAttribute(Constants.personalMobilityCognitive);					
+				}else if (prefferedMode instanceof PublicTransport){
+					personalMobilityCognitive = prefferedMode.getValueOfAttribute(Constants.personalMobilityCognitive);											
+				}else if (prefferedMode instanceof Cycle){
+					personalMobilityCognitive = prefferedMode.getValueOfAttribute(Constants.personalMobilityCognitive);								
+				}else if (prefferedMode instanceof Walking){
+					personalMobilityCognitive = prefferedMode.getValueOfAttribute(Constants.personalMobilityCognitive);													
+				}
+				personalMobilityCognitive = ((personalMobilityCognitive +1)/2);
+				return personalMobilityCognitive;			
+			}
+		
+			private double updatePersonalMobilityAffective() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					personalMobilityAffective = prefferedMode.getValueOfAttribute(Constants.personalMobilityAffective);					
+				}else if (prefferedMode instanceof PublicTransport){
+					personalMobilityAffective = prefferedMode.getValueOfAttribute(Constants.personalMobilityAffective);											
+				}else if (prefferedMode instanceof Cycle){
+					personalMobilityAffective = prefferedMode.getValueOfAttribute(Constants.personalMobilityAffective);								
+				}else if (prefferedMode instanceof Walking){
+					personalMobilityAffective = prefferedMode.getValueOfAttribute(Constants.personalMobilityAffective);													
+				}
+				personalMobilityAffective = ((personalMobilityAffective +1)/2);
+				return personalMobilityAffective;			
+			}
+			
+			private double updatePersonalMobilityPhysical() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					personalMobilityPhysical = prefferedMode.getValueOfAttribute(Constants.personalMobilityPhysical);					
+				}else if (prefferedMode instanceof PublicTransport){
+					personalMobilityPhysical = prefferedMode.getValueOfAttribute(Constants.personalMobilityPhysical);											
+				}else if (prefferedMode instanceof Cycle){
+					personalMobilityPhysical = prefferedMode.getValueOfAttribute(Constants.personalMobilityPhysical);								
+				}else if (prefferedMode instanceof Walking){
+					personalMobilityPhysical = prefferedMode.getValueOfAttribute(Constants.personalMobilityPhysical);													
+				}
+				personalMobilityPhysical= ((personalMobilityPhysical +1)/2);
+				return personalMobilityPhysical;			
+			}
+			public void updatePersonalMobility(){
+				evaluateThreeVariablesSatisfaction= new DecisionGenerator();
+				personalMobility =	evaluateThreeVariablesSatisfaction.getTip(updatePersonalMobilityPhysical(),updatePersonalMobilityCognitive(),updatePersonalMobilityAffective());
+			}
+				
+			private double updatePersonalAutonomyCognitive() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					personalAutonomyCognitive = prefferedMode.getValueOfAttribute(Constants.personalAutonomyCognitive);					
+				}else if (prefferedMode instanceof PublicTransport){
+					personalAutonomyCognitive = prefferedMode.getValueOfAttribute(Constants.personalAutonomyCognitive);											
+				}else if (prefferedMode instanceof Cycle){
+					personalAutonomyCognitive = prefferedMode.getValueOfAttribute(Constants.personalAutonomyCognitive);								
+				}else if (prefferedMode instanceof Walking){
+					personalAutonomyCognitive = prefferedMode.getValueOfAttribute(Constants.personalAutonomyCognitive);													
+				}
+				personalAutonomyCognitive= ((personalAutonomyCognitive +1)/2);
+				return personalAutonomyCognitive;			
+			}
+		
+			private double updatePersonalAutonomyAffective() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					personalAutonomyAffective = prefferedMode.getValueOfAttribute(Constants.personalAutonomyAffective);					
+				}else if (prefferedMode instanceof PublicTransport){
+					personalAutonomyAffective = prefferedMode.getValueOfAttribute(Constants.personalAutonomyAffective);											
+				}else if (prefferedMode instanceof Cycle){
+					personalAutonomyAffective = prefferedMode.getValueOfAttribute(Constants.personalAutonomyAffective);								
+				}else if (prefferedMode instanceof Walking){
+					personalAutonomyAffective = prefferedMode.getValueOfAttribute(Constants.personalAutonomyAffective);													
+				}
+				personalAutonomyAffective = ((personalAutonomyAffective +1)/2);
+				return personalAutonomyAffective;			
+			}
+			
+			private double updatePersonalAutonomyPhysical() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					personalAutonomyPhysical = prefferedMode.getValueOfAttribute(Constants.personalAutonomyPhysical);					
+				}else if (prefferedMode instanceof PublicTransport){
+					personalAutonomyPhysical = prefferedMode.getValueOfAttribute(Constants.personalAutonomyPhysical);											
+				}else if (prefferedMode instanceof Cycle){
+					personalAutonomyPhysical = prefferedMode.getValueOfAttribute(Constants.personalAutonomyPhysical);								
+				}else if (prefferedMode instanceof Walking){
+					personalAutonomyPhysical = prefferedMode.getValueOfAttribute(Constants.personalAutonomyPhysical);													
+				}
+				personalAutonomyPhysical = ((personalAutonomyPhysical +1)/2);
+				return personalAutonomyPhysical;			
+			}
+			public void updatePersonalAutonomy(){
+				evaluateThreeVariablesSatisfaction= new DecisionGenerator();
+				personalAutonomy =	evaluateThreeVariablesSatisfaction.getTip(updatePersonalAutonomyPhysical(),updatePersonalAutonomyCognitive(),updatePersonalAutonomyAffective());
+			}
+		
+			private double updateJourneyControlCognitive() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					journeyControlCognitive = prefferedMode.getValueOfAttribute(Constants.journeyControlCognitive);					
+				}else if (prefferedMode instanceof PublicTransport){
+					journeyControlCognitive = prefferedMode.getValueOfAttribute(Constants.journeyControlCognitive);											
+				}else if (prefferedMode instanceof Cycle){
+					journeyControlCognitive = prefferedMode.getValueOfAttribute(Constants.journeyControlCognitive);								
+				}else if (prefferedMode instanceof Walking){
+					journeyControlCognitive = prefferedMode.getValueOfAttribute(Constants.journeyControlCognitive);													
+				}
+				journeyControlCognitive = ((journeyControlCognitive+1)/2);
+				return journeyControlCognitive;			
+			}
+		
+			private double updateJourneyControlAffective() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					journeyControlAffective = prefferedMode.getValueOfAttribute(Constants.journeyControlAffective);					
+				}else if (prefferedMode instanceof PublicTransport){
+					journeyControlAffective = prefferedMode.getValueOfAttribute(Constants.journeyControlAffective);											
+				}else if (prefferedMode instanceof Cycle){
+					journeyControlAffective = prefferedMode.getValueOfAttribute(Constants.journeyControlAffective);								
+				}else if (prefferedMode instanceof Walking){
+					journeyControlAffective = prefferedMode.getValueOfAttribute(Constants.journeyControlAffective);													
+				}
+				journeyControlAffective = ((journeyControlAffective +1)/2);
+				return journeyControlAffective;			
+			}
+			
+			private double updateJourneyControlPhysical() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					journeyControlPhysical = prefferedMode.getValueOfAttribute(Constants.journeyControlPhysical);					
+				}else if (prefferedMode instanceof PublicTransport){
+					journeyControlPhysical = prefferedMode.getValueOfAttribute(Constants.journeyControlPhysical);											
+				}else if (prefferedMode instanceof Cycle){
+					journeyControlPhysical = prefferedMode.getValueOfAttribute(Constants.journeyControlPhysical);								
+				}else if (prefferedMode instanceof Walking){
+					journeyControlPhysical = prefferedMode.getValueOfAttribute(Constants.journeyControlPhysical);													
+				}
+				journeyControlPhysical = ((journeyControlPhysical +1)/2);
+				return journeyControlPhysical;			
+			}
+			public void updateJourneyControl(){	
+				evaluateThreeVariablesSatisfaction= new DecisionGenerator();
+				journeyControl =	evaluateThreeVariablesSatisfaction.getTip(updateJourneyControlPhysical(),updateJourneyControlCognitive(),updateJourneyControlAffective());
+			}
+		
+			private double updateProtectionFromElementsCognitive() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					protectionFromElementsCognitive = prefferedMode.getValueOfAttribute(Constants.protectionFromElementsCognitive);					
+				}else if (prefferedMode instanceof PublicTransport){
+					protectionFromElementsCognitive = prefferedMode.getValueOfAttribute(Constants.protectionFromElementsCognitive);											
+				}else if (prefferedMode instanceof Cycle){
+					protectionFromElementsCognitive = prefferedMode.getValueOfAttribute(Constants.protectionFromElementsCognitive);								
+				}else if (prefferedMode instanceof Walking){
+					protectionFromElementsCognitive = prefferedMode.getValueOfAttribute(Constants.protectionFromElementsCognitive);													
+				}
+				protectionFromElementsCognitive= ((protectionFromElementsCognitive +1)/2);
+				return protectionFromElementsCognitive;			
+			}
+		
+			private double updateProtectionFromElementsAffective() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					protectionFromElementsAffective = prefferedMode.getValueOfAttribute(Constants.protectionFromElementsAffective);					
+				}else if (prefferedMode instanceof PublicTransport){
+					protectionFromElementsAffective = prefferedMode.getValueOfAttribute(Constants.protectionFromElementsAffective);											
+				}else if (prefferedMode instanceof Cycle){
+					protectionFromElementsAffective = prefferedMode.getValueOfAttribute(Constants.protectionFromElementsAffective);								
+				}else if (prefferedMode instanceof Walking){
+					protectionFromElementsAffective = prefferedMode.getValueOfAttribute(Constants.protectionFromElementsAffective);													
+				}
+				protectionFromElementsAffective = ((protectionFromElementsAffective +1)/2);
+				return protectionFromElementsAffective;			
+			}
+			
+			private double updateProtectionFromElementsPhysical() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					protectionFromElementsPhysical = prefferedMode.getValueOfAttribute(Constants.protectionFromElementsPhysical);					
+				}else if (prefferedMode instanceof PublicTransport){
+					protectionFromElementsPhysical = prefferedMode.getValueOfAttribute(Constants.protectionFromElementsPhysical);											
+				}else if (prefferedMode instanceof Cycle){
+					protectionFromElementsPhysical = prefferedMode.getValueOfAttribute(Constants.protectionFromElementsPhysical);								
+				}else if (prefferedMode instanceof Walking){
+					protectionFromElementsPhysical = prefferedMode.getValueOfAttribute(Constants.protectionFromElementsPhysical);													
+				}
+				protectionFromElementsPhysical = ((protectionFromElementsPhysical +1)/2);
+				return protectionFromElementsPhysical;			
+			}
+			public void updateProtectionFromElements(){
+				evaluateThreeVariablesSatisfaction= new DecisionGenerator();
+				protectionFromElements =	evaluateThreeVariablesSatisfaction.getTip(updateProtectionFromElementsPhysical(),updateProtectionFromElementsCognitive(),updateProtectionFromElementsAffective());
+			}
+
+			private double updateOthersAttitudeCognitive() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					othersAttitudeCognitive = prefferedMode.getValueOfAttribute(Constants.othersAttitudeCognitive);					
+				}else if (prefferedMode instanceof PublicTransport){
+					othersAttitudeCognitive = prefferedMode.getValueOfAttribute(Constants.othersAttitudeCognitive);											
+				}else if (prefferedMode instanceof Cycle){
+					othersAttitudeCognitive = prefferedMode.getValueOfAttribute(Constants.othersAttitudeCognitive);								
+				}else if (prefferedMode instanceof Walking){
+					othersAttitudeCognitive = prefferedMode.getValueOfAttribute(Constants.othersAttitudeCognitive);													
+				}
+				othersAttitudeCognitive = ((othersAttitudeCognitive+1)/2);
+				return othersAttitudeCognitive;			
+			}
+		
+			private double updateOthersAttitudeAffective() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					othersAttitudeAffective = prefferedMode.getValueOfAttribute(Constants.othersAttitudeAffective);					
+				}else if (prefferedMode instanceof PublicTransport){
+					othersAttitudeAffective = prefferedMode.getValueOfAttribute(Constants.othersAttitudeAffective);											
+				}else if (prefferedMode instanceof Cycle){
+					othersAttitudeAffective = prefferedMode.getValueOfAttribute(Constants.othersAttitudeAffective);								
+				}else if (prefferedMode instanceof Walking){
+					othersAttitudeAffective = prefferedMode.getValueOfAttribute(Constants.othersAttitudeAffective);													
+				}
+				othersAttitudeAffective = ((othersAttitudeAffective  +1)/2);
+				return othersAttitudeAffective;			
+			}
+			
+			private double updateOthersAttitudePhysical() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					othersAttitudePhysical = prefferedMode.getValueOfAttribute(Constants.othersAttitudePhysical);					
+				}else if (prefferedMode instanceof PublicTransport){
+					othersAttitudePhysical = prefferedMode.getValueOfAttribute(Constants.othersAttitudePhysical);											
+				}else if (prefferedMode instanceof Cycle){
+					othersAttitudePhysical = prefferedMode.getValueOfAttribute(Constants.othersAttitudePhysical);								
+				}else if (prefferedMode instanceof Walking){
+					othersAttitudePhysical = prefferedMode.getValueOfAttribute(Constants.othersAttitudePhysical);													
+				}
+				othersAttitudePhysical = ((othersAttitudePhysical +1)/2);
+				return othersAttitudePhysical;			
+			}
+			public void updateOthersAttitude(){	
+				evaluateThreeVariablesSatisfaction= new DecisionGenerator();
+				othersAttitude =	evaluateThreeVariablesSatisfaction.getTip(updateOthersAttitudePhysical(),updateOthersAttitudeCognitive(),updateOthersAttitudeAffective());
+			}
+
+			private double updatePersonalSecurityCognitive() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					personalSecurityCognitive = prefferedMode.getValueOfAttribute(Constants.personalSecurityCognitive);					
+				}else if (prefferedMode instanceof PublicTransport){
+					personalSecurityCognitive = prefferedMode.getValueOfAttribute(Constants.personalSecurityCognitive);											
+				}else if (prefferedMode instanceof Cycle){
+					personalSecurityCognitive = prefferedMode.getValueOfAttribute(Constants.personalSecurityCognitive);								
+				}else if (prefferedMode instanceof Walking){
+					personalSecurityCognitive = prefferedMode.getValueOfAttribute(Constants.personalSecurityCognitive);													
+				}
+				personalSecurityCognitive = ((personalSecurityCognitive +1)/2);
+				return personalSecurityCognitive;			
+			}
+		
+			private double updatePersonalSecurityAffective() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					personalSecurityAffective = prefferedMode.getValueOfAttribute(Constants.personalSecurityAffective);					
+				}else if (prefferedMode instanceof PublicTransport){
+					personalSecurityAffective = prefferedMode.getValueOfAttribute(Constants.personalSecurityAffective);											
+				}else if (prefferedMode instanceof Cycle){
+					personalSecurityAffective = prefferedMode.getValueOfAttribute(Constants.personalSecurityAffective);								
+				}else if (prefferedMode instanceof Walking){
+					personalSecurityAffective = prefferedMode.getValueOfAttribute(Constants.personalSecurityAffective);													
+				}
+				personalSecurityAffective  = ((personalSecurityAffective  +1)/2);
+				return personalSecurityAffective;			
+			}
+			
+			private double updatePersonalSecurityPhysical() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					personalSecurityPhysical = prefferedMode.getValueOfAttribute(Constants.personalSecurityPhysical);					
+				}else if (prefferedMode instanceof PublicTransport){
+					personalSecurityPhysical = prefferedMode.getValueOfAttribute(Constants.personalSecurityPhysical);											
+				}else if (prefferedMode instanceof Cycle){
+					personalSecurityPhysical = prefferedMode.getValueOfAttribute(Constants.personalSecurityPhysical);								
+				}else if (prefferedMode instanceof Walking){
+					personalSecurityPhysical = prefferedMode.getValueOfAttribute(Constants.personalSecurityPhysical);													
+				}
+				personalSecurityPhysical = ((personalSecurityPhysical +1)/2);
+				return personalSecurityPhysical;			
+			}
+			public void updatePersonalSecurity(){
+				evaluateThreeVariablesSatisfaction= new DecisionGenerator();
+				personalSecurity =	evaluateThreeVariablesSatisfaction.getTip(updatePersonalSecurityPhysical(),updatePersonalSecurityCognitive(),updatePersonalSecurityAffective());
+			}
+
+			private double updatePersonalSafetyCognitive() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					personalSafetyCognitive = prefferedMode.getValueOfAttribute(Constants.personalSafetyCognitive);					
+				}else if (prefferedMode instanceof PublicTransport){
+					personalSafetyCognitive = prefferedMode.getValueOfAttribute(Constants.personalSafetyCognitive);											
+				}else if (prefferedMode instanceof Cycle){
+					personalSafetyCognitive = prefferedMode.getValueOfAttribute(Constants.personalSafetyCognitive);								
+				}else if (prefferedMode instanceof Walking){
+					personalSafetyCognitive = prefferedMode.getValueOfAttribute(Constants.personalSafetyCognitive);													
+				}
+				personalSafetyCognitive = ((personalSafetyCognitive +1)/2);
+				return personalSafetyCognitive;			
+			}
+		
+			private double updatePersonalSafetyAffective() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					personalSafetyAffective = prefferedMode.getValueOfAttribute(Constants.personalSafetyAffective);					
+				}else if (prefferedMode instanceof PublicTransport){
+					personalSafetyAffective = prefferedMode.getValueOfAttribute(Constants.personalSafetyAffective);											
+				}else if (prefferedMode instanceof Cycle){
+					personalSafetyAffective = prefferedMode.getValueOfAttribute(Constants.personalSafetyAffective);								
+				}else if (prefferedMode instanceof Walking){
+					personalSafetyAffective = prefferedMode.getValueOfAttribute(Constants.personalSafetyAffective);													
+				}
+				personalSafetyAffective = ((personalSafetyAffective +1)/2);
+				return personalSafetyAffective;			
+			}
+			
+			private double updatePersonalSafetyPhysical() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					personalSafetyPhysical = prefferedMode.getValueOfAttribute(Constants.personalSafetyPhysical);					
+				}else if (prefferedMode instanceof PublicTransport){
+					personalSafetyPhysical = prefferedMode.getValueOfAttribute(Constants.personalSafetyPhysical);											
+				}else if (prefferedMode instanceof Cycle){
+					personalSafetyPhysical = prefferedMode.getValueOfAttribute(Constants.personalSafetyPhysical);								
+				}else if (prefferedMode instanceof Walking){
+					personalSafetyPhysical = prefferedMode.getValueOfAttribute(Constants.personalSafetyPhysical);													
+				}
+				personalSafetyPhysical = ((personalSafetyPhysical  +1)/2);
+				return personalSafetyPhysical;			
+			}
+			public void updatePersonalSafety(){
+				evaluateThreeVariablesSatisfaction= new DecisionGenerator();
+				personalSafety =	evaluateThreeVariablesSatisfaction.getTip(updatePersonalSafetyPhysical(),updatePersonalSafetyCognitive(),updatePersonalSafetyAffective());
+			}
+
+			
+			public double updateEfficiency(){
+			//	subAttributesValue= new ArrayList<ModeAttribute>();	
+				updateModeFrequency();
+				updateModeReliability();
+				updateModeJourneyTime();
+				updateModeRouteManagement();
+				updateParkingAndStorage();	
+				if (prefferedMode instanceof PersonalVehicle)	{
+					subAttributesValue= new ArrayList<ModeAttribute>();									
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.modeFrequency,getModeFrequency()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.modeReliability, getModeReliability()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.timeliness, getModeJourneyTime()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.routeManagement, getModeRouteMgt()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.parkingSpaceConcern, getModeParkingAndStorage()));
+				}else if (prefferedMode instanceof PublicTransport) {
+					subAttributesValue= new ArrayList<ModeAttribute>();					
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.modeFrequency,modeFrequency));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.modeReliability, modeReliability));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.timeliness, modeJourneyTime));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.routeManagement, modeRouteMgt));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.parkingSpaceConcern, modeParkingAndStorage));
+					
+				}else if (prefferedMode instanceof Cycle) {
+					subAttributesValue= new ArrayList<ModeAttribute>();					
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.modeFrequency,modeFrequency));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.modeReliability, modeReliability));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.timeliness, modeJourneyTime));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.routeManagement, modeRouteMgt));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.parkingSpaceConcern, modeParkingAndStorage));
+					
+				}else if (prefferedMode instanceof Walking) {
+					subAttributesValue= new ArrayList<ModeAttribute>();					
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.modeFrequency,modeFrequency));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.modeReliability, modeReliability));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.timeliness, modeJourneyTime));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.routeManagement, modeRouteMgt));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.parkingSpaceConcern, modeParkingAndStorage));				
+					}				
+				return modeEfficiency = prefferedMode.evaluateMajorAttributeValue(subAttributesValue);		
+			}			
+			public void setModeEfficiency(double modeEfficiency) {
+				this.modeEfficiency = modeEfficiency;
+			}
+			
+			
+			public double updateConveniency(){
+				//subAttributesValue= new ArrayList<ModeAttribute>();
+				updateModeRouteManagement();
+				updateParkingAndStorage();
+				updatePersonalMobility();
+				updatePersonalAutonomy();
+				updateJourneyControl();	
+				if (prefferedMode instanceof PersonalVehicle){
+					subAttributesValue= new ArrayList<ModeAttribute>();									
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.routeManagement, getModeRouteMgt()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.parkingSpaceConcern, getModeParkingAndStorage()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalMobility, getPersonalMobility()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalAutonomy, getPersonalAutonomy()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.journeyControl, getJourneyControl()));
+				}else if(prefferedMode instanceof PublicTransport){
+					subAttributesValue= new ArrayList<ModeAttribute>();			
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.routeManagement, getModeRouteMgt()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.parkingSpaceConcern, getModeParkingAndStorage()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalMobility, getPersonalMobility()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalAutonomy, getPersonalAutonomy()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.journeyControl, getJourneyControl()));
+				}else if(prefferedMode instanceof Cycle){
+					subAttributesValue= new ArrayList<ModeAttribute>();				
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.routeManagement, getModeRouteMgt()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.parkingSpaceConcern, getModeParkingAndStorage()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalMobility, getPersonalMobility()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalAutonomy, getPersonalAutonomy()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.journeyControl, getJourneyControl()));
+				}else if(prefferedMode instanceof Walking){
+					subAttributesValue= new ArrayList<ModeAttribute>();			
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.routeManagement, getModeRouteMgt()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.parkingSpaceConcern, getModeParkingAndStorage()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalMobility, getPersonalMobility()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalAutonomy, getPersonalAutonomy()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.journeyControl, getJourneyControl()));
+				}		
+				modeConveniency = prefferedMode.evaluateMajorAttributeValue(subAttributesValue);		
+				return modeConveniency;			 			
+			}
+			
+			public double updateSafety(){
+				//subAttributesValue= new ArrayList<ModeAttribute>();
+				updateProtectionFromElements();
+				updateOthersAttitude();
+				updatePersonalSecurity();
+				updatePersonalSafety();
+				if (prefferedMode instanceof PersonalVehicle){
+					subAttributesValue= new ArrayList<ModeAttribute>();	
+					
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.protectionFromElements, getProtectionFromElements()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.othersAttitude, getOthersAttitude()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalSafety, getPersonalSafety()));		
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalSecurity, getPersonalSecurity()));
+				}else if(prefferedMode instanceof PublicTransport){
+					subAttributesValue= new ArrayList<ModeAttribute>();	
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.protectionFromElements, getProtectionFromElements()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.othersAttitude, getOthersAttitude()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalSafety, getPersonalSafety()));		
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalSecurity, getPersonalSecurity()));
+				}else if(prefferedMode instanceof Cycle){
+					subAttributesValue= new ArrayList<ModeAttribute>();	
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.protectionFromElements, getProtectionFromElements()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.othersAttitude, getOthersAttitude()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalSafety, getPersonalSafety()));		
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalSecurity, getPersonalSecurity()));
+				}else if(prefferedMode instanceof Walking){
+					subAttributesValue= new ArrayList<ModeAttribute>();	
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.protectionFromElements, getProtectionFromElements()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.othersAttitude, getOthersAttitude()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalSafety, getPersonalSafety()));		
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalSecurity, getPersonalSecurity()));
+				}		
+				modeSafety = prefferedMode.evaluateMajorAttributeValue(subAttributesValue);				
+				return modeSafety;			 			
+			}
+		////this section evaluate PCA for all the three decision variables
+			
+			/////Efficiency Variable's Physical, Cognitive, Affective Value
+			
+			/// On;y considere conveniency
+			private double updateEfficiencyAffective(){			
+				subAttributesValue= new ArrayList<ModeAttribute>();	
+				updateModeFrequencyAffective();
+				updateModeReliabilityAffective();
+				updateModeJourneyTimeAffective();
+				updateModeRouteManagementAffective();
+				updateParkingAndStorageAffective();				
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.modeFrequencyAffective,getModeFrequencyAffective()));
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.infoReliabilityAffective,getModeReliabilityAffective()));
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.timelinessAffective, getModeJourneyTimeAffective()));
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.routeMgtAffective, getModeRouteManagementAffective()));
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.parkingSpaceConcernAffective, getParkingAndStorageAffective()));
+			
+				modeEfficiencyAffective = prefferedMode.evaluateMajorAttributeValue(subAttributesValue);	
+				
+			//	System.out.print("Efficiency Affective Value is "+ modeEfficiencyAffective);
+				return modeEfficiencyAffective;			 			
+			}
+			
+			private double updateEfficiencyCognitive(){			
+				subAttributesValue= new ArrayList<ModeAttribute>();	
+				updateModeFrequencyCognitive();
+				updateModeReliabilityCognitive();
+				updateModeJourneyTimeCognitive();
+				updateModeRouteManagementCognitive();
+				updateParkingAndStorageCognitive();				
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.modeFrequencyCognitive,getModeFrequencyCognitive()));
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.infoReliabilityCognitive,getModeReliabilityCognitive()));
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.timelinessCognitive, getModeJourneyTimeCognitive()));
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.routeMgtCognitive, getModeRouteManagementCognitive()));
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.parkingSpaceConcernCognitive, getParkingAndStorageCognitive()));
+			
+				modeEfficiencyCognitive = prefferedMode.evaluateMajorAttributeValue(subAttributesValue);	
+				
+			//	System.out.print("Efficiency Cognitive Value is "+ modeEfficiencyCognitive);
+				return modeEfficiencyCognitive;			 			
+			}
+			private double updateEfficiencyPhysical(){			
+				subAttributesValue= new ArrayList<ModeAttribute>();	
+				updateModeFrequencyPhysical();
+				updateModeReliabilityPhysical();
+				updateModeJourneyTimePhysical();
+				updateModeRouteManagementPhysical();
+				updateParkingAndStoragePhysical();				
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.modeFrequencyPhysical,getModeFrequencyPhysical()));
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.infoReliabilityPhysical,getModeReliabilityPhysical()));
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.timelinessPhysical, getModeJourneyTimePhysical()));
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.routeMgtPhysical, getModeRouteManagementPhysical()));
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.parkingSpaceConcernPhysical, getParkingAndStoragePhysical()));
+			
+				modeEfficiencyPhysical = prefferedMode.evaluateMajorAttributeValue(subAttributesValue);	
+				
+			//	System.out.print("Efficiency Physical Value is "+ modeEfficiencyPhysical);
+				return modeEfficiencyPhysical;			 			
+			}
+			
+		/////Convenience Variable's Physical, Cognitive, Affective Value
+			public double updateConveniencyAffective(){
+				//subAttributesValue= new ArrayList<ModeAttribute>();
+				updateModeRouteManagementAffective();
+				updateParkingAndStorageAffective();
+				updatePersonalMobilityAffective();
+				updatePersonalAutonomyAffective();
+				updateJourneyControlAffective();	
+				if (prefferedMode instanceof PersonalVehicle){
+					subAttributesValue= new ArrayList<ModeAttribute>();									
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.routeMgtAffective, getModeRouteManagementAffective()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.parkingSpaceConcernAffective, getParkingAndStorageAffective()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalMobilityAffective, getPersonalMobilityAffective()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalAutonomyAffective, getPersonalAutonomyAffective()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.journeyControlAffective, getJourneyControlAffective()));
+				}else if(prefferedMode instanceof PublicTransport){
+					subAttributesValue= new ArrayList<ModeAttribute>();									
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.routeMgtAffective, getModeRouteManagementAffective()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.parkingSpaceConcernAffective, getParkingAndStorageAffective()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalMobilityAffective, getPersonalMobilityAffective()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalAutonomyAffective, getPersonalAutonomyAffective()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.journeyControlAffective, getJourneyControlAffective()));
+				}else if(prefferedMode instanceof Cycle){
+					subAttributesValue= new ArrayList<ModeAttribute>();									
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.routeMgtAffective, getModeRouteManagementAffective()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.parkingSpaceConcernAffective, getParkingAndStorageAffective()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalMobilityAffective, getPersonalMobilityAffective()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalAutonomyAffective, getPersonalAutonomyAffective()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.journeyControlAffective, getJourneyControlAffective()));
+				}else if(prefferedMode instanceof Walking){						
+					subAttributesValue= new ArrayList<ModeAttribute>();									
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.routeMgtAffective, getModeRouteManagementAffective()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.parkingSpaceConcernAffective, getParkingAndStorageAffective()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalMobilityAffective, getPersonalMobilityAffective()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalAutonomyAffective, getPersonalAutonomyAffective()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.journeyControlAffective, getJourneyControlAffective()));
+				}		
+				modeConveniencyAffective = prefferedMode.evaluateMajorAttributeValue(subAttributesValue);		
+				return modeConveniencyAffective;			 			
+			}
+
+			////
+			public double updateConveniencyCognitive(){
+				//subAttributesValue= new ArrayList<ModeAttribute>();
+				updateModeRouteManagementCognitive();
+				updateParkingAndStorageCognitive();
+				updatePersonalMobilityCognitive();
+				updatePersonalAutonomyCognitive();
+				updateJourneyControlCognitive();	
+				if (prefferedMode instanceof PersonalVehicle){
+					subAttributesValue= new ArrayList<ModeAttribute>();									
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.routeMgtCognitive, getModeRouteManagementCognitive()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.parkingSpaceConcernCognitive, getParkingAndStorageCognitive()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalMobilityCognitive, getPersonalMobilityCognitive()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalAutonomyCognitive, getPersonalAutonomyCognitive()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.journeyControlCognitive, getJourneyControlCognitive()));
+				}else if(prefferedMode instanceof PublicTransport){
+					subAttributesValue= new ArrayList<ModeAttribute>();									
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.routeMgtCognitive, getModeRouteManagementCognitive()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.parkingSpaceConcernCognitive, getParkingAndStorageCognitive()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalMobilityCognitive, getPersonalMobilityCognitive()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalAutonomyCognitive, getPersonalAutonomyCognitive()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.journeyControlCognitive, getJourneyControlCognitive()));
+				}else if(prefferedMode instanceof Cycle){
+					subAttributesValue= new ArrayList<ModeAttribute>();									
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.routeMgtCognitive, getModeRouteManagementCognitive()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.parkingSpaceConcernCognitive, getParkingAndStorageCognitive()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalMobilityCognitive, getPersonalMobilityCognitive()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalAutonomyCognitive, getPersonalAutonomyCognitive()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.journeyControlCognitive, getJourneyControlCognitive()));
+				}else if(prefferedMode instanceof Walking){						
+					subAttributesValue= new ArrayList<ModeAttribute>();									
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.routeMgtCognitive, getModeRouteManagementCognitive()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.parkingSpaceConcernCognitive, getParkingAndStorageCognitive()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalMobilityCognitive, getPersonalMobilityCognitive()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalAutonomyCognitive, getPersonalAutonomyCognitive()));
+					subAttributesValue.add(prefferedMode.addAllAttributes(Constants.journeyControlCognitive, getJourneyControlCognitive()));
+				}		
+				modeConveniencyCognitive = prefferedMode.evaluateMajorAttributeValue(subAttributesValue);		
+				return modeConveniencyCognitive;			 			
+			}
+				
+			public double updateConveniencyPhysical(){			
+				subAttributesValue= new ArrayList<ModeAttribute>();	
+				updateModeRouteManagementPhysical();
+				updateParkingAndStoragePhysical();
+				updatePersonalMobilityPhysical();
+				updatePersonalAutonomyPhysical();
+				updateJourneyControlPhysical();	
+				if (prefferedMode instanceof PersonalVehicle){
+				subAttributesValue= new ArrayList<ModeAttribute>();
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.routeMgtPhysical, getModeRouteManagementPhysical()));
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.parkingSpaceConcernPhysical, getParkingAndStoragePhysical()));
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalMobilityPhysical, getPersonalMobilityPhysical()));
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalAutonomyPhysical, getPersonalAutonomyPhysical()));
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.journeyControlPhysical, getJourneyControlPhysical()));
+			}else if(prefferedMode instanceof PublicTransport){
+				subAttributesValue= new ArrayList<ModeAttribute>();
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.routeMgtPhysical, getModeRouteManagementPhysical()));
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.parkingSpaceConcernPhysical, getParkingAndStoragePhysical()));
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalMobilityPhysical, getPersonalMobilityPhysical()));
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalAutonomyPhysical, getPersonalAutonomyPhysical()));
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.journeyControlPhysical, getJourneyControlPhysical()));
+			}else if(prefferedMode instanceof Cycle){
+				subAttributesValue= new ArrayList<ModeAttribute>();
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.routeMgtPhysical, getModeRouteManagementPhysical()));
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.parkingSpaceConcernPhysical, getParkingAndStoragePhysical()));
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalMobilityPhysical, getPersonalMobilityPhysical()));
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalAutonomyPhysical, getPersonalAutonomyPhysical()));
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.journeyControlPhysical, getJourneyControlPhysical()));
+			}else if(prefferedMode instanceof Walking){
+				subAttributesValue= new ArrayList<ModeAttribute>();
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.routeMgtPhysical, getModeRouteManagementPhysical()));
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.parkingSpaceConcernPhysical, getParkingAndStoragePhysical()));
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalMobilityPhysical, getPersonalMobilityPhysical()));
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalAutonomyPhysical, getPersonalAutonomyPhysical()));
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.journeyControlPhysical, getJourneyControlPhysical()));
+			}
+				modeConveniencyPhysical = prefferedMode.evaluateMajorAttributeValue(subAttributesValue);				
+		//		System.out.print("Conveniency Value is "+ modeConveniencyPhysical);
+				return modeConveniencyPhysical;			 			
+			}
+			//////PCA for Route managemnet, Perosnal Mobiliy and Journey Control	
+			private double updateSafetyAffective(){	
+				subAttributesValue= new ArrayList<ModeAttribute>();		
+				updateProtectionFromElementsAffective();
+				updateOthersAttitudeAffective();
+				updatePersonalSecurityAffective();
+				updatePersonalSafetyAffective();
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.protectionFromElementsAffective, getProtectionFromElementsAffective()));
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.othersAttitudeAffective, getOthersAttitudeAffective()));
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalSafetyAffective, getPersonalSafetyAffective()));		
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalSecurityAffective, getPersonalSecurityAffective()));
+		
+				modeSafetyAffective = prefferedMode.evaluateMajorAttributeValue(subAttributesValue);					
+		//		System.out.print("Safety Value is "+ modeSafetyAffective);
+				return modeSafetyAffective;			 			
+			}
+			
+			private double updateSafetyCognitive(){	
+				subAttributesValue= new ArrayList<ModeAttribute>();		
+				updateProtectionFromElementsCognitive();
+				updateOthersAttitudeCognitive();
+				updatePersonalSecurityCognitive();
+				updatePersonalSafetyCognitive();
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.protectionFromElementsCognitive, getProtectionFromElementsCognitive()));
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.othersAttitudeCognitive, getOthersAttitudeCognitive()));
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalSafetyCognitive, getPersonalSafetyCognitive()));		
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalSecurityCognitive, getPersonalSecurityCognitive()));
+		
+				modeSafetyCognitive = prefferedMode.evaluateMajorAttributeValue(subAttributesValue);					
+		//		System.out.print("Safety Value is "+ modeSafetyCognitive);
+				return modeSafetyCognitive;			 			
+			}
+			
+			private double updateSafetyPhysical(){	
+				subAttributesValue= new ArrayList<ModeAttribute>();		
+				updateProtectionFromElementsPhysical();
+				updateOthersAttitudePhysical();
+				updatePersonalSecurityPhysical();
+				updatePersonalSafetyPhysical();
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.protectionFromElementsPhysical, getProtectionFromElementsPhysical()));
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.othersAttitudePhysical, getOthersAttitudePhysical()));
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalSafetyPhysical, getPersonalSafetyPhysical()));		
+				subAttributesValue.add(prefferedMode.addAllAttributes(Constants.personalSecurityPhysical, getPersonalSecurityPhysical()));
+		
+				modeSafetyPhysical = prefferedMode.evaluateMajorAttributeValue(subAttributesValue);					
+		//		System.out.print("Safety Value is "+ modeSafetyPhysical);
+				return modeSafetyPhysical;			 			
+			}
+}

@@ -1,0 +1,301 @@
+package moshproject.agents.intervener;
+
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JSlider;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+
+import com.jogamp.newt.event.KeyEvent;
+
+public class InterventionPanel extends JPanel{
+
+	public InterventionPanel(Intervener intervener){		
+		setLayout(new GridBagLayout());
+		GridBagConstraints c = new GridBagConstraints();			
+		
+		JLabel label;
+		JCheckBox checkBox;
+		 int min =0;
+		 int max=10;
+		 int initial =0;
+		c.fill =GridBagConstraints.HORIZONTAL;
+		c.gridx=0;
+		c.gridy=0;		
+		checkBox =new JCheckBox("Reliability:");
+		checkBox.setMnemonic(KeyEvent.VK_R);
+		checkBox.setSelected(true);
+		add(checkBox, c);
+		
+		checkBox =new JCheckBox("Journey For Money");
+		c.fill =GridBagConstraints.HORIZONTAL;
+		c.gridx =1;
+		c.gridy =0;
+		checkBox =new JCheckBox("Journey For Money:");
+		checkBox.setMnemonic(KeyEvent.VK_J);
+		checkBox.setSelected(true);
+		add(checkBox, c);
+	
+		
+		JSlider slideJourneyTime = new JSlider(JSlider.HORIZONTAL,min,max,initial);		
+		c.gridx=1;
+		c.gridy=1;
+		//slidInfor.setInverted(true);
+		slideJourneyTime.setMajorTickSpacing(1);
+		slideJourneyTime.setMinorTickSpacing(1);		
+		slideJourneyTime.setPaintTicks(true);
+		slideJourneyTime.setPaintLabels(true);
+		
+		slideJourneyTime.addChangeListener(new ChangeListener() {			
+			@Override
+			public void stateChanged(ChangeEvent e) {
+				JSlider source = (JSlider) e.getSource();
+			    if (!source.getValueIsAdjusting()) {
+			        intervener.setNewJourneyTime((double)source.getValue());
+			    }
+			}
+		});
+		add(slideJourneyTime,c);
+		
+		label =new JLabel("Value For Money:");
+		c.gridx=0;
+		c.gridy=2;		
+		add(label, c);
+		
+		JSlider slideValueForMoney = new JSlider(JSlider.HORIZONTAL,min,max,initial);
+		c.gridx=1;
+		c.gridy=2;
+		slideValueForMoney.setMajorTickSpacing(1);
+		slideValueForMoney.setMinorTickSpacing(1);		
+		slideValueForMoney.setPaintTicks(true);
+		slideValueForMoney.setPaintLabels(true);
+		
+		slideValueForMoney.addChangeListener(new ChangeListener() {			
+			@Override
+			public void stateChanged(ChangeEvent e) {
+				JSlider source = (JSlider) e.getSource();
+			    if (!source.getValueIsAdjusting()) {
+			        intervener.setNewValueForMoney((double)source.getValue());
+			    }
+			}
+		});
+		add(slideValueForMoney,c);
+		
+		
+		label =new JLabel("Security:");
+		c.gridx=0;
+		c.gridy=3;		
+		add(label, c);
+		
+		JSlider slideSecurity = new JSlider(JSlider.HORIZONTAL,min,max,initial);
+		c.gridx=1;
+		c.gridy=3;		
+		slideSecurity.setInverted(true);
+		slideSecurity.setMajorTickSpacing(1);
+		slideSecurity.setMinorTickSpacing(1);		
+		slideSecurity.setPaintTicks(true);
+		slideSecurity.setPaintLabels(true);
+		
+		slideSecurity.addChangeListener(new ChangeListener() {			
+			@Override
+			public void stateChanged(ChangeEvent e) {
+				JSlider source = (JSlider) e.getSource();
+			    if (!source.getValueIsAdjusting()) {
+			        intervener.setNewSecurity((double)source.getValue());
+			    }
+			}
+		});
+		add(slideSecurity,c);
+		
+		label =new JLabel("Personal Mobility:");
+		c.gridx=0;
+		c.gridy=4;	
+		c.gridwidth = 1;	
+		c.weightx=0.5;
+		add(label, c);		
+		JSlider slideMobility = new JSlider(JSlider.HORIZONTAL,min,max,initial);
+		c.gridx=1;
+		c.gridy=4;	
+		c.gridwidth = 1;
+		c.weightx=0.5;
+		//slidParkingSpace.setInverted(true);
+		slideMobility.setMajorTickSpacing(1);
+		slideMobility.setMinorTickSpacing(1);		
+		slideMobility.setPaintTicks(true);
+		slideMobility.setPaintLabels(true);
+		
+		slideMobility.addChangeListener(new ChangeListener() {			
+			@Override
+			public void stateChanged(ChangeEvent e) {
+				JSlider source = (JSlider) e.getSource();
+			    if (!source.getValueIsAdjusting()) {
+			        intervener.setNewMobility((double)source.getValue());
+			    }
+			}
+		});
+		add(slideMobility,c);
+
+		
+		label =new JLabel("Convenience:");
+		c.gridx=0;
+		c.gridy=5;	
+		c.gridwidth = 1;	
+		c.weightx=0.5;
+		add(label, c);		
+		JSlider slideConvenience = new JSlider(JSlider.HORIZONTAL,min,max,initial);
+		c.gridx=1;
+		c.gridy=5;	
+		c.gridwidth = 1;
+		c.weightx=0.5;
+		//slidParkingSpace.setInverted(true);
+		slideConvenience.setMajorTickSpacing(1);
+		slideConvenience.setMinorTickSpacing(1);		
+		slideConvenience.setPaintTicks(true);
+		slideConvenience.setPaintLabels(true);
+		
+		slideConvenience.addChangeListener(new ChangeListener() {			
+			@Override
+			public void stateChanged(ChangeEvent e) {
+				JSlider source = (JSlider) e.getSource();
+			    if (!source.getValueIsAdjusting()) {
+			        intervener.setNewConvenience((double)source.getValue());
+			    }
+			}
+		});
+		add(slideConvenience,c);
+		
+		label =new JLabel("Comfort:");
+		c.gridx=0;
+		c.gridy=6;	
+		c.gridwidth = 1;	
+		c.weightx=0.5;
+		add(label, c);		
+		JSlider slideComfort = new JSlider(JSlider.HORIZONTAL,min,max,initial);
+		c.gridx=1;
+		c.gridy=6;	
+		c.gridwidth = 1;
+		c.weightx=0.5;
+		//slidParkingSpace.setInverted(true);
+		slideComfort.setMajorTickSpacing(1);
+		slideComfort.setMinorTickSpacing(1);		
+		slideComfort.setPaintTicks(true);
+		slideComfort.setPaintLabels(true);
+		
+		slideComfort.addChangeListener(new ChangeListener() {			
+			@Override
+			public void stateChanged(ChangeEvent e) {
+				JSlider source = (JSlider) e.getSource();
+			    if (!source.getValueIsAdjusting()) {
+			        intervener.setNewComfort((double)source.getValue());
+			    }
+			}
+		});
+		add(slideComfort,c);
+/////		
+		JButton generalInterventionButton = new JButton("All Passengers'Interventions");
+		c.gridx=0;
+		c.gridy=7;
+		c.weighty = 0.1;
+		c.gridheight=1;
+		generalInterventionButton.addActionListener( new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				intervener.applyIntervention();
+			}			
+		});
+		add(generalInterventionButton,c);
+		
+////
+		JButton cyclistInterventionButton = new JButton("Cyclists'Interventions");
+		c.gridx=1;
+		c.gridy=7;
+		c.weighty = 0.1;
+		c.gridheight=1;
+		cyclistInterventionButton.addActionListener( new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				intervener.applyIntervention();
+			}			
+		});
+		add(cyclistInterventionButton,c);
+////
+/////		
+			JButton carUserInterventionButton = new JButton("Car Users'Interventions");
+			c.gridx=0;
+			c.gridy=8;
+			c.weighty = 0.1;
+			c.gridheight=1;
+			carUserInterventionButton.addActionListener( new ActionListener(){
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					intervener.applyIntervention();
+				}			
+			});
+			add(carUserInterventionButton,c);
+			
+////
+			JButton publicTransInterventionButton = new JButton("Public Trans Users'Interventions");
+			c.gridx=1;
+			c.gridy=8;
+			c.weighty = 0.1;
+			c.gridheight=1;
+			publicTransInterventionButton.addActionListener( new ActionListener(){
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					intervener.applyIntervention();
+				}			
+			});
+			add(publicTransInterventionButton,c);
+	////
+			////
+			JButton pedestrianInterventionButton = new JButton("Pedestrians'Interventions");
+			c.gridx=0;
+			c.gridy=9;
+			c.weighty = 0.1;
+			c.gridheight=1;
+			pedestrianInterventionButton.addActionListener( new ActionListener(){
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					intervener.applyIntervention();
+				}			
+			});
+			add(pedestrianInterventionButton,c);
+	////
+		JButton resetButton = new JButton("Reset Sliders");
+		c.gridx=1;
+		c.gridy=9;
+		c.weighty = 0.1;
+		c.gridheight=1;
+		resetButton.addActionListener( new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				intervener.reset();
+				slideReliability.setValue(initial);
+				slideSecurity.setValue(initial);
+				slideJourneyTime.setValue(initial);
+				slideConvenience.setValue(initial);
+				slideValueForMoney.setValue(initial);
+				slideComfort.setValue(initial);
+				slideMobility.setValue(initial);
+			}
+			
+		});
+		add(resetButton,c);
+		
+
+	}
+}

@@ -1,0 +1,220 @@
+package moshproject.agents.passenger;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import moshproject.agents.mode.Cycle;
+import moshproject.agents.mode.Mode;
+import moshproject.agents.mode.PersonalVehicle;
+import moshproject.agents.mode.PublicTransport;
+import moshproject.agents.mode.Walking;
+import moshproject.fuzzycollections.DecisionGenerator;
+import repast.simphony.engine.schedule.ScheduledMethod;
+import repast.simphony.random.RandomHelper;
+import repast.simphony.space.SpatialMath;
+import repast.simphony.space.continuous.ContinuousSpace;
+import repast.simphony.space.continuous.NdPoint;
+import repast.simphony.space.grid.Grid;
+import repast.simphony.space.grid.GridPoint;
+
+public class Passenger {
+	private ContinuousSpace<Object> space;
+	private Grid<Object> grid;	
+	
+	public Passengers passengerType;
+	
+	public Passengers getPassengerType() {
+		return passengerType;
+	}
+
+	public void setPassengerType(Passengers passengerType) {
+		this.passengerType = passengerType;
+	}
+
+	public Mode prefferedMode;
+	public Mode getPrefferedMode() {
+		return prefferedMode;
+	}
+
+	public void setPrefferedMode(Mode prefferedMode) {
+		this.prefferedMode = prefferedMode;
+	}
+
+	double modeSatisfaction;
+	private double levelOfNeedsSatisfaction;
+
+	public List<Double> modeSatisfactionList = new ArrayList<Double>();
+	private double physicalConsideration;
+	private double cognitiveConsideration;
+	DecisionGenerator evaluateSatisfaction;
+	private double affectiveConsideration;
+	private double aspirationLevel;
+	private double uncertaintyTolerance;
+	private double uncertainty;
+	
+		public Passenger(ContinuousSpace<Object> space, Grid<Object> grid) {
+			this.space = space;
+			this.grid = grid;	
+		}
+			
+		public void initialize(){
+			uncertaintyTolerance=passengerType.uncertaintyTolerance;
+			uncertainty = passengerType.uncertainty;
+			aspirationLevel =passengerType.aspirationLevel;
+			evaluateSatisfaction= new DecisionGenerator();
+		}
+	
+		@ScheduledMethod(start =1, interval=1)
+		public void step() {
+		passengerType.updatePreviousExperience(modeSatisfactionList);
+		System.out.println("The preffered mode is:"+ this.prefferedMode);
+		System.out.println("The passenger type :"+ getPassengerType().toString());
+		updatePhysicalConsideration();
+		updateCognitiveConsideration();
+		updateAffectiveConsideration();			
+		updateTransition();
+		//modeSatisfaction = prefferedModeSatisfaction();					
+			neigbourModeStatisfaction();
+			levelOfNeedsSatisfaction=modeSatisfaction;
+			//chooseBehaviour();			
+			move();
+			
+			
+		//	System.out.print("level of need satisfaction is "+ levelOfNeedsSatisfaction);
+		}
+	
+		
+		public double getLevelOfNeedsSatisfaction() {
+			return levelOfNeedsSatisfaction;
+		}
+		
+		
+		private double prefferedModeSatisfaction(){		
+				if (prefferedMode instanceof PublicTransport){
+					updatePhysicalConsideration();	
+					updateCognitiveConsideration();
+				}else if (prefferedMode instanceof PersonalVehicle){
+					updatePhysicalConsideration();	
+					updateCognitiveConsideration();
+				//	modeSatisfaction= passengerType.getPersonalSatisfaction();
+				}
+//				else if (prefferedMode instanceof Cycle){
+//					modeSatisfaction= passengerType.getPersonalSatisfaction();
+//				}
+//				else if (prefferedMode instanceof Walking){
+//					modeSatisfaction= passengerType.getPersonalSatisfaction();
+//				}
+				
+				modeSatisfaction = evaluateSatisfaction.getTip(physicalConsideration, cognitiveConsideration,affectiveConsideration);
+				
+			//	return personalSatisfaction;
+				return modeSatisfaction;
+			}
+			 
+	
+		private void updateTransition(){
+			if (prefferedMode instanceof PublicTransport){
+				modeSatisfaction= prefferedModeSatisfaction();
+						
+			}else if (prefferedMode instanceof PersonalVehicle){
+				modeSatisfaction= prefferedModeSatisfaction();
+			}
+		}
+		
+		
+		// This section evaluate passengers satisfaction on the major factors
+		private void updatePhysicalConsideration() {
+			// TODO Auto-generated method stub
+			if (prefferedMode instanceof PersonalVehicle)	{				
+				physicalConsideration= prefferedMode.getValueOfAttribute("physicalConsideration");				
+			}else if (prefferedMode instanceof PublicTransport){
+				physicalConsideration= prefferedMode.getValueOfAttribute("physicalConsideration");
+			}	else if (prefferedMode instanceof Cycle){
+				physicalConsideration= prefferedMode.getValueOfAttribute("physicalConsideration");
+			}	else if (prefferedMode instanceof Walking){
+				physicalConsideration= prefferedMode.getValueOfAttribute("physicalConsideration");
+			}
+			System.out.println("physical consideartion:" + physicalConsideration);
+		}
+		public double getPhysicalConsideration() {
+			return physicalConsideration;
+		}
+
+		public void setPhysicalConsideration(double physicalConsideration) {
+			this.physicalConsideration = physicalConsideration;
+		}
+				
+		private void updateCognitiveConsideration() {
+			// TODO Auto-generated method stub
+			if (prefferedMode instanceof PersonalVehicle)	{				
+				cognitiveConsideration= prefferedMode.getValueOfAttribute("cognitiveConsideration");				
+			}else if (prefferedMode instanceof PublicTransport){
+				cognitiveConsideration= prefferedMode.getValueOfAttribute("cognitiveConsideration");
+			}	else if (prefferedMode instanceof Cycle){
+				cognitiveConsideration= prefferedMode.getValueOfAttribute("cognitiveConsideration");
+			}	else if (prefferedMode instanceof Walking){
+				cognitiveConsideration= prefferedMode.getValueOfAttribute("cognitiveConsideration");
+			}
+		}
+		
+		public double getCognitiveConsideration() {
+			return cognitiveConsideration;
+		}
+
+		public void setCognitiveConsideration(double cognitiveConsideration) {
+			this.cognitiveConsideration = cognitiveConsideration;
+		}
+
+		private void updateAffectiveConsideration() {
+			// TODO Auto-generated method stub
+			if (prefferedMode instanceof PersonalVehicle)	{				
+				affectiveConsideration= prefferedMode.getValueOfAttribute("affectiveConsideration");				
+			}else if (prefferedMode instanceof PublicTransport){
+				affectiveConsideration= prefferedMode.getValueOfAttribute("affectiveConsideration");
+			}	else if (prefferedMode instanceof Cycle){
+				affectiveConsideration= prefferedMode.getValueOfAttribute("affectiveConsideration");
+			}	else if (prefferedMode instanceof Walking){
+				affectiveConsideration= prefferedMode.getValueOfAttribute("affectiveConsideration");
+			}
+		}
+
+		
+		public double getAffectiveConsideration() {
+			return affectiveConsideration;
+		}
+
+		public void setAffectiveConsideration(double affectiveConsideration) {
+			this.affectiveConsideration = affectiveConsideration;
+		}
+		public double getModeSatisfaction() {
+			return modeSatisfaction;
+		}
+	
+		private void neigbourModeStatisfaction(){	
+					modeSatisfactionList.add(modeSatisfaction);			
+				}
+		
+		
+		
+		private void move(){ 
+			GridPoint pt = grid.getLocation(this);
+			NdPoint mypoint = space.getLocation(this);
+			NdPoint otherpoint = new NdPoint(pt.getX(),pt.getY());
+			double angle = SpatialMath.calcAngleFor2DMovement(space, mypoint, otherpoint);
+			space.moveByVector(this, 5, angle,0);
+			mypoint=space.getLocation(this);
+			grid.moveTo(this,(int)mypoint.getX(),(int)mypoint.getY());
+		}
+
+
+		
+	
+	
+
+	
+	
+			
+			
+			
+			
+}

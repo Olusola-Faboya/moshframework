@@ -1,0 +1,23 @@
+<repast.simphony.data2.engine.FileSinkDescriptor>
+  <name>AllModeECSSatisfaction File Sink</name>
+  <dataSet>AllModeECSSatisfaction Data Set</dataSet>
+  <delimiter>,</delimiter>
+  <format>TABULAR</format>
+  <sourceIds class="linked-hash-set">
+    <string>tick</string>
+    <string>PrivateModeEfficiency</string>
+    <string>PrivateModeSafety</string>
+    <string>PrivateModeComfort</string>
+    <string>CycleModeEfficiency</string>
+    <string>CycleModeSafety</string>
+    <string>CycleModeComfort</string>
+    <string>PublicModeEfficiency</string>
+    <string>PublicModeSafety</string>
+    <string>PublicModeComfort</string>
+    <string>WalkingModeEfficiency</string>
+    <string>WalkingModeSafety</string>
+    <string>WalkingModeComfort</string>
+  </sourceIds>
+  <fileName>AllModeECSSatisfaction.txt</fileName>
+  <addTimeStamp>true</addTimeStamp>
+</repast.simphony.data2.engine.FileSinkDescriptor>

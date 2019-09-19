@@ -1,0 +1,1088 @@
+package moshproject.agents.passenger;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+
+
+
+import moshproject.agents.intervener.Intervener;
+import moshproject.agents.mode.Cycle;
+import moshproject.agents.mode.Mode;
+import moshproject.agents.mode.PersonalVehicle;
+import moshproject.agents.mode.PublicTransport;
+import moshproject.agents.mode.Walking;
+import moshproject.agents.passenger.chart.CognitiveStatechart;
+import moshproject.agents.passenger.chart.ComparisonStatechart;
+import moshproject.common.Constants;
+import repast.simphony.engine.environment.RunEnvironment;
+import repast.simphony.engine.schedule.ScheduledMethod;
+import repast.simphony.random.RandomHelper;
+import repast.simphony.space.SpatialMath;
+import repast.simphony.space.continuous.ContinuousSpace;
+import repast.simphony.space.continuous.NdPoint;
+import repast.simphony.space.grid.Grid;
+import repast.simphony.space.grid.GridPoint;
+import repast.simphony.ui.probe.ProbedProperty;
+
+public class Passenger {	
+	private ContinuousSpace<Object> space;
+	private Grid<Object> grid;	
+	
+	@ProbedProperty(displayName="ComparisonStatechart")
+	ComparisonStatechart comparisonStatechart = ComparisonStatechart.createStateChart(this, 0);
+	
+	public String getComparisonStatechartState(){
+		if (comparisonStatechart == null) return "";
+		Object result = comparisonStatechart.getCurrentSimpleState();
+		return result == null ? "" : result.toString();
+	}
+	
+	@ProbedProperty(displayName="CognitiveStatechart")
+	CognitiveStatechart cognitiveStatechart = CognitiveStatechart.createStateChart(this,0);
+	Random  rand = new Random();
+	
+	Intervener intervener;
+	
+	private ModeAttributesPerceptions myPerception;
+	public void setMyPerception(ModeAttributesPerceptions myPerception) {
+		this.myPerception = myPerception;
+		this.myPerception.passenger=this;	
+	}
+	public ModeAttributesPerceptions getMyPerception() {
+		return myPerception;
+	}
+	private void updateMyPerception(ModeAttributesPerceptions myPerception){
+		this.myPerception =myPerception;
+		
+	}
+	 public PassengerType passengerType;
+	public PassengerType getPassengerType() {
+		return passengerType;
+	}
+	public void setPassengerType(PassengerType passengerType) {
+		this.passengerType = passengerType;
+		this.passengerType.myPassenger = this;
+	}
+	
+	public Mode interracteePrefferedMode;	
+	public Mode getInterracteePrefferedMode() {
+		interracteePrefferedMode= passengerType.getNewMode();
+		return interracteePrefferedMode;
+	}
+	
+
+
+	public Mode prefferedMode;
+	public Mode getPrefferedMode() {
+		return prefferedMode;
+	}
+	PassengerType behaviour;
+	public Mode setPrefferedMode(Mode prefferedMode) {
+		return this.prefferedMode = prefferedMode;		
+	}	
+	public double modeSatisfaction;
+	public double setModeSatisfaction(double modeSatisfaction) {
+		return this.modeSatisfaction = modeSatisfaction;
+	}
+	public List<Double> myModeSatisfactionList = new ArrayList<Double>();
+	private double uncertainty;	
+	public double getUncertainty() {
+		return uncertainty;
+	}
+	public void setUncertainty(double uncertainty) {
+		this.uncertainty = uncertainty;
+	}
+	private double uncertaintyTolerance;
+	
+	public double getUncertaintyTolerance() {
+		return uncertaintyTolerance;
+	}
+	public void setUncertaintyTolerance(double uncertaintyTolerance) {
+		this.uncertaintyTolerance = uncertaintyTolerance;
+	}
+	public double aspirationLevel;
+	
+	public double getAspirationLevel() {
+		return aspirationLevel;
+	}
+	public void setAspirationLevel(double aspirationLevel) {
+		this.aspirationLevel = aspirationLevel;
+	}
+
+	public double  previousExperience;
+	public double getPreviousExperience() {
+		return previousExperience;
+	}
+
+	public void setPreviousExperience(double previousExperience) {
+		this.previousExperience = previousExperience;
+	}	
+	private double changeInExperience;
+
+	public double getChangeInExperience() {
+		return changeInExperience;
+	}
+	public void setChangeInExperience(double changeInExperience) {	
+		this.changeInExperience = changeInExperience;
+	}
+
+	private double levelOfNeedsSatisfaction;
+	private boolean socialAgreeability;
+	private double socialSatisfaction;
+	private double assumedMaximumDifference;
+	private double socialInformation;
+	public double transitionBehaviour;	
+	private double personalVehJourneyTimeCognitiveDemand;
+	private double publicTransJourneyTimeCognitiveDemand;
+	private double personalVehMobilityCognitiveDemand;
+	private double publicTransMobilityCognitiveDemand;
+	private double ModeReliabilityCogDemand;
+	private double passengerReliabilityCognitive;
+	private double personalVehReliabilityCognitiveDemand;
+	private double publicTransReliabilityCognitiveDemand;
+	private double personalVehReliabilityCognitive;
+	private double publicTransReliabilityCognitive;
+	private double publicModeSatisfaction;
+	private double personalVehModeSatisfaction;
+	private double firedVPReliabilityCog;
+	private double privateReliabilityCognitiveCounts;
+	private int publicReliabilityCognitiveCounts;
+	private double privateReliabilityAffectiveCounts;
+	private double publicReliabilityAffectiveCounts;
+	private double privateReliabilityUnpleasantAffectiveCounts;
+	private double publicReliabilityUnpleasantAffectiveCounts;
+	private double publicReliabilityUnpleasantCognitiveCounts;
+	private double privateReliabilityUnpleasantCognitiveCounts;
+	private double privateReliabilityPleasantAffectiveCounts;
+	private double publicReliabilityPleasantAffectiveCounts;
+	private double privateReliabilityPleasantCognitiveCounts;
+	private double publicReliabilityPleasantCognitiveCounts;
+	private double privateReliabilityNeitherPleasantAffectiveCounts;
+	private double publicReliabilityNeitherPleasantAffectiveCounts;
+	private double privateReliabilityNeitherPleasantCognitiveCounts;
+	private double publicReliabilityPleasantNeitherCognitiveCounts;
+	private double privateReliabilityAffective;
+	private double publicReliabilityAffective;
+	private double personalReliabilityAffectiveDemand;
+	private double publicReliabilityAffectiveDemand;
+	private double cycleReliabilityCognitive;
+	private double cycleReliabilityCognitiveDemand;
+	private int privateAllConvenienceCognitiveCounts;
+	private int cycleAllConvenienceCognitiveCounts;
+	private int privateAllConveniencePhysicalCounts;
+	private int cycleAllConveniencePhysicalCounts;
+	private int cycleAllConvenienceAffectiveCounts;
+	private int privateAllConvenienceAffectiveCounts;
+	private int privateUnpleasantConvenienceCognitiveCounts;
+	private int cycleUnpleasantConvenienceCognitiveCounts;
+	private int privateUnpleasantConveniencePhysicalCounts;
+	private int cycleUnpleasantConveniencePhysicalCounts;
+	private int privateConvenienceUnpleasantAffectiveCounts;
+	private int cycleConvenienceUnpleasantAffectiveCounts;
+	private int privatePleasantConvenienceCognitiveCounts;
+	private int cyclePleasantConvenienceCognitiveCounts;
+	private int privatePleasantConveniencePhysicalCounts;
+	private int cyclePleasantConveniencePhysicalCounts;
+	private int privateConveniencePleasantAffectiveCounts;
+	private int cycleConveniencePleasantAffectiveCounts;
+	private int privateNeitherNorPleasantConvenienceCognitiveCounts;
+	private int cycleNeitherNorPleasantConvenienceCognitiveCounts;
+	private int privatePleasantConvenienceNeitherNorPhysicalCounts;
+	private int privateNeitherNorPleasantConveniencePhysicalCounts;
+	private int cycleNeitherNorPleasantConveniencePhysicalCounts;
+	private int privateNeitherNorConveniencePleasantAffectiveCounts;
+	private int cycleNeitherNorConveniencePleasantAffectiveCounts;
+	private double privateConvenienceCognitive;
+	private double cycleConvenieceCognitive;
+	private double privateConvenienceCognitiveDemand;
+	private double cycleConvenienceCognitiveDemand;
+	private double privateModeSatisfaction;
+	private double cycleModeSatisfaction;
+	private double walkingModeSatisfaction;
+	private int privateSatisfactionAffectiveCounts;
+	private int cycleSatisfactionAffectiveCounts;
+	private int privateSatisfactionCognitiveCounts;
+	private int cycleSatisfactionCognitiveCounts;
+	private int privateSatisfactionPhysicalCounts;
+	private int cycleSatisfactionPhysicalCounts;
+	private int privateSatisfactionUnpleasantCognitiveCounts;
+	private int cycleSatisfactionUnpleasantCognitiveCounts;
+	private int privateSatisfactionNeitherNorPleasantCognitiveCounts;
+	private int cycleSatisfactionNeitherNorPleasantCognitiveCounts;
+	private int cycleSatisfactionPleasantCognitiveCounts;
+	private int privateSatisfactionPleasantCognitiveCounts;
+	private boolean cycleOwnership;
+	private int tick;
+	////
+	private double needsDifference;
+	private boolean carOwnership;
+//	@ProbedProperty(displayName="AllModeStatechart")
+//	AllModeStatechart allModeStatechart = AllModeStatechart.createStateChart(this, 0);
+//	
+//	public String getAllModeStatechartState(){
+//		if (allModeStatechart == null) return "";
+//		Object result = allModeStatechart.getCurrentSimpleState();
+//		return result == null ? "" : result.toString();
+//	}
+	
+
+	public double getNeedsDifference() {
+		return needsDifference;
+	}
+	public double getSocialInformation() {
+		return socialInformation;
+	}
+	public void setSocialInformation(double socialInformation) {
+		this.socialInformation = socialInformation;
+	}
+
+		public double getAssumedMaximumDifference() {
+		return assumedMaximumDifference;
+	}
+		public double getLevelOfNeedsSatisfaction() {
+		return levelOfNeedsSatisfaction;
+	}
+
+		public void setLevelOfNeedsSatisfaction(double levelOfNeedsSatisfaction) {
+		this.levelOfNeedsSatisfaction = levelOfNeedsSatisfaction;
+	}
+// Uncertainties generation
+// Social uncertainty is the failed expectation during imitation and inquiring
+	private double socialUncertainty(){
+		double socialUncertainty = RandomHelper.nextDoubleFromTo(0.0, 0.5);
+		return socialUncertainty;
+	}
+//Personal uncertainty 
+	private double personalUncertainty(){
+		double personaluncertainty =0.0;
+		double passuncertainty = passengerType.getChangeInExperience();
+			if(passuncertainty<0.0){
+				personaluncertainty= (1-(Math.abs(passuncertainty)));
+			}else{
+				personaluncertainty= passuncertainty;
+			}
+			return personaluncertainty;
+	}
+///Total source of uncertainties which can come form personal opinion and social failures		
+	@SuppressWarnings("unused")
+				private double uncertainty(){
+					double	totalUncertainty= ((personalUncertainty() + socialUncertainty()));///2);//*0.75;
+					if(totalUncertainty<0.0){
+						uncertainty= (1-(Math.abs(totalUncertainty)));
+					}else{
+						uncertainty= totalUncertainty;
+					}
+				return uncertainty;
+				}
+
+	
+	
+		public Passenger(ContinuousSpace<Object> space, Grid<Object> grid) {
+			this.space = space;
+			this.grid = grid;
+			cycleOwnership= false;
+			carOwnership =false;
+			assumedMaximumDifference=0.5;
+			socialAgreeability= false;
+		}
+	//	@ScheduledMethod(start =0, priority =0)
+		public void initialize(){
+			uncertaintyTolerance = RandomHelper.nextDoubleFromTo(0.2, 0.9);			
+			uncertainty=RandomHelper.nextDoubleFromTo(0.1, 0.5);
+			aspirationLevel = RandomHelper.nextDoubleFromTo(0.3, 1.0);			
+			socialSatisfaction = 0.0;
+			socialInformation =RandomHelper.nextDoubleFromTo(0.0, 0.6);			
+			needsDifference	=	RandomHelper.nextDoubleFromTo(0.0, 0.6);	
+			myPerception = new ModeAttributesPerceptions(this.prefferedMode);			
+		}
+	
+		@ScheduledMethod(start =1, interval=1)
+		public void step() {		
+		previousExperience = passengerType.updatePreviousExperience();
+		System.out.println("=======================================");
+		System.out.println("Tick:"+ this.getTickCount());		
+		System.out.println(" The mode is :"+ this.getPrefferedMode());
+	//	myPerception.updatePrefferedMode(prefferedMode);
+		myPerception.updatePrefferedMode(this.prefferedMode);
+		System.out.println(" The mode is :"+ this.getPrefferedMode());		
+		myPerception.updateModeEfficiency();
+		myPerception.updateModeComfortability();
+		myPerception.updateModeSafety();
+		myPerception.normalisedWeight();
+		///
+		myPerception.updateModeEfficiencyCognitve();
+		myPerception.updateModeSafetyCognitive();
+		myPerception.updateModeComfortabilityCognitive();
+	/////
+		myPerception.updateModeEfficiencyAffective();
+		myPerception.updateModeSafetyAffective();
+		myPerception.updateModeComfortabilityAffective();
+		/////
+		myPerception.updateModeSafetyPhysical();
+		myPerception.updateModeComfortabilityPhysical();
+		/////
+		
+		updateModeSatisfaction();					
+		myPreviousModeStatisfaction();	
+		levelOfNeedsSatisfaction= getModeSatisfaction();
+		System.out.println("Mode Satisfaction"+getModeSatisfaction());		
+		selectBehaviour();	
+		//myPerception.updatePerception();
+		System.out.println(" ======================================");
+//		System.out.println(" Mode Efficiency is :" + myPerception.getModeEfficiency());
+//		System.out.println(" Mode Comfortability is :" + myPerception.getModeComfortability());
+//		System.out.println(" Mode Safety is :" +myPerception.getModeSafety());
+//		System.out.println(" ======================================");			
+		System.out.println(" Timeliness taken from the mode is :" + this.prefferedMode.getValueOfAttribute(Constants.gettingToDestOnTimePerception));
+		System.out.println(" Delays taken from the mode is:" + this.prefferedMode.getValueOfAttribute(Constants.delaysPerception));
+		System.out.println(" ======================================");	
+	
+		System.out.println("Timeliness get at the ModeTimeliness cass"+myPerception.modeTime.getTimelinessCognitive());
+		System.out.println("Delays get at the ModeDelays class"+myPerception.modeDelays.getDelaysCognitive());
+		System.out.println(" ======================================");
+		System.out.println(" Journey Time is:" + myPerception.getVpJourneyTime());		
+		System.out.println(" Timeliness after Fuzzy evaluation is:" + myPerception.modeTime.getCycleTimeliness());
+		System.out.println(" Delays after fuzzy evaluation is:" + myPerception.modeDelays.getCycleDelays());
+		System.out.println(" ======================================");		
+		move();
+		}
+
+		private double updateModeSatisfaction(){			
+			if (prefferedMode instanceof PublicTransport){
+				modeSatisfaction= (Math.pow(myPerception.getPublicModeEfficiency(),myPerception.getPublicEfficiencyWt())*
+								(Math.pow(myPerception.getPublicModeComfortability(),myPerception.getPublicComfortabilityWt())*
+								(Math.pow(myPerception.getPublicModeSafety(), myPerception.getPublicSafetyWt()))));
+			}else if (prefferedMode instanceof PersonalVehicle){
+				modeSatisfaction= (Math.pow(myPerception.getPrivateModeEfficiency(),myPerception.getPrivateEfficiencyWt())*
+								(Math.pow(myPerception.getPrivateModeComfortability(),myPerception.getPrivateComfortabilityWt())*
+								(Math.pow(myPerception.getPrivateModeSafety(), myPerception.getPrivateSafetyWt()))));		
+			}else if (prefferedMode instanceof Cycle){
+				modeSatisfaction= (Math.pow(myPerception.getCycleModeEfficiency(),myPerception.getCycleEfficiencyWt())*
+								(Math.pow(myPerception.getCycleModeComfortability(),myPerception.getCycleComfortabilityWt())*
+								(Math.pow(myPerception.getCycleModeSafety(), myPerception.getCycleSafetyWt()))));
+			}else if (prefferedMode instanceof Walking){
+				modeSatisfaction= (Math.pow(myPerception.getWalkingModeEfficiency(),myPerception.getWalkingEfficiencyWt())*
+								(Math.pow(myPerception.getWalkingModeComfortability(),myPerception.getWalkingComfortabilityWt())*
+								(Math.pow(myPerception.getWalkingModeSafety(), myPerception.getWalkingSafetyWt()))));
+			}else{
+				System.out.println("There is no mode chosen");
+			}
+			
+			return modeSatisfaction;
+		}	
+	////////
+		private int getTickCount(){
+			int tickCount = (int) RunEnvironment.getInstance().getCurrentSchedule().getTickCount();
+			return tickCount;
+		}			
+		public double getModeSatisfaction() {
+			return modeSatisfaction;
+		}	
+		private void myPreviousModeStatisfaction(){	
+					myModeSatisfactionList.add(modeSatisfaction);			
+		}				
+		public List<Double> getModeSatisfactionList() {
+			return myModeSatisfactionList;
+		}
+
+		private void move(){ 
+			GridPoint pt = grid.getLocation(this);
+			NdPoint mypoint = space.getLocation(this);
+			NdPoint otherpoint = new NdPoint(pt.getX(),pt.getY());
+			double angle = SpatialMath.calcAngleFor2DMovement(space, mypoint, otherpoint);
+			space.moveByVector(this, 5, angle,0);
+			mypoint=space.getLocation(this);
+			grid.moveTo(this,(int)mypoint.getX(),(int)mypoint.getY());
+		}
+	//	@ScheduledMethod(start =10, interval=1)
+		private void selectBehaviour(){
+			if ((uncertainty>uncertaintyTolerance)&&(modeSatisfaction<aspirationLevel)){
+				passengerType.inquiring();
+			}else if ((uncertainty<uncertaintyTolerance)&&(modeSatisfaction<aspirationLevel)){				
+				passengerType.optimising();				
+			}else if ((uncertainty>uncertaintyTolerance)&&(modeSatisfaction>aspirationLevel)){				
+				passengerType.imitation();				
+			}else{// if ((uncertainty<uncertaintyTolerance)&&(modeSatisfaction>aspirationLevel)){				
+				passengerType.repetition();	
+			}	
+			updateStatechartTransition();				
+		}
+		
+		public boolean isImitating(){
+			if ((uncertainty>uncertaintyTolerance)&&(modeSatisfaction>aspirationLevel)){
+				return true;
+			}else return false;
+		}
+		
+		public boolean isInquiringg(){
+			if ((uncertainty>uncertaintyTolerance)&&(modeSatisfaction<aspirationLevel)){
+				return true;
+			}else return false;
+		}
+		
+		public boolean isOptimisingg(){
+			if ((uncertainty<uncertaintyTolerance)&&(modeSatisfaction<aspirationLevel)){
+				return true;
+			}else return false;
+		}
+		public boolean isRepeating(){
+			if ((uncertainty<uncertaintyTolerance)&&(modeSatisfaction>aspirationLevel)){
+				return true;
+			}else return false;
+		}
+
+	public double updateStatechartTransition(){			
+				transitionBehaviour =modeSatisfaction;			
+		return transitionBehaviour;
+	}
+	
+public double updateStatechartTransitionPrivate(){
+	if(isModePersonalVehicle()){
+		transitionBehaviour =modeSatisfaction;	
+	}else{
+		transitionBehaviour=-1;
+	}
+return transitionBehaviour;
+}
+public double updateStatechartTransitionPublic(){			
+		if(isModePublic()){
+			transitionBehaviour =modeSatisfaction;	
+		}else{
+			transitionBehaviour=-1;
+		}		
+return transitionBehaviour;
+}
+public double updateStatechartTransitionCycle(){			
+		if(isModeCyle()){
+			transitionBehaviour =modeSatisfaction;	
+		}else{
+			transitionBehaviour=-1;
+		}			
+return transitionBehaviour;
+}
+public double updateStatechartTransitionWalking(){			
+		if(isModeWalking()){
+			transitionBehaviour =modeSatisfaction;	
+		}else{
+			transitionBehaviour=-1;
+		}		
+return transitionBehaviour;
+}
+/////////
+public void switchToCycleMode(){	
+		this.prefferedMode= new Cycle();	
+	updateModeSatisfaction();
+}
+public void switchToWalkingMode(){	
+	this.prefferedMode= new Walking();	
+updateModeSatisfaction();
+}
+public void switchToPublicTransMode(){	
+	this.prefferedMode= new PublicTransport();	
+updateModeSatisfaction();
+}
+public void switchToPrivateCarMode(){	
+	this.prefferedMode= new PersonalVehicle();	
+updateModeSatisfaction();
+}
+////
+public void switchFromWalkingToCycleMode(){
+	if (this.prefferedMode instanceof Walking){
+		this.prefferedMode= new Cycle();
+	}	
+	updateModeSatisfaction();
+}
+public void switchFromCycleToWalkingMode(){
+	if (this.prefferedMode instanceof Cycle){
+		this.prefferedMode= new Walking();
+	}	
+	updateModeSatisfaction();
+}
+public void switchFromCarToWalkingMode(){
+	if (this.prefferedMode instanceof PersonalVehicle){
+		this.prefferedMode= new Walking();
+	}	
+	updateModeSatisfaction();
+}
+public void switchFromWalkingToCarMode(){
+	if (this.prefferedMode instanceof Walking){
+		this.prefferedMode= new PersonalVehicle();
+	}	
+	updateModeSatisfaction();
+}
+public void switchFromPublicToCycleMode(){
+	if (this.prefferedMode instanceof PublicTransport){
+		this.prefferedMode= new Cycle();
+	}	
+	updateModeSatisfaction();
+}
+public void switchFromCycleToPublicMode(){
+	if (this.prefferedMode instanceof Cycle){
+		this.prefferedMode= new PublicTransport();
+	}	
+	updateModeSatisfaction();
+}
+public void switchFromPublicToCarMode(){
+	if (this.prefferedMode instanceof PublicTransport){
+		this.prefferedMode= new PersonalVehicle();
+	}	
+	updateModeSatisfaction();
+}
+public void switchFromCarToPublicMode(){
+	if (this.prefferedMode instanceof PersonalVehicle){
+		this.prefferedMode= new PublicTransport();
+	}	
+	updateModeSatisfaction();
+}
+public void switchFromPublicToWalkingMode(){
+	if (this.prefferedMode instanceof PublicTransport){
+		this.prefferedMode= new Walking();
+	}	
+	updateModeSatisfaction();
+}
+public void switchFromWalkingToPublicMode(){
+	if (this.prefferedMode instanceof Walking){
+		this.prefferedMode= new PublicTransport();
+	}	
+	updateModeSatisfaction();
+}
+public void switchFromCarToCycleMode(){
+	if (this.prefferedMode instanceof PersonalVehicle){
+		this.prefferedMode= new Cycle();
+	}	
+	updateModeSatisfaction();
+}
+public void switchFromCycleToCarMode(){
+	if (this.prefferedMode instanceof Cycle){
+		this.prefferedMode= new PersonalVehicle();
+	}	
+	updateModeSatisfaction();
+}
+////	
+private boolean cycleOwnership(){
+double 	r = rand. nextDouble();
+if((this.prefferedMode instanceof PersonalVehicle)||(this.prefferedMode instanceof PublicTransport)||(this.prefferedMode instanceof Walking)&&(r<=0.70)){
+	cycleOwnership =true;	
+	}else
+		cycleOwnership=false;
+	return cycleOwnership;
+}
+public boolean isCycleOwnership() {
+	return cycleOwnership;
+}
+private boolean carOwnership(){
+double 	r = rand. nextDouble();
+if((this.prefferedMode instanceof PublicTransport)||(this.prefferedMode instanceof Cycle)||(this.prefferedMode instanceof Walking)
+	&&(r<=0.80)){
+	carOwnership =true;	
+	}else
+		carOwnership=false;
+	return carOwnership;
+}
+public boolean isCarOwnership() {
+	return carOwnership;
+}
+////
+		public void selectSustainableMode(){
+			int randInt =(int)(Math.random()*3);
+			switch (randInt){				
+				case 0: this.prefferedMode = new PublicTransport(); break;
+				case 1: this.prefferedMode = new Walking(); break;				
+				default: this.prefferedMode = new Cycle();
+			}			
+		}		
+		public void switchMode() throws Exception  {
+			System.out.println("-----SWITCH-----");
+			if (this.prefferedMode instanceof PersonalVehicle){
+				selectSustainableMode();
+			}	else if ((this.prefferedMode instanceof PublicTransport)||(this.prefferedMode instanceof Cycle)
+					||(this.prefferedMode instanceof Walking)){
+					this.prefferedMode = new PersonalVehicle();
+			}
+			updateModeSatisfaction();
+		}	
+//////////////		
+		public boolean isSustainableMode(){
+			if ((this.prefferedMode instanceof Cycle)||(this.prefferedMode instanceof PublicTransport)
+					||(this.prefferedMode instanceof Walking)){
+				return true;
+			}else return false;
+		}
+		public boolean isModePersonalVehicle(){
+			if (this.prefferedMode instanceof PersonalVehicle){
+				return true;
+			}else return false;
+		}	
+		public boolean isModeCyle(){
+			if (this.prefferedMode instanceof Cycle){
+				return true;
+			}else return false;
+		}
+		public boolean isModeWalking(){
+			if (this.prefferedMode instanceof Walking){
+				return true;
+			}else return false;
+		}
+		public boolean isModePublic(){
+			if (this.prefferedMode instanceof PublicTransport){
+				return true;
+			}else return false;
+		}
+///////////////////////////		
+		public boolean isPublicInterracteeMode(){
+			if (this.getInterracteePrefferedMode()instanceof PublicTransport){
+				return true;
+			}else return false;
+		}
+		public boolean isPrivateInterracteeMode(){
+			if (this.getInterracteePrefferedMode()instanceof PersonalVehicle){
+				return true;
+			}else return false;
+		}
+		public boolean isCyclistInterracteeMode(){
+			if (this.getInterracteePrefferedMode()instanceof Cycle){
+				return true;
+			}else return false;
+		}
+		public boolean isWalkerInterracteeMode(){
+			if (this.getInterracteePrefferedMode()instanceof Walking){
+				return true;
+			}else return false;
+		}
+		
+		public boolean isInquiringInterracteeMode(){
+			if ((this.getInterracteePrefferedMode()instanceof Walking)||(this.getInterracteePrefferedMode()instanceof Cycle)
+					||(this.getInterracteePrefferedMode()instanceof PublicTransport)||(this.getInterracteePrefferedMode()instanceof PersonalVehicle)){
+				return true;
+			}else return false;
+		}
+	//////
+///Different Mode counts
+		public int isCycle() {
+			if (comparisonStatechart.getCurrentSimpleState().getId().equals("Cycle"))
+				return 1;
+			else return 0;
+		}
+		public int isCar() {
+			if (comparisonStatechart.getCurrentSimpleState().getId().equals("PrivateCar"))
+				return 1;
+			else return 0;
+		}
+		public int isPublic() {
+			if (comparisonStatechart.getCurrentSimpleState().getId().equals("PublicTransport"))
+				return 1;
+			else return 0;
+		}
+		public int isWalking() {
+			if (comparisonStatechart.getCurrentSimpleState().getId().equals("Walking"))
+				return 1;
+			else return 0;
+		}
+//// Behaviour Counts///////////////////////////////////////////////////////////////
+		public int isRepetition() {
+			if (cognitiveStatechart.getCurrentSimpleState().getId().equals("Repetition"))
+				return 1;
+			else return 0;
+		}
+		public int isImitation() {
+			if (cognitiveStatechart.getCurrentSimpleState().getId().equals("Imitation"))
+				return 1;
+			else return 0;
+		}
+		public int isOptimising() {
+			if (cognitiveStatechart.getCurrentSimpleState().getId().equals("Optimising"))
+				return 1;
+			else return 0;
+		}
+		public int isInquiring() {
+			if (cognitiveStatechart.getCurrentSimpleState().getId().equals("Inquiring"))
+				return 1;
+			else return 0;
+		}
+	
+///This section gets the Outputs  Reliability		
+		public double getPrivateConveniencelevel(){
+			return myPerception.getPrivateUserConvenience();					
+		}
+		public double getCycleConveniencelevel(){		
+			return myPerception.getCycleUserConvenience();					
+		}
+		public double privateReliabilitylevel(){
+			return myPerception.getPersonalVehReliability();					
+		}
+		public double cycleReliabilitylevel(){		
+			return myPerception.getCycleReliability();	
+		}		
+/////////////
+//////All The section collects the counts
+////All counts
+			public double getPrivateAllConvenienceCognitiveCounts(){			
+				return 	privateAllConvenienceCognitiveCounts=this.myPerception.getPrivateVPConvenienceCognitiveCounts();			
+			}
+			public double getCycleAllConvenienceCognitiveCounts(){			
+				return 	cycleAllConvenienceCognitiveCounts=this.myPerception.getCycleVPConvenienceCognitiveCounts();			
+			}
+			public double getPrivateAllConveniencePhysicalCounts(){			
+				return 	privateAllConveniencePhysicalCounts=this.myPerception.getPrivateVPConveniencePhysicalCounts();			
+			}
+			public double getCycleAllConveniencePhysicalCounts(){			
+				return 	cycleAllConveniencePhysicalCounts=this.myPerception.getCycleVPConveniencePhysicalCounts();			
+			}
+			public double getPrivateAllConvenienceAffectiveCounts(){			
+				return 	privateAllConvenienceAffectiveCounts=this.myPerception.getPrivateVPConvenienceAffectiveCounts();			
+			}
+			public double getCycleAllConvenienceAffectiveCounts(){			
+				return 	cycleAllConvenienceAffectiveCounts=this.myPerception.getCycleVPConvenienceAffectiveCounts();			
+			}
+
+/////PCA Unpleasant levels	
+			public double getPrivateConvenienceUnpleasantCognitiveCounts(){			
+				return 	privateUnpleasantConvenienceCognitiveCounts=this.myPerception.getPrivateVPConvenienceUnpleasantCognitiveCounts();			
+			}
+			public double getCycleConvenienceUnpleasantCognitiveCounts(){			
+				return 	cycleUnpleasantConvenienceCognitiveCounts=this.myPerception.getCycleVPConvenienceUnpleasantCognitiveCounts();			
+			}
+			public double getPrivateConvenienceUnpleasantPhysicalCounts(){			
+				return 	privateUnpleasantConveniencePhysicalCounts=this.myPerception.getPrivateVPConvenienceUnpleasantPhysicalCounts();			
+			}
+			public double getCycleConvenienceUnpleasantPhysicalCounts(){			
+				return 	cycleUnpleasantConveniencePhysicalCounts=this.myPerception.getCycleVPConvenienceUnpleasantPhysicalCounts();			
+			}
+			public double getPrivateConvenienceUnpleasantAffectiveCounts(){			
+				return 	privateConvenienceUnpleasantAffectiveCounts=this.myPerception.getPrivateVPConvenienceUnpleasantAffectiveCounts();			
+			}
+			public double getCycleConvenienceUnpleasantAffectiveCounts(){			
+				return 	cycleConvenienceUnpleasantAffectiveCounts=this.myPerception.getCycleVPConvenienceUnpleasantAffectiveCounts();			
+			}
+	/////Pleasant levels		
+			public double getPrivateConveniencePleasantCognitiveCounts(){			
+				return 	privatePleasantConvenienceCognitiveCounts=this.myPerception.getPrivateVPConveniencePleasantCognitiveCounts();			
+			}
+			public double getCycleConveniencePleasantCognitiveCounts(){			
+				return 	cyclePleasantConvenienceCognitiveCounts=this.myPerception.getCycleVPConveniencePleasantCognitiveCounts();			
+			}
+			public double getPrivateConveniencePleasantPhysicalCounts(){			
+				return 	privatePleasantConveniencePhysicalCounts=this.myPerception.getPrivateVPConveniencePleasantPhysicalCounts();			
+			}
+			public double getCycleConveniencePleasantPhysicalCounts(){			
+				return 	cyclePleasantConveniencePhysicalCounts=this.myPerception.getCycleVPConveniencePleasantPhysicalCounts();			
+			}
+			public double getPrivateConveniencePleasantAffectiveCounts(){			
+				return 	privateConveniencePleasantAffectiveCounts=this.myPerception.getPrivateVPConveniencePleasantAffectiveCounts();			
+			}
+			public double getCycleConveniencePleasantAffectiveCounts(){			
+				return 	cycleConveniencePleasantAffectiveCounts=this.myPerception.getCycleVPConveniencePleasantAffectiveCounts();			
+			}
+	////Convenience Neither Pleasant Nor Unpleasant		
+			public double getPrivateConvenienceNeitherNorPleasantCognitiveCounts(){			
+				return 	privateNeitherNorPleasantConvenienceCognitiveCounts=this.myPerception.getPrivateVPConvenienceNeitherNorPleasantCognitiveCounts();			
+			}
+			public double getCycleConvenienceNeitherNorPleasantCognitiveCounts(){			
+				return 	cycleNeitherNorPleasantConvenienceCognitiveCounts=this.myPerception.getCycleVPConvenienceNeitherNorPleasantCognitiveCounts();			
+			}
+			public double getPrivateConvenienceNeitherNorPleasantPhysicalCounts(){			
+				return 	privateNeitherNorPleasantConveniencePhysicalCounts=this.myPerception.getPrivateVPConvenienceNeitherNorPleasantPhysicalCounts();			
+			}
+			public double getCycleConvenienceNeitherNorPleasantPhysicalCounts(){			
+				return 	cycleNeitherNorPleasantConveniencePhysicalCounts=this.myPerception.getCycleVPConvenienceNeitherNorPleasantPhysicalCounts();			
+			}
+			public double getPrivateConvenienceNeitherNorPleasantAffectiveCounts(){			
+				return 	privateNeitherNorConveniencePleasantAffectiveCounts=this.myPerception.getPrivateVPConvenienceNeitherNorPleasantAffectiveCounts();			
+			}
+			public double getCycleConvenienceNeitherNorPleasantAffectiveCounts(){			
+				return 	cycleNeitherNorConveniencePleasantAffectiveCounts=this.myPerception.getCycleVPConvenienceNeitherNorPleasantAffectiveCounts();			
+			}		
+		
+////////Private and Cycle Convenience cognitive  
+	public double getPrivateConvenienceCognitive(){
+		double firedPrivateConvenienceCognitive = myPerception.getPrivateUserConvenienceCognitive();
+		if (prefferedMode instanceof PersonalVehicle)	{
+			return firedPrivateConvenienceCognitive;
+		}else
+		return	-1;				
+	}
+	public double getCycleConvenienceCognitive(){	
+		double firedCycleConvenienceCognitve = myPerception.getCycleUserConvenienceCognitive();
+		if(prefferedMode instanceof Cycle){
+			return firedCycleConvenienceCognitve;
+		}else
+			return -1;
+	}		
+////////Private and Cycle Convenience cognitiveDemand 
+	public double getPrivateConvenienceCognitiveDemand(){	
+		double firedprivateConvenienceCognitiveDemand =myPerception.getPrivateUserConvenienceCognitiveDemand();	
+		if (prefferedMode instanceof PersonalVehicle)	{
+			return firedprivateConvenienceCognitiveDemand;
+		}else
+		return	-1;	
+	}
+	public double getCycleConvenienceCognitiveDemand(){		
+		double firedCycleConvenienceCognitiveDemand =this.myPerception.getCycleUserConvenienceCognitiveDemand();	
+		if (prefferedMode instanceof Cycle)	{
+			return firedCycleConvenienceCognitiveDemand;
+		}else
+		return	-1;	
+	}	
+///Mode Satisfaction, Efficiency, Safety, Comfort	
+	public double getPrivateModeSatisfaction(){
+		if(prefferedMode instanceof PersonalVehicle){
+			privateModeSatisfaction = this.getModeSatisfaction();
+			return privateModeSatisfaction;
+		}else	
+		return -1;
+	}
+///
+	public double getPublicTransModeSatisfaction(){
+		if(prefferedMode instanceof PublicTransport){
+			publicModeSatisfaction = this.getModeSatisfaction();
+			return publicModeSatisfaction;
+		}else	
+		return -1;
+	}
+/////
+	public double getCycleSatisfaction(){
+	if(prefferedMode instanceof Cycle){
+		cycleModeSatisfaction = this.getModeSatisfaction();
+		return cycleModeSatisfaction;
+	}else	
+	return -1;
+}
+////
+	public double getWalkingSatisfaction(){
+		if(prefferedMode instanceof Walking){
+			walkingModeSatisfaction = this.getModeSatisfaction();
+			return walkingModeSatisfaction;
+		}else	
+		return -1;
+	}	
+	
+	public double getPrivateModeEfficiency(){
+		double modeEfficiency =myPerception.getPrivateModeEfficiency();
+		if(prefferedMode instanceof PersonalVehicle){
+			return modeEfficiency;
+		}else
+			return -1;	
+	}
+	public double getPrivateModeSafety(){
+		double modeSafety =myPerception.getPrivateModeSafety();
+		if(prefferedMode instanceof PersonalVehicle){
+			return modeSafety;
+		}else
+			return -1;	
+	}
+	public double getPrivateModeComfort(){
+		double modeComfortability =myPerception.getPrivateModeComfortability();
+		if(prefferedMode instanceof PersonalVehicle){
+			return modeComfortability;
+		}else
+			return -1;	
+	}
+//Private ESC-PCA
+///Efficiency
+	public double getPrivateModeEfficiencyCognitive(){
+		double modeEfficiencyCognitive =myPerception.getPrivateModeEfficiencyCognitive();
+		if(prefferedMode instanceof PersonalVehicle){
+			return modeEfficiencyCognitive;
+		}else
+			return -1;	
+	}
+	public double getPrivateModeEfficiencyAffective(){
+		double modeEfficiencyAffective =myPerception.getPrivateModeEfficiencyAffective();
+		if(prefferedMode instanceof PersonalVehicle){
+			return modeEfficiencyAffective;
+		}else
+			return -1;	
+	}
+////	Safety
+	public double getPrivateModeSafetyCognitive(){
+		double modeSafetyCognitive =myPerception.getPrivateModeSafetyCognitive();
+		if(prefferedMode instanceof PersonalVehicle){
+			return modeSafetyCognitive;
+		}else
+			return -1;	
+	}
+	public double getPrivateModeSafetyAffective(){
+		double modeSafetyAffective =myPerception.getPrivateModeSafetyAffective();
+		if(prefferedMode instanceof PersonalVehicle){
+			return modeSafetyAffective;
+		}else
+			return -1;	
+	}
+	public double getPrivateModeSafetyPhysical(){
+		double modeSafetyPhysical =myPerception.getPrivateModeSafetyPhysical();
+		if(prefferedMode instanceof PersonalVehicle){
+			return modeSafetyPhysical;
+		}else
+			return -1;	
+	}
+////Comfortability
+	public double getPrivateModeComfortabilityCognitive(){
+		double modeSafetyCognitive =myPerception.getPrivateModeComfortabilityCognitive();
+		if(prefferedMode instanceof PersonalVehicle){
+			return modeSafetyCognitive;
+		}else
+			return -1;	
+	}
+	public double getPrivateModeComfortabilityAffective(){
+		double modeSafetyAffective =myPerception.getPrivateModeComfortabilityAffective();
+		if(prefferedMode instanceof PersonalVehicle){
+			return modeSafetyAffective;
+		}else
+			return -1;	
+	}
+	public double getPrivateModeComfortabilityPhysical(){
+		double modeSafetyPhysical =myPerception.getPrivateModeComfortabilityPhysical();
+		if(prefferedMode instanceof PersonalVehicle){
+			return modeSafetyPhysical;
+		}else
+			return -1;	
+	}	
+///Cycle
+	public double getCycleModeSatisfaction(){	
+		if(prefferedMode instanceof Cycle){
+			cycleModeSatisfaction = this.getModeSatisfaction();
+			return cycleModeSatisfaction;
+		}else
+			return -1;	
+	}
+	public double getCycleModeEfficiency(){
+		double modeEfficiency =myPerception.getCycleModeEfficiency();
+		if(prefferedMode instanceof Cycle){
+			return modeEfficiency;
+		}else
+			return -1;	
+	}
+	public double getCycleModeSafety(){
+		double modeSafety =myPerception.getCycleModeSafety();
+		if(prefferedMode instanceof Cycle){
+			return modeSafety;
+		}else
+			return -1;	
+	}
+	public double getCycleModeComfort(){
+		double modeComfortability =myPerception.getCycleModeComfortability();
+		if(prefferedMode instanceof Cycle){
+			return modeComfortability;
+		}else
+			return -1;	
+	}
+///Cycle ECS_PCA
+//Efficiency
+	public double getCycleModeEfficiencyCognitive(){
+		double modeEfficiencyCognitive =myPerception.getCycleModeEfficiencyCognitive();
+		if(prefferedMode instanceof Cycle){
+			return modeEfficiencyCognitive;
+		}else
+			return -1;	
+	}
+	public double getCycleModeEfficiencyAffective(){
+		double modeEfficiencyAffective =myPerception.getCycleModeEfficiencyAffective();
+		if(prefferedMode instanceof Cycle){
+			return modeEfficiencyAffective;
+		}else
+			return -1;	
+	}
+////Safety
+	public double getCycleModeSafetyCognitive(){
+		double modeSafetyCognitive =myPerception.getCycleModeSafetyCognitive();
+		if(prefferedMode instanceof Cycle){
+			return modeSafetyCognitive;
+		}else
+			return -1;	
+	}
+	public double getCycleModeSafetyAffective(){
+		double modeSafetyAffective =myPerception.getCycleModeSafetyAffective();
+		if(prefferedMode instanceof Cycle){
+			return modeSafetyAffective;
+		}else
+			return -1;	
+	}
+	public double getCycleModeSafetyPhysical(){
+		double modeSafetyPhysical =myPerception.getCycleModeSafetyPhysical();
+		if(prefferedMode instanceof Cycle){
+			return modeSafetyPhysical;
+		}else
+			return -1;	
+	}
+///Comfortability
+	public double getCycleModeComfortabilityCognitive(){
+		double modeSafetyCognitive =myPerception.getCycleModeComfortabilityCognitive();
+		if(prefferedMode instanceof Cycle){
+			return modeSafetyCognitive;
+		}else
+			return -1;	
+	}
+	public double getCycleModeComfortabilityAffective(){
+		double modeSafetyAffective =myPerception.getCycleModeComfortabilityAffective();
+		if(prefferedMode instanceof Cycle){
+			return modeSafetyAffective;
+		}else
+			return -1;	
+	}
+	public double getCycleModeComfortabilityPhysical(){
+		double modeSafetyPhysical =myPerception.getCycleModeComfortabilityPhysical();
+		if(prefferedMode instanceof Cycle){
+			return modeSafetyPhysical;
+		}else
+			return -1;	
+	}
+///Satisfaction APC Counts
+///Affective counts
+	public double getPrivateSatisfactionAffectiveCounts(){			
+		return 	privateSatisfactionAffectiveCounts=this.myPerception.getPrivateSatisfactionAffectiveCounts();			
+	}
+	public double getCycleSatisfactionAffectiveCounts(){			
+		return 	cycleSatisfactionAffectiveCounts=this.myPerception.getCycleSatisfactionAffectiveCounts();			
+	}
+///Cognitive Counts
+	public double getPrivateSatisfactionCognitiveCounts(){			
+		return 	privateSatisfactionCognitiveCounts=this.myPerception.getPrivateSatisfactionCognitiveCounts();			
+	}
+	public double getCycleSatisfactionCognitiveCounts(){			
+		return 	cycleSatisfactionCognitiveCounts=this.myPerception.getCycleSatisfactionCognitiveCounts();			
+	}
+////Physical Counts
+	public double getPrivateSatisfactionPhysicalCounts(){			
+		return 	privateSatisfactionPhysicalCounts=this.myPerception.getPrivateSatisfactionPhysicalCounts();			
+	}
+	public double getCycleSatisfactionPhysicalCounts(){			
+		return 	cycleSatisfactionPhysicalCounts=this.myPerception.getCycleSatisfactionPhysicalCounts();			
+	}
+///Satisfaction Cognitive Levels
+//Unpleasant
+	public double getPrivateSatisfactionUnpleasantCognitiveCounts(){			
+		return 	privateSatisfactionUnpleasantCognitiveCounts=this.myPerception.getPrivateSatisfactionUnpleasantCognitiveCounts();			
+	}
+	public double getCycleSatisfactionUnpleasantCognitiveCounts(){			
+		return 	cycleSatisfactionUnpleasantCognitiveCounts=this.myPerception.getCycleSatisfactionUnpleasantCognitiveCounts();			
+	}
+////NeitherNor
+	public double getPrivateSatisfactionNeitherNorPleasantCognitiveCounts(){			
+		return 	privateSatisfactionNeitherNorPleasantCognitiveCounts=this.myPerception.getPrivateSatisfactionNeitherNorPleasantCognitiveCounts();			
+	}
+	public double getCycleSatisfactionNeitherNorPleasantCognitiveCounts(){			
+		return 	cycleSatisfactionNeitherNorPleasantCognitiveCounts=this.myPerception.getCycleSatisfactionNeitherNorPleasantCognitiveCounts();			
+	}
+//Pleasant
+	public double getPrivateSatisfactionPleasantCognitiveCounts(){			
+		return 	privateSatisfactionPleasantCognitiveCounts=this.myPerception.getPrivateSatisfactionPleasantCognitiveCounts();			
+	}
+	public double getCycleSatisfactionPleasantCognitiveCounts(){			
+		return 	cycleSatisfactionPleasantCognitiveCounts=this.myPerception.getCycleSatisfactionPleasantCognitiveCounts();			
+	}
+	
+}
+
+		
+	
+	
+
+	
+	
+			
+			
+			
+			
+

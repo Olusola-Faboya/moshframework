@@ -1,0 +1,15 @@
+<repast.simphony.data2.engine.FileSinkDescriptor>
+  <name>TREAVELLER File Sink</name>
+  <dataSet>TRAVELLERS Data Set</dataSet>
+  <delimiter>,</delimiter>
+  <format>TABULAR</format>
+  <sourceIds class="linked-hash-set">
+    <string>tick</string>
+    <string>CYCLISTS</string>
+    <string>CARUSERS</string>
+    <string>PUBLICUSERS</string>
+    <string>PEDESTRIANS</string>
+  </sourceIds>
+  <fileName>TRAVELLEROutput.txt</fileName>
+  <addTimeStamp>true</addTimeStamp>
+</repast.simphony.data2.engine.FileSinkDescriptor>

@@ -1,0 +1,204 @@
+package moshproject.agents.passenger;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+import moshproject.agent.behaviour.Behaviour;
+import moshproject.agents.intervener.Intervener;
+import moshproject.agents.mode.Cycle;
+import moshproject.agents.mode.Mode;
+import moshproject.agents.mode.PersonalVehicle;
+import moshproject.agents.mode.PublicTransport;
+import moshproject.agents.mode.Walking;
+import moshproject.agents.passenger.chart.CombinedStatechart;
+import repast.simphony.engine.environment.RunEnvironment;
+import repast.simphony.engine.schedule.ScheduledMethod;
+import repast.simphony.random.RandomHelper;
+import repast.simphony.space.SpatialMath;
+import repast.simphony.space.continuous.ContinuousSpace;
+import repast.simphony.space.continuous.NdPoint;
+import repast.simphony.space.grid.Grid;
+import repast.simphony.space.grid.GridPoint;
+import repast.simphony.ui.probe.ProbedProperty;
+import moshproject.agents.passenger.chart.UniTravellersStatechart;
+
+public class Passenger {	
+	private ContinuousSpace<Object> space;
+	private Grid<Object> grid;		
+	Random  rand = new Random();	
+	
+	private ModeAttributesPerceptions myPerception;
+	public void setMyPerception(ModeAttributesPerceptions myPerception) {
+		this.myPerception = myPerception;
+		this.myPerception.passenger=this;	
+	}
+	public ModeAttributesPerceptions getMyPerception() {
+		return myPerception;
+	}
+	private void updateMyPerception(ModeAttributesPerceptions myPerception){
+		this.myPerception =myPerception;
+		
+	}
+	 public PassengerType passengerType;
+	public PassengerType getPassengerType() {
+		return passengerType;
+	}
+	public void setPassengerType(PassengerType passengerType) {
+		this.passengerType = passengerType;
+		this.passengerType.myPassenger = this;
+	}
+	
+	private Mode interracteePrefferedMode;	
+	public void setInterracteePrefferedMode(Mode interracteePrefferedMode) {
+		this.interracteePrefferedMode = interracteePrefferedMode;
+	}
+	public Mode getInterracteePrefferedMode() {	
+		return interracteePrefferedMode;
+	}
+	
+	private boolean interacteeFound;	
+	public boolean isInteracteeFound() {
+		return interacteeFound;
+	}
+	public void setInteracteeFound(boolean findInteractee) {
+		this.interacteeFound = findInteractee;
+	}
+	private boolean inquiryInteracteeFound;		
+	public boolean isInquiryInteracteeFound() {
+		return inquiryInteracteeFound;
+	}
+	public void setInquiryInteracteeFound(boolean inquiryInteracteeFound) {
+		this.inquiryInteracteeFound = inquiryInteracteeFound;
+	}
+	
+	public Mode prefferedMode;
+	public Mode getPrefferedMode() {
+		return prefferedMode;
+	}
+	public Mode setPrefferedMode(Mode prefferedMode) {
+		return this.prefferedMode = prefferedMode;		
+	}	
+
+	public double modeSatisfaction;
+	public double setModeSatisfaction(double modeSatisfaction) {
+		return this.modeSatisfaction = modeSatisfaction;
+	}
+	public List<Double> myModeSatisfactionList = new ArrayList<Double>();
+	private double uncertainty;	
+	public double getUncertainty() {
+		return uncertainty;
+	}
+	public void setUncertainty(double uncertainty) {
+		this.uncertainty = uncertainty;
+	}
+	private double uncertaintyTolerance;
+	
+	public double getUncertaintyTolerance() {
+		return uncertaintyTolerance;
+	}
+	public void setUncertaintyTolerance(double uncertaintyTolerance) {
+		this.uncertaintyTolerance = uncertaintyTolerance;
+	}
+	public double aspirationLevel;
+	
+	public double getAspirationLevel() {
+		return aspirationLevel;
+	}
+	public void setAspirationLevel(double aspirationLevel) {
+		this.aspirationLevel = aspirationLevel;
+	}
+
+	public double  previousExperience;
+	public double getPreviousExperience() {
+		return previousExperience;
+	}
+	public void setPreviousExperience(double previousExperience) {
+		this.previousExperience = previousExperience;
+	}	
+	private double changeInExperience;
+	public double getChangeInExperience() {
+		return changeInExperience;
+	}
+	public void setChangeInExperience(double changeInExperience) {	
+		this.changeInExperience = changeInExperience;
+	}
+
+	private double levelOfNeedsSatisfaction;
+	private boolean socialAgreeability;
+	private double socialSatisfaction;
+	private double assumedMaximumDifference;
+	private double socialInformation;
+	public double transitionBehaviour;	
+	private double personalVehJourneyTimeCognitiveDemand;
+	private double publicTransJourneyTimeCognitiveDemand;
+	private double personalVehMobilityCognitiveDemand;
+	private double publicTransMobilityCognitiveDemand;
+	private double ModeReliabilityCogDemand;
+	private double passengerReliabilityCognitive;
+	private double personalVehReliabilityCognitiveDemand;
+	private double publicTransReliabilityCognitiveDemand;
+	private double personalVehReliabilityCognitive;
+	private double publicTransReliabilityCognitive;
+	private double publicModeSatisfaction;
+	private double personalVehModeSatisfaction;
+	private double firedVPReliabilityCog;
+	private double privateReliabilityCognitiveCounts;
+	private int publicReliabilityCognitiveCounts;
+	private double privateReliabilityAffectiveCounts;
+	private double publicReliabilityAffectiveCounts;
+	private double privateReliabilityUnpleasantAffectiveCounts;
+	private double publicReliabilityUnpleasantAffectiveCounts;
+	private double publicReliabilityUnpleasantCognitiveCounts;
+	private double privateReliabilityUnpleasantCognitiveCounts;
+	private double privateReliabilityPleasantAffectiveCounts;
+	private double publicReliabilityPleasantAffectiveCounts;
+	private double privateReliabilityPleasantCognitiveCounts;
+	private double publicReliabilityPleasantCognitiveCounts;
+	private double privateReliabilityNeitherPleasantAffectiveCounts;
+	private double publicReliabilityNeitherPleasantAffectiveCounts;
+	private double privateReliabilityNeitherPleasantCognitiveCounts;
+	private double publicReliabilityPleasantNeitherCognitiveCounts;
+	private double privateReliabilityAffective;
+	private double publicReliabilityAffective;
+	private double personalReliabilityAffectiveDemand;
+	private double publicReliabilityAffectiveDemand;
+	private double cycleReliabilityCognitive;
+	private double cycleReliabilityCognitiveDemand;
+	private int privateAllConvenienceCognitiveCounts;
+	private int cycleAllConvenienceCognitiveCounts;
+	private int privateAllConveniencePhysicalCounts;
+	private int cycleAllConveniencePhysicalCounts;
+	private int cycleAllConvenienceAffectiveCounts;
+	private int privateAllConvenienceAffectiveCounts;
+	private int privateUnpleasantConvenienceCognitiveCounts;
+	private int cycleUnpleasantConvenienceCognitiveCounts;
+	private int privateUnpleasantConveniencePhysicalCounts;
+	private int cycleUnpleasantConveniencePhysicalCounts;
+	private int privateConvenienceUnpleasantAffectiveCounts;
+	private int cycleConvenienceUnpleasantAffectiveCounts;
+	private int privatePleasantConvenienceCognitiveCounts;
+	private int cyclePleasantConvenienceCognitiveCounts;
+	private int privatePleasantConveniencePhysicalCounts;
+	private int cyclePleasantConveniencePhysicalCounts;
+	private int privateConveniencePleasantAffectiveCounts;
+	private int cycleConveniencePleasantAffectiveCounts;
+	private int privateNeitherNorPleasantConvenienceCognitiveCounts;
+	private int cycleNeitherNorPleasantConvenienceCognitiveCounts;
+	private int privatePleasantConvenienceNeitherNorPhysicalCounts;
+	private int privateNeitherNorPleasantConveniencePhysicalCounts;
+	private int cycleNeitherNorPleasantConveniencePhysicalCounts;
+	private int privateNeitherNorConveniencePleasantAffectiveCounts;
+	private int cycleNeitherNorConveniencePleasantAffectiveCounts;
+	private double privateConvenienceCognitive;
+	private double cycleConvenieceCognitive;
+	private double privateConvenienceCognitiveDemand;
+	private double cycleConvenienceCognitiveDemand;
+	private double privateModeSatisfaction;
+	private double cycleModeSatisfaction;
+	private double walkingModeSatisfaction;
+	private int privateSatisfactionAffectiveCounts;
+	private int cycleSatisfactionAffectiveCounts;
+	private int privateSatisfactionCognitiveCounts;
+	private int cycleSatisfactionCognitiveCounts;
+	private in

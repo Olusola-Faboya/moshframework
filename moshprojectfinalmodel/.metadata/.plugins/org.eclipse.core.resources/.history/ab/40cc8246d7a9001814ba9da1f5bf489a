@@ -1,0 +1,849 @@
+INFO  [Thread-3] 2018-08-25 22:38:42,701 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,701 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@23017f9e
+INFO  [Thread-3] 2018-08-25 22:38:42,701 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@23017f9e
+INFO  [Thread-3] 2018-08-25 22:38:42,701 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5430596971037457
+INFO  [Thread-3] 2018-08-25 22:38:42,701 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,701 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,701 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@74f7b917
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@74f7b917
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.38786085748494703
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@4f9aa4c
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@4f9aa4c
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5050788811249842
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@4e3ff7d0
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@4e3ff7d0
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.4926541887108249
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  Imitation zone
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@60f8b45f
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@60f8b45f
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5667482856363093
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  Imitation zone
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - The imitation interactee ismoshproject.agents.mode.PublicTransport@1dc0075c
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@2fe73e23
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@2fe73e23
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5954915924736371
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@93c9e9f
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@93c9e9f
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5693885543004887
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - I'm Inquiring=======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@91028c0
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@91028c0
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.4607194939805907
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@1783ea14
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@1783ea14
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.42670067276096135
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@3584dd77
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@3584dd77
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.6263830153092107
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@733416b0
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@733416b0
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.6441736814306556
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@7ef4c116
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@7ef4c116
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5907344753075391
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@d7065b4
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@d7065b4
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.4577717389956303
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@3470bba6
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@3470bba6
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5657975927981743
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@1acfd770
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@1acfd770
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5445191514203961
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@6553c8e7
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@6553c8e7
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5575674939021168
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@18ac84b7
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@18ac84b7
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5782016485883084
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@260c873a
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@260c873a
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.6046002826031174
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  Imitation zone
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - The imitation interactee ismoshproject.agents.mode.PersonalVehicle@2cc75801
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@5bfdc785
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@5bfdc785
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5595310137604286
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@5defdaa8
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@5defdaa8
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5220219128119583
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@6d2a808b
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@6d2a808b
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.4660063973378095
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@58d5cce7
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@58d5cce7
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.613639340883317
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@318edc48
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@318edc48
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5928656064053153
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@1cf149ff
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@1cf149ff
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5162088300154699
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@20529eeb
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@20529eeb
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.484327340892773
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@7de9760e
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@7de9760e
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.4723523779045144
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@7d52f4ec
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@7d52f4ec
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.598746541506985
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@67916b69
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@67916b69
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5985976859730453
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@60da6d8c
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@60da6d8c
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.6192696773499162
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@1f52571e
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@1f52571e
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5588503991816922
+INFO  [Thread-3] 2018-08-25 22:38:42,709 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@287c957d
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@287c957d
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5165971038282063
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@6290908c
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@6290908c
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5669570881679227
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@5a5ddc45
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@5a5ddc45
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.6024784268906871
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@52af7ec6
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@52af7ec6
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.6243503023098301
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@2b5a3b31
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@2b5a3b31
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5352438404923963
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@2d4b8449
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@2d4b8449
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5599400443844712
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession - I'm Inquiring=======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@2973b8bf
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@2973b8bf
+INFO  [Thread-3] 2018-08-25 22:38:42,719 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5536737891507456
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@3b8cb4c4
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@3b8cb4c4
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.4874854475738932
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@42b0144c
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@42b0144c
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.509416991824292
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@1481d34d
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@1481d34d
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.48319649239129914
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@3a613fa9
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@3a613fa9
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.4318281469048013
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@1df95d49
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@1df95d49
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.6111496767107004
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@758965e2
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@758965e2
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5905581882614963
+INFO  [Thread-3] 2018-08-25 22:38:42,734 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@5e9465de
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@5e9465de
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5567108501545328
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@41786372
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@41786372
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.6108137207313848
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@30877dbc
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@30877dbc
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.37189832297634706
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@31a1cd04
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@31a1cd04
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5652571482301897
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@1d7437f9
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@1d7437f9
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5064044452578206
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@9991f6
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@9991f6
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5898169659710432
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@5bd593b6
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@5bd593b6
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5717935786966555
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@1b087056
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@1b087056
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5152989386581829
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@6e38de14
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@6e38de14
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.6248534897681431
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@3d1c6958
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@3d1c6958
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.48041546047366096
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@40ff9bbe
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@40ff9bbe
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.6130674375035386
+INFO  [Thread-3] 2018-08-25 22:38:42,750 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@37d0dccd
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@37d0dccd
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5606648801577166
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@12f851f
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@12f851f
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5579023115376234
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - I'm Inquiring=======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@39e8a009
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@39e8a009
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5874227894883354
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@573087b7
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@573087b7
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5607914491809668
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@7fac26de
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@7fac26de
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.533688390489275
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@30c9ffdf
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@30c9ffdf
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.6192366697893559
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@6916eba4
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@6916eba4
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5721626028430862
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@1515af78
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@1515af78
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.6313552459540932
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@34481107
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@34481107
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.6008376321495903
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@12d68a90
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@12d68a90
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.48034468056786106
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,766 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@751d5f2c
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@751d5f2c
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5599287272774256
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@74749218
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@74749218
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.587304982924511
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - I'm Inquiring=======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@1dc0075c
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@1dc0075c
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.6164925164546027
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@625e9419
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@625e9419
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.4401929329480384
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@64915406
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@64915406
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.6292531611597781
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@e8ee099
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@e8ee099
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5858429603250787
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@3b46a84f
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@3b46a84f
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5439704732310956
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@6fe164b6
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@6fe164b6
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5423747972630041
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@30d42763
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@30d42763
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5569801374665763
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - I'm Inquiring=======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@200a3102
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@200a3102
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5327379172037477
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@28c29760
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@28c29760
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.6134179682777133
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@2da23cc7
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@2da23cc7
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5924614131920689
+INFO  [Thread-3] 2018-08-25 22:38:42,781 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@7ecb54ed
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@7ecb54ed
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.47199719214573344
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@aaa7d68
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@aaa7d68
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.6484823374888495
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@16687444
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@16687444
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.6426860197185267
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@55283151
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@55283151
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.4735069041515531
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@4f902f42
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@4f902f42
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.64943967201995
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@667ac6b7
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@667ac6b7
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.6620638084391425
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession -  Imitation zone
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - The imitation interactee ismoshproject.agents.mode.PublicTransport@629d24f9
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@33a0a639
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@33a0a639
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.6105582993982565
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@4cc2df32
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@4cc2df32
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.6419859511367848
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@732802a8
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@732802a8
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5907442681061018
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@434ca08f
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@434ca08f
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.6290804878646293
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@7964c717
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@7964c717
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5415000760911728
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@26be2228
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@26be2228
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.4808536086191692
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@1a8c6cea
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@1a8c6cea
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.6182042104466944
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,797 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@6b4a11de
+INFO  [Thread-3] 2018-08-25 22:38:42,812 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@6b4a11de
+INFO  [Thread-3] 2018-08-25 22:38:42,812 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.6421191156902741
+INFO  [Thread-3] 2018-08-25 22:38:42,812 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,812 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,812 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,812 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@5baea559
+INFO  [Thread-3] 2018-08-25 22:38:42,812 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@5baea559
+INFO  [Thread-3] 2018-08-25 22:38:42,812 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.6257560902344499
+INFO  [Thread-3] 2018-08-25 22:38:42,812 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,812 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,812 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,812 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@648bc2c3
+INFO  [Thread-3] 2018-08-25 22:38:42,812 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@648bc2c3
+INFO  [Thread-3] 2018-08-25 22:38:42,812 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.591669755883589
+INFO  [Thread-3] 2018-08-25 22:38:42,812 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,812 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,812 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,812 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@2f513cc
+INFO  [Thread-3] 2018-08-25 22:38:42,812 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@2f513cc
+INFO  [Thread-3] 2018-08-25 22:38:42,812 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5785998924829231
+INFO  [Thread-3] 2018-08-25 22:38:42,812 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,812 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,812 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,812 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@2936199e
+INFO  [Thread-3] 2018-08-25 22:38:42,812 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@2936199e
+INFO  [Thread-3] 2018-08-25 22:38:42,812 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5694118964337868
+INFO  [Thread-3] 2018-08-25 22:38:42,812 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@1fcc88e6
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@1fcc88e6
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5487296391543581
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@734d8eb5
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@734d8eb5
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.40343728968637815
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@75d6a96
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@75d6a96
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5257300959020015
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@1402504d
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@1402504d
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.41740635600845083
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@4fb9cf4
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@4fb9cf4
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5361595713607635
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@733b911e
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@733b911e
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.6248007914624811
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@400fcf69
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@400fcf69
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.42015807991105575
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@5101504d
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@5101504d
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5995106060590436
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@3355cdbb
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@3355cdbb
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.618511739221563
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@1c0918f1
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@1c0918f1
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.43054413010582165
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@134f7188
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@134f7188
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5442543936316749
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@2bf101
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@2bf101
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.584715055470284
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,819 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@5899c7cb
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@5899c7cb
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5363398220048662
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@7d0b3cfe
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@7d0b3cfe
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5972173816265306
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@14ad980d
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@14ad980d
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5446050505650429
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@310e6021
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@310e6021
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.617299231084665
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@99bff
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@99bff
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.4537302636338065
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@5c388921
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@5c388921
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.6015886131418546
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession -  Imitation zone
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@3083c270
+INFO  [Thread-3] 2018-08-25 22:38:42,835 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@3083c270
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5685800551327301
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@204e4c0a
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@204e4c0a
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5751348170139544
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@6f5106e8
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@6f5106e8
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5809964183878087
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@55ec7ce0
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@55ec7ce0
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.6232483922407873
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@4acb799e
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@4acb799e
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5360194627291113
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@50910f85
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@50910f85
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5091806039614344
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@f377722
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@f377722
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.6248018902460286
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,872 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@1772bc86
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@1772bc86
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5283244475837501
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@3910761e
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@3910761e
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.42055987054148347
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@5863df47
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@5863df47
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.598488366974983
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@6b1f3d3
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@6b1f3d3
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.348726999861518
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@28203283
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@28203283
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5982337808638781
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@20384dcf
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@20384dcf
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5247042321002207
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@2f13cd66
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@2f13cd66
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5753531769090917
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@1473c3aa
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@1473c3aa
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5630777532905633
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@153df40
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@153df40
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.632660195127337
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@c30cd06
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@c30cd06
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.6176299573050407
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@7d83ea14
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@7d83ea14
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.4475223976164344
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@2cac126c
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@2cac126c
+INFO  [Thread-3] 2018-08-25 22:38:42,888 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.6219941042236384
+INFO  [Thread-3] 2018-08-25 22:38:42,903 repast.simphony.batch.ssh.LocalSession - I'm Inquiring=======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,903 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,903 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@10085e17
+INFO  [Thread-3] 2018-08-25 22:38:42,903 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@10085e17
+INFO  [Thread-3] 2018-08-25 22:38:42,903 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.4896458051056622
+INFO  [Thread-3] 2018-08-25 22:38:42,903 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,903 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,903 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,903 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@595b5883
+INFO  [Thread-3] 2018-08-25 22:38:42,903 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@595b5883
+INFO  [Thread-3] 2018-08-25 22:38:42,903 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5404590211166105
+INFO  [Thread-3] 2018-08-25 22:38:42,903 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,903 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,903 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,903 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@1955a54
+INFO  [Thread-3] 2018-08-25 22:38:42,903 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PublicTransport@1955a54
+INFO  [Thread-3] 2018-08-25 22:38:42,903 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.6061264803424762
+INFO  [Thread-3] 2018-08-25 22:38:42,903 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,903 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,903 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,903 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@24dd1f91
+INFO  [Thread-3] 2018-08-25 22:38:42,903 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@24dd1f91
+INFO  [Thread-3] 2018-08-25 22:38:42,903 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5517346761249734
+INFO  [Thread-3] 2018-08-25 22:38:42,903 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,903 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,903 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,903 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@57337c63
+INFO  [Thread-3] 2018-08-25 22:38:42,903 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@57337c63
+INFO  [Thread-3] 2018-08-25 22:38:42,903 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5031739301511983
+INFO  [Thread-3] 2018-08-25 22:38:42,903 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,903 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,903 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,919 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@51fce1a5
+INFO  [Thread-3] 2018-08-25 22:38:42,919 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@51fce1a5
+INFO  [Thread-3] 2018-08-25 22:38:42,919 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.4960155883959525
+INFO  [Thread-3] 2018-08-25 22:38:42,919 repast.simphony.batch.ssh.LocalSession - I will repeat my last choice process
+INFO  [Thread-3] 2018-08-25 22:38:42,919 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,919 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,919 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@57f9af8d
+INFO  [Thread-3] 2018-08-25 22:38:42,919 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@57f9af8d
+INFO  [Thread-3] 2018-08-25 22:38:42,919 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5196207649754016
+INFO  [Thread-3] 2018-08-25 22:38:42,919 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,919 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,919 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,919 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@42c98351
+INFO  [Thread-3] 2018-08-25 22:38:42,919 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@42c98351
+INFO  [Thread-3] 2018-08-25 22:38:42,919 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.3609812174716742
+INFO  [Thread-3] 2018-08-25 22:38:42,919 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,919 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,919 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,919 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@47b12923
+INFO  [Thread-3] 2018-08-25 22:38:42,919 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Cycle@47b12923
+INFO  [Thread-3] 2018-08-25 22:38:42,919 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.49856614168009206
+INFO  [Thread-3] 2018-08-25 22:38:42,919 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,919 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,919 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,919 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@dbe293f
+INFO  [Thread-3] 2018-08-25 22:38:42,919 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.PersonalVehicle@dbe293f
+INFO  [Thread-3] 2018-08-25 22:38:42,919 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.5873512563620803
+INFO  [Thread-3] 2018-08-25 22:38:42,919 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,919 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,919 repast.simphony.batch.ssh.LocalSession - Tick:100
+INFO  [Thread-3] 2018-08-25 22:38:42,919 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@75bf4990
+INFO  [Thread-3] 2018-08-25 22:38:42,919 repast.simphony.batch.ssh.LocalSession -  The mode is :moshproject.agents.mode.Walking@75bf4990
+INFO  [Thread-3] 2018-08-25 22:38:42,935 repast.simphony.batch.ssh.LocalSession - Mode Satisfaction0.4870442074971504
+INFO  [Thread-3] 2018-08-25 22:38:42,935 repast.simphony.batch.ssh.LocalSession - I'm, Optimising
+INFO  [Thread-3] 2018-08-25 22:38:42,935 repast.simphony.batch.ssh.LocalSession - =======================================
+INFO  [Thread-3] 2018-08-25 22:38:42,935 repast.simphony.batch.ssh.LocalSession - Tick:100

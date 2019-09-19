@@ -1,0 +1,225 @@
+package moshproject.agents.intervener;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import moshproject.agents.passenger.Walker;
+import moshproject.agents.mode.PublicTransport;
+import moshproject.agents.passenger.Cyclist;
+import moshproject.agents.passenger.Passenger;
+import moshproject.agents.passenger.PersonalVehicleUser;
+import moshproject.agents.passenger.PublicTransportUser;
+import repast.simphony.engine.environment.RunState;
+import repast.simphony.parameter.Parameter;
+import repast.simphony.space.continuous.ContinuousSpace;
+import repast.simphony.space.grid.Grid;
+
+public class Intervener {
+	private ContinuousSpace<Object> space;
+	private Grid<Object> grid;
+	
+	//Intervention intervention;
+	List<Passenger> passengers;
+	//Passenger passes;
+	double reliability;
+	double journeyTime;
+	double valueForMoney;
+	double mobility;
+	double security;
+	double convenience;
+	double comfort;
+	
+	//Passenger passe;
+	public Intervener(ContinuousSpace<Object> space, Grid<Object> grid) {	
+		this.space = space;
+		this.grid = grid;
+		this.reliability=0;
+		this.journeyTime=0;
+		this.valueForMoney=0;
+		this.mobility=0;
+		this.security=0;
+		this.convenience=0;
+		this.comfort=0;
+	}	
+	public void initialize() {
+		// TODO Auto-generated method stub		
+	}	
+	public List<Passenger> getAllPassengers() {
+		Iterable<Passenger> passenger = RunState.getInstance().getMasterContext().getObjects(Passenger.class);
+		passengers = new ArrayList<Passenger>();
+			for(Passenger passes: passenger){
+			passengers.add(passes);
+			}
+		return passengers;
+	}
+////Gather Cyclists	
+	public List<Passenger> getCyclists() {
+		Iterable<Passenger> passenger = RunState.getInstance().getMasterContext().getObjects(Passenger.class);
+		passengers = new ArrayList<Passenger>();
+			for(Passenger passes: passenger){
+				if((passes.passengerType instanceof Cyclist))
+			passengers.add(passes);
+			}
+		return passengers;
+	}
+	
+////Gather Public Transport USers
+	public List<Passenger> getPublicTransUsers() {
+		Iterable<Passenger> passenger = RunState.getInstance().getMasterContext().getObjects(Passenger.class);
+		passengers = new ArrayList<Passenger>();
+			for(Passenger passes: passenger){
+				if((passes.passengerType instanceof PublicTransportUser))
+			passengers.add(passes);
+			}
+		return passengers;
+	}
+////Gather Walkers
+	public List<Passenger> getWalkers(){
+		Iterable<Passenger> passenger = RunState.getInstance().getMasterContext().getObjects(Passenger.class);
+		passengers = new ArrayList<Passenger>();
+			for(Passenger passes: passenger){
+				if((passes.passengerType instanceof Walker))
+			passengers.add(passes);
+			}
+		return passengers;
+	}
+	
+////Gather PrivateUsers
+	public List<Passenger> getPrivateUsers(){
+		Iterable<Passenger> passenger = RunState.getInstance().getMasterContext().getObjects(Passenger.class);
+		passengers = new ArrayList<Passenger>();
+			for(Passenger passes: passenger){
+				if((passes.passengerType instanceof PersonalVehicleUser))
+			passengers.add(passes);
+			}
+		return passengers;
+	}
+	
+	//@ScheduledMethod(start =1, interval=1)	
+	public void applyIntervention(){	
+		getAllPassengers();		
+		for ( Passenger p : passengers ) {
+			p.getPrefferedMode().setValueToAttribute("careForNeed", evaluateCaterForNeed(p));
+			p.getPrefferedMode().setValueToAttribute("informationAvailability",evaluateInformationAvailability(p));
+			p.getPrefferedMode().setValueToAttribute("security",evaluateSecurity(p));
+			p.getPrefferedMode().setValueToAttribute("costs",evaluateCosts(p));
+		}
+			
+	}
+	
+	//@ScheduledMethod(start =1, interval=1)
+	public void reset(){	
+		reliability=0;
+		journeyTime=0;
+		valueForMoney=0;
+		mobility=0;
+		security=0;
+		convenience=0;
+		comfort=0;
+	}
+/// Display labels		
+	@Parameter(displayName="Reliability", usageName="Reliability")
+	public double getReliability() {
+		return reliability;
+	}
+	public void setNewReliability(double newReliability) {
+		this.reliability= newReliability;				
+	}
+///	
+	@Parameter(displayName=" Journey Time", usageName="JourneyTime")
+	public double getJourneyTime() {
+		return journeyTime;
+	}
+	public void setNewJourneyTime(double newJourneyTime) {
+		this.journeyTime = newJourneyTime;
+	}
+///
+	@Parameter(displayName="Value For Money", usageName="Value For Money")
+	public double getValueForMoney() {
+		return valueForMoney;
+	}
+	public void setNewValueForMoney(double newValueForMoney) {
+		this.valueForMoney = newValueForMoney;
+	}
+///
+	@Parameter(displayName=" Security", usageName="Security")
+	public double getSecurity() {
+		return security;
+	}
+	public void setNewSecurity(double newSecurity) {
+		this.security = newSecurity;
+	}
+///
+	@Parameter(displayName=" Mobility", usageName="Mobility")
+	public double getPersonalMobility() {
+		return mobility;
+	}
+	public void setNewMobility(double newMobility) {
+		this.mobility = newMobility;
+	}
+///	
+	@Parameter(displayName="Convenience", usageName="Convenience")
+	public double getConvenience() {
+		return convenience;
+	}
+	public void setNewConvenience(double newConvenience) {
+		this.convenience = newConvenience;
+	}
+///	
+	@Parameter(displayName="Comfort", usageName="Comfort")
+	public double getComfort() {
+		return comfort;
+	}
+	public void setNewComfort(double newComfort) {
+		this.comfort = newComfort;
+	}
+///
+	
+	public double evaluateCaterForNeed(Passenger p) {
+		double initialIntervention=0; double careForNeedIntervention=0;
+//		if(p.getPrefferedMode() instanceof ModeTrain){				
+//			double	intervenerCaterForNeed=getCaterForNeed();				
+//			initialIntervention = intervenerCaterForNeed/10;
+//			careForNeedIntervention = (p.getCaterForNeed()+initialIntervention);		
+//		}			
+		return careForNeedIntervention;
+	}
+	
+	public double evaluateInformationAvailability(Passenger p){			
+		double initialIntervention=0; double inforAvailabilityIntervention=0;		
+//			if(p.getPrefferedMode() instanceof ModeTrain){				
+//				double	intervenerInforAvailability=getInforAvailability();					
+//						initialIntervention = intervenerInforAvailability/10;			
+//					inforAvailabilityIntervention = (p.getInformationAvailability()+initialIntervention);		
+//			}						
+		return inforAvailabilityIntervention;	
+	}
+	public double evaluateSecurity(Passenger p){			
+		double initialIntervention=0; double securityIntervention=0;		
+//			if(p.getPrefferedMode() instanceof ModeTrain){				
+//				double	intervenerSecurity=getSecurity();					
+//						initialIntervention = intervenerSecurity/10;			
+//					securityIntervention = (p.getSecurity()+initialIntervention);		
+//			}						
+		return securityIntervention;	
+	}
+	
+	public double evaluateCosts(Passenger p){			
+		double initialIntervention=0; double costsIntervention=0;		
+//			if(p.getPrefferedMode() instanceof ModeCar){				
+//				double	intervenerCosts=getParkingspaceTax()+getFares();					
+//						initialIntervention = intervenerCosts/10;						
+//					costsIntervention = (p.getCosts()-initialIntervention);
+//					if(costsIntervention<0){
+//						costsIntervention=0.01;
+//					}					
+//			}	else if (p.getPrefferedMode() instanceof ModeTrain){
+//				double	intervenerCosts=getFares();					
+//				initialIntervention = intervenerCosts/10;						
+//			costsIntervention = (p.getCosts()+initialIntervention);				
+//			}
+			return costsIntervention;	
+		}
+
+	
+}

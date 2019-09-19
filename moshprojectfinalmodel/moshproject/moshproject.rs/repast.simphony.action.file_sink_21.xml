@@ -1,0 +1,15 @@
+<repast.simphony.data2.engine.FileSinkDescriptor>
+  <name>AllModeSatisafction File Sink</name>
+  <dataSet>AllModeSatisfaction Data Set</dataSet>
+  <delimiter>,</delimiter>
+  <format>TABULAR</format>
+  <sourceIds class="linked-hash-set">
+    <string>tick</string>
+    <string>CycleModeSatisfaction</string>
+    <string>PrivateModeSatisfaction</string>
+    <string>PublicTransModeSatisfaction</string>
+    <string>WalkingSatisfaction</string>
+  </sourceIds>
+  <fileName>AllMode SatisafctionOutput.txt</fileName>
+  <addTimeStamp>true</addTimeStamp>
+</repast.simphony.data2.engine.FileSinkDescriptor>

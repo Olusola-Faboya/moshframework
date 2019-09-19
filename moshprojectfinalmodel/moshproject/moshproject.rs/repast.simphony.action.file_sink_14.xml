@@ -1,0 +1,15 @@
+<repast.simphony.data2.engine.FileSinkDescriptor>
+  <name>AllModeAffective Count File Sink</name>
+  <dataSet>AllModeAffectiveCount Set</dataSet>
+  <delimiter>,</delimiter>
+  <format>TABULAR</format>
+  <sourceIds class="linked-hash-set">
+    <string>tick</string>
+    <string>Cycle Affective Counts</string>
+    <string>Private Affective Counts</string>
+    <string>Public Affective Counts</string>
+    <string>Walking Affective Counts</string>
+  </sourceIds>
+  <fileName>AllModeAffective.txt</fileName>
+  <addTimeStamp>true</addTimeStamp>
+</repast.simphony.data2.engine.FileSinkDescriptor>

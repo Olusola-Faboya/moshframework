@@ -1,0 +1,103 @@
+package moshproject.agents.passenger;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import moshproject.agents.mode.Mode;
+import moshproject.agents.mode.PersonalVehicle;
+import moshproject.agents.mode.PublicTransport;
+import repast.simphony.random.RandomHelper;
+import repast.simphony.space.continuous.ContinuousSpace;
+import repast.simphony.space.grid.Grid;
+
+public class Passenger {
+	private ContinuousSpace<Object> space;
+	private Grid<Object> grid;
+	
+	List<Double> modeSatisfactionList = new ArrayList<Double>();
+	List<Mode> prefferedModeList = new ArrayList<Mode>();
+	
+	public Passengers passengerType;
+	public Mode prefferedMode;
+	
+	private boolean socialAgreeability; 
+	private double socialSatisfaction;
+	private double assumedMaximumDifference;
+	private double uncertaintyTolerance;
+	private double aspirationLevel;
+	private double uncertainty;
+	private double previousExperience;
+	private double modeSatisfaction;
+	
+	private double physicalConsideration;
+	private double cognitiveConsideration;
+	private double affectiveConsideration;
+	
+	public Passenger(ContinuousSpace<Object> space, Grid<Object> grid) {
+		this.space = space;
+		this.grid = grid;	
+		
+		socialAgreeability =false; 
+		socialSatisfaction =0.0;
+		assumedMaximumDifference =0.5;
+		previousExperience=0.0;
+	}
+	
+	public void initialize(){
+		uncertaintyTolerance = RandomHelper.nextDoubleFromTo(0.1, 0.9);
+		aspirationLevel = RandomHelper.nextDoubleFromTo(0.2, 1.0);
+		uncertainty = passengerType.allUncertainty();
+		
+	}
+	
+	public void updatePreviousExperience(){
+		if(modeSatisfactionList.size()==0){
+			previousExperience=0.0;
+		}else{													
+			previousExperience=	modeSatisfactionList.get(modeSatisfactionList.size()-1);						
+		}
+	}
+	
+	
+	private void updateTransition(){
+		if (prefferedMode instanceof PublicTransport){
+			modeSatisfaction= personalSatisfaction();
+					
+		}else if (prefferedMode instanceof PersonalVehicle){
+			modeSatisfaction= personalSatisfaction();
+		}
+	}
+
+	
+	// This section evaluate passengers satisfaction on the factors
+			private double personalSatisfaction() {	
+				if (prefferedMode instanceof PersonalVehicle){
+					updatePhysicalConsideration();
+					updateCognitiveConsideration();
+				//	updateAffectiveConsideration();
+				} else if (prefferedMode instanceof PublicTransport){
+					updatePhysicalConsideration();
+					updateCognitiveConsideration();
+			//		updateAffectiveConsideration();
+				}
+			//	fuzzySatisfaction = evaluateSatisfaction.getTip(physicalConsideration, cognitiveConsideration,affectiveConsideration);
+		
+			//	return fuzzySatisfaction;
+			}
+			
+			private void updatePhysicalConsideration() {
+				if (prefferedMode instanceof PersonalVehicle)	{				
+					physicalConsideration= prefferedMode.getValueOfAttribute("physicalConsideration");				
+				}else if (prefferedMode instanceof PublicTransport){
+					physicalConsideration= prefferedMode.getValueOfAttribute("physicalConsideration");
+				}				
+			}
+			
+			private void updateCognitiveConsideration() {
+				if (prefferedMode instanceof PersonalVehicle)	{				
+					cognitiveConsideration= prefferedMode.getValueOfAttribute("physicalConsideration");				
+				}else if (prefferedMode instanceof PublicTransport){
+					cognitiveConsideration= prefferedMode.getValueOfAttribute("physicalConsideration");
+				}				
+			}
+}

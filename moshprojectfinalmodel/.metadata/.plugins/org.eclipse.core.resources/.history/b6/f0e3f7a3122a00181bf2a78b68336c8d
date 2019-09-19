@@ -1,0 +1,230 @@
+package moshproject.agent.mode.attributes;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Vector;
+
+import moshproject.agents.mode.Cycle;
+import moshproject.agents.mode.Mode;
+import moshproject.agents.mode.PersonalVehicle;
+import moshproject.agents.mode.PublicTransport;
+import moshproject.agents.mode.Walking;
+import moshproject.agents.passenger.Passenger;
+import moshproject.common.Constants;
+import moshproject.common.FuzzyDecisionVariables;
+//import moshproject.common.FuzzyDecisionVariables;
+import moshproject.fuzzycollections.ThreeVariablesDecisionGenerator;
+
+	public class InfoReliability {
+		Passenger passenger;
+		Mode prefferedMode;
+		FuzzyDecisionVariables pca; 
+		
+		private double modeReliabilityPhysical;
+		private double modeReliabilityCognitive;
+		private double publicModeReliabilityCognitive;
+		private double privateModeReliabilityCognitive;
+		private double modeReliabilityAffective;
+		private double privateModeReliabilityAffective;
+		private double publicModeReliabilityAffective;
+		private double modeReliability;
+		private ArrayList<Double> reliabilityCognitiveList;
+		private ArrayList<Double> reliabilityPhysicalList;
+		private ArrayList<Double> reliabiityAffectiveList;
+		private double privateModeReliability;
+		private double publicModeReliability;
+		ThreeVariablesDecisionGenerator  evaluateThreeVariablesSatisfaction;
+		Map<String, List<Double>> otherVariables;		
+		ArrayList<Double> weigthValues;	
+		private Vector modeReliabilityDecisionVariables;
+		private ArrayList<Double> reliabilityUnpleasentCognitiveList;
+		private ArrayList<Double> reliabilityNeitherNorPleasantCognitiveList;
+		private ArrayList<Double> reliabilityPleasantCognitiveList;
+		
+
+		public  InfoReliability(Mode prefferedMode){
+			this.prefferedMode = prefferedMode;						
+			pca= new FuzzyDecisionVariables();
+			updateModeReliability() ;
+		}
+			
+			private double updateModeReliabilityPhysical() {			
+				return modeReliabilityPhysical = prefferedMode.setValueToAttribute(Constants.infoReliabilityPhysical, 0);																	
+			}			
+			
+			public double updateModeReliabilityCognitive() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					modeReliabilityCognitive = prefferedMode.getValueOfAttribute(Constants.infoReliabilityPerception);				
+				}else if (prefferedMode instanceof PublicTransport){
+					modeReliabilityCognitive = prefferedMode.getValueOfAttribute(Constants.infoReliabilityPerception);											
+				}else if (prefferedMode instanceof Cycle){
+					modeReliabilityCognitive = prefferedMode.getValueOfAttribute(Constants.infoReliabilityPerception);								
+				}else if (prefferedMode instanceof Walking){
+					modeReliabilityCognitive = prefferedMode.getValueOfAttribute(Constants.infoReliabilityPerception);													
+				}			
+				return modeReliabilityCognitive;			
+			}
+			
+			public double getModeReliabilityCognitive() {
+				return modeReliabilityCognitive;
+			}
+			
+			public double getPublicModeReliabilityCognitive(){
+				if(prefferedMode instanceof PublicTransport){
+					publicModeReliabilityCognitive = this.getModeReliabilityCognitive();
+				}				
+				return publicModeReliabilityCognitive;
+			}
+			
+			public double getPrivateModeReliabilityCognitive(){
+				if(prefferedMode instanceof PersonalVehicle){
+					privateModeReliabilityCognitive = this.getModeReliabilityCognitive();
+				}				
+				return privateModeReliabilityCognitive;
+			}
+			
+			public double updateModeReliabilityAffective() {			
+				if (prefferedMode instanceof PersonalVehicle)	{
+					modeReliabilityAffective = prefferedMode.getValueOfAttribute(Constants.infoReliabilityAffective);				
+				}else if (prefferedMode instanceof PublicTransport){
+					modeReliabilityAffective = prefferedMode.getValueOfAttribute(Constants.infoReliabilityAffective);											
+				}else if (prefferedMode instanceof Cycle){
+					modeReliabilityAffective = prefferedMode.getValueOfAttribute(Constants.infoReliabilityAffective);								
+				}else if (prefferedMode instanceof Walking){
+					modeReliabilityAffective = prefferedMode.getValueOfAttribute(Constants.infoReliabilityAffective);													
+				}				
+				return modeReliabilityAffective;			
+			}
+			
+			public double getModeReliabilityAffective() {
+				return modeReliabilityAffective;
+			}
+			
+			public double getPrivateModeReliabilityAffective(){
+				if(prefferedMode instanceof PersonalVehicle){
+					privateModeReliabilityAffective = this.getModeReliabilityAffective();
+				}				
+				return privateModeReliabilityAffective;
+			}
+			
+			public double getPublicModeReliabilityAffective(){
+				if(prefferedMode instanceof PublicTransport){
+					publicModeReliabilityAffective = this.getModeReliabilityAffective();
+				}				
+				return publicModeReliabilityAffective;
+			}
+			
+//			public double updateModeReliability() {	
+//				evaluateThreeVariablesSatisfaction= new ThreeVariablesDecisionGenerator();			
+//				if(prefferedMode instanceof PersonalVehicle){
+//					updateModeReliabilityAffective();
+//					updateModeReliabilityCognitive();
+//					updateModeReliabilityPhysical();
+//				}else if (prefferedMode instanceof PublicTransport){
+//					updateModeReliabilityAffective();
+//					updateModeReliabilityCognitive();
+//					updateModeReliabilityPhysical();
+//				}
+//				modeReliability= evaluateThreeVariablesSatisfaction.getTip(updateModeReliabilityPhysical(),updateModeReliabilityCognitive(),updateModeReliabilityAffective());
+//				
+//				return modeReliability;
+//			}
+			
+			public double getModeReliability() {
+				return modeReliability;
+			}
+			
+			public double getPrivateModeReliability(){
+				if(prefferedMode instanceof PersonalVehicle){
+					privateModeReliability = this.getModeReliability();
+				}
+		//		System.out.println("private Mode reliability is:"+privateModeReliability);
+				return (double) privateModeReliability;
+			}			
+			public double getPublicModeReliability(){
+				if(prefferedMode instanceof PublicTransport){
+					publicModeReliability = this.getModeReliability();
+				}
+		//		System.out.println("public Mode Realiability is:"+publicModeReliability);
+				return (double) publicModeReliability;
+			}
+			
+			
+	////////The Fuzzy System Version
+			public Vector modeReliabilityValues() {	
+				evaluateThreeVariablesSatisfaction= new ThreeVariablesDecisionGenerator();			
+				if(prefferedMode instanceof PersonalVehicle){
+					updateModeReliabilityAffective();
+					updateModeReliabilityCognitive();
+					updateModeReliabilityPhysical();
+				}else if (prefferedMode instanceof PublicTransport){
+					updateModeReliabilityAffective();
+					updateModeReliabilityCognitive();
+					updateModeReliabilityPhysical();
+				}				
+				return modeReliabilityDecisionVariables =	evaluateThreeVariablesSatisfaction.getTip(updateModeReliabilityPhysical(),updateModeReliabilityCognitive(),updateModeReliabilityAffective());
+			}
+			
+
+			public Vector getModeReliabilityDecisionVariables() {
+				return modeReliabilityDecisionVariables;
+			}
+
+			public double updateModeReliability(){				
+				modeReliabilityValues();	
+				modeReliability =(double) getModeReliabilityDecisionVariables().get(0);
+				System.out.println( " The Mode Reliability is:"+ modeReliability);		
+				return modeReliability ;
+			}	
+////
+			public ArrayList<Double> firedModeReliabilityCognitive() {
+				reliabilityCognitiveList = new ArrayList<>();
+				otherVariables = (Map<String, List<Double>>) getModeReliabilityDecisionVariables().get(1);
+				reliabilityCognitiveList = (ArrayList<Double>)pca.uNboundledMapPCACognitive(otherVariables);
+				System.out.println("The Reliability Cognitive Values:");
+				for (Double antecedents :reliabilityCognitiveList){
+					System.out.println(antecedents);
+				} 				 
+				return reliabilityCognitiveList	;			
+			}
+				
+///////
+			public ArrayList<Double> firedModeReliabilityUnpleasantCognitive() {				
+				reliabilityUnpleasentCognitiveList = new ArrayList<>();
+				otherVariables = (Map<String, List<Double>>) getModeReliabilityDecisionVariables().get(1);				
+				reliabilityUnpleasentCognitiveList = (ArrayList<Double>)pca.uNboundledMapUnpleasantCognitive(otherVariables);
+				System.out.println("The Unpleasant Reliability Cognitive Values:");
+				for (Double antecedents :reliabilityUnpleasentCognitiveList){
+					System.out.println(antecedents);
+				} 			 
+				return reliabilityUnpleasentCognitiveList	;			
+			}
+		
+			public ArrayList<Double> firedModeReliabilityNeitherNorPleasantCognitive() {				
+				reliabilityNeitherNorPleasantCognitiveList = new ArrayList<>();
+				otherVariables = (Map<String, List<Double>>) getModeReliabilityDecisionVariables().get(1);				
+				reliabilityNeitherNorPleasantCognitiveList = (ArrayList<Double>)pca.uNboundledMapNeitherNorPleasantCognitive(otherVariables);
+				System.out.println("The Neither pleasant nor unpleasant Reliability Cognitive Values:");
+				for (Double antecedents :reliabilityNeitherNorPleasantCognitiveList){
+					System.out.println(antecedents);
+				} 				 
+				return reliabilityNeitherNorPleasantCognitiveList	;			
+			}
+			
+			public ArrayList<Double> firedModeReliabilityPleasantCognitive() {				
+				reliabilityPleasantCognitiveList = new ArrayList<>();
+				otherVariables = (Map<String, List<Double>>) getModeReliabilityDecisionVariables().get(1);				
+				reliabilityPleasantCognitiveList = (ArrayList<Double>)pca.uNboundledMapPleasantCognitive(otherVariables);
+				System.out.println("The Pleasant Reliability Cognitive Values:");
+				for (Double antecedents :reliabilityPleasantCognitiveList){
+					System.out.println(antecedents);
+				} 				 
+				return reliabilityPleasantCognitiveList	;			
+			}
+				
+				
+	}
+
+		

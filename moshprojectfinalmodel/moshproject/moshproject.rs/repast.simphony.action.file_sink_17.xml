@@ -1,0 +1,23 @@
+<repast.simphony.data2.engine.FileSinkDescriptor>
+  <name>AllModePleasantLevelAPC Count File Sink</name>
+  <dataSet>AllModePleasantLevelAPCCount Data Set</dataSet>
+  <delimiter>,</delimiter>
+  <format>TABULAR</format>
+  <sourceIds class="linked-hash-set">
+    <string>tick</string>
+    <string>Cycle Pleasant Affective count</string>
+    <string>Private Pleasant Affective Count</string>
+    <string>Public Pleasant Affective Count</string>
+    <string>Walking Pleasant Affective Count</string>
+    <string>Cycle Pleasant Physical count</string>
+    <string>Private Pleasant Physical count</string>
+    <string>Public Pleasant Physical count</string>
+    <string>Walking Pleasant Physical count</string>
+    <string>Cycle Pleasant Cognitive count</string>
+    <string>Private Pleasant Cognitive Count</string>
+    <string>Public Pleasant Cognitive Count</string>
+    <string>Walking Pleasant Cognitive Count</string>
+  </sourceIds>
+  <fileName>AllModePleasantAffective Count.txt</fileName>
+  <addTimeStamp>true</addTimeStamp>
+</repast.simphony.data2.engine.FileSinkDescriptor>

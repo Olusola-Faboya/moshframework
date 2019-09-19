@@ -1,0 +1,177 @@
+package moshproject.agents.intervener;
+
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.Box;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JSlider;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+
+import com.jogamp.newt.event.KeyEvent;
+
+public class InterventionPanel extends JPanel{
+
+	public InterventionPanel(Intervener intervener){		
+		setLayout(new GridBagLayout());
+		GridBagConstraints c = new GridBagConstraints();			
+		
+		JLabel label;
+		JCheckBox checkBox;		
+		c.fill =GridBagConstraints.HORIZONTAL;
+		c.gridx=0;
+		c.gridy=0;		
+		checkBox =new JCheckBox("Reliability:");
+		checkBox.setMnemonic(KeyEvent.VK_R);
+		checkBox.setSelected(true);
+		add(checkBox, c);
+			
+		c.fill =GridBagConstraints.HORIZONTAL;
+		c.gridx =1;
+		c.gridy =0;
+		checkBox =new JCheckBox("Journey For Money:");
+		checkBox.setMnemonic(KeyEvent.VK_J);
+		checkBox.setSelected(true);
+		add(checkBox, c);	
+		
+		c.fill =GridBagConstraints.HORIZONTAL;
+		c.gridx =0;
+		c.gridy =1;
+		checkBox =new JCheckBox("Security:");
+		checkBox.setMnemonic(KeyEvent.VK_S);
+		checkBox.setSelected(true);
+		add(checkBox, c);
+		
+		c.fill =GridBagConstraints.HORIZONTAL;
+		c.gridx =1;
+		c.gridy =1;
+		checkBox =new JCheckBox("Personality Mobility:");
+		checkBox.setMnemonic(KeyEvent.VK_M);
+		checkBox.setSelected(true);
+		add(checkBox, c);
+		
+		c.fill =GridBagConstraints.HORIZONTAL;
+		c.gridx =0;
+		c.gridy =2;
+		checkBox =new JCheckBox("Convenience:");
+		checkBox.setMnemonic(KeyEvent.VK_C);
+		checkBox.setSelected(true);
+		add(checkBox, c);
+		
+		c.fill =GridBagConstraints.HORIZONTAL;
+		c.gridx =1;
+		c.gridy =2;
+		checkBox =new JCheckBox("Comfort:");
+		checkBox.setMnemonic(KeyEvent.VK_F);
+		checkBox.setSelected(true);
+		add(checkBox, c);
+		
+		
+/////		
+		JButton testButton = new JButton("TestButton");
+		Box buttonBox =Box.createHorizontalBox();
+		buttonBox.add(testButton);
+		testButton.add(Box.createHorizontalStrut(20));
+		add(testButton,c);
+		
+		
+		JButton generalInterventionButton = new JButton("All Passengers'Interventions");
+		c.gridx=0;
+		c.gridy=3;
+		c.gridwidth = 1;
+		c.gridheight=1;
+		generalInterventionButton.addActionListener( new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				intervener.applyIntervention();
+			}			
+		});
+		add(generalInterventionButton,c);
+		
+////
+		JButton cyclistInterventionButton = new JButton("Cyclists'Interventions");
+		c.gridx=1;
+		c.gridy=3;
+		c.weighty = 0.1;
+		c.gridheight=1;
+		cyclistInterventionButton.addActionListener( new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				intervener.applyIntervention();
+			}			
+		});
+		add(cyclistInterventionButton,c);
+////
+/////		
+			JButton carUserInterventionButton = new JButton("Car Users'Interventions");
+			c.gridx=0;
+			c.gridy=5;
+			c.weighty = 0.1;
+			c.gridheight=1;
+			carUserInterventionButton.addActionListener( new ActionListener(){
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					intervener.applyIntervention();
+				}			
+			});
+			add(carUserInterventionButton,c);
+			
+////
+			JButton publicTransInterventionButton = new JButton("Public Trans Users'Interventions");
+			c.gridx=1;
+			c.gridy=5;
+			c.weighty = 0.1;
+			c.gridheight=1;
+			publicTransInterventionButton.addActionListener( new ActionListener(){
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					intervener.applyIntervention();
+				}			
+			});
+			add(publicTransInterventionButton,c);
+	////
+			////
+			JButton pedestrianInterventionButton = new JButton("Pedestrians'Interventions");
+			c.gridx=0;
+			c.gridy=6;
+			c.weighty = 0.1;
+			c.gridheight=1;
+			pedestrianInterventionButton.addActionListener( new ActionListener(){
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					intervener.applyIntervention();
+				}			
+			});
+			add(pedestrianInterventionButton,c);
+	////
+		JButton resetButton = new JButton("Reset Sliders");
+		c.gridx=1;
+		c.gridy=6;
+		c.weighty = 0.1;
+		c.gridheight=1;
+		resetButton.addActionListener( new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				intervener.reset();
+			
+			}
+			
+		});
+		add(resetButton,c);
+		
+
+	}
+}

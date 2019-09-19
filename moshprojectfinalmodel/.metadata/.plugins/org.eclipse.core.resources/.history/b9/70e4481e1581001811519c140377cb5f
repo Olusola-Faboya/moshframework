@@ -1,0 +1,322 @@
+package moshproject.agents.intervener;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+import moshproject.agents.passenger.Walker;
+import moshproject.agents.mode.PersonalVehicle;
+import moshproject.agents.mode.PublicTransport;
+import moshproject.agents.mode.Walking;
+import moshproject.agents.passenger.Cyclist;
+import moshproject.agents.passenger.ModeAttributesPerceptions;
+import moshproject.agents.passenger.Passenger;
+import moshproject.agents.passenger.PersonalVehicleUser;
+import moshproject.agents.passenger.PublicTransportUser;
+import moshproject.common.Constants;
+import repast.simphony.engine.environment.RunState;
+import repast.simphony.engine.schedule.ScheduledMethod;
+import repast.simphony.parameter.Parameter;
+import repast.simphony.space.continuous.ContinuousSpace;
+import repast.simphony.space.grid.Grid;
+
+public class Intervener {
+	private ContinuousSpace<Object> space;
+	private Grid<Object> grid;
+	Random rand = new Random();
+	
+	List<Passenger> passengers;	
+	boolean reliabilityStatus;
+	boolean journeyTimeStatus;
+	boolean convenienceStatus;
+	boolean valueForMoneyStatus;
+	boolean comfortStatus;
+	boolean mobilityStatus;
+	boolean securityStatus;
+	boolean costsStatus;
+	
+	double intReliability;
+	double intJourneyTime;
+	
+	
+	ModeAttributesPerceptions passengerPerception;
+	InterventionPanel interventionPanel;
+	//Passenger passe;
+	public Intervener(ContinuousSpace<Object> space, Grid<Object> grid) {	
+		this.space = space;
+		this.grid = grid;		
+		this.reliabilityStatus=false;
+		this.journeyTimeStatus=false;
+		this.convenienceStatus=false;
+		this.valueForMoneyStatus=false;
+		this.comfortStatus=false;
+		this.mobilityStatus=false;
+		this.securityStatus=false;
+		this.costsStatus=false;
+		
+		this.intReliability=0.0;
+		this.intJourneyTime=0.0;
+	}	
+	public void initialize() {
+		// TODO Auto-generated method stub		
+	}		
+	public void setPassengerPerception(Passenger pass) {
+		passengerPerception= pass.getMyPerception();		
+	}	
+	public ModeAttributesPerceptions getPassengerPerception(){
+		return passengerPerception;
+	}
+	
+	public List<Passenger> getAllPassengers() {
+		Iterable<Passenger> passenger = RunState.getInstance().getMasterContext().getObjects(Passenger.class);
+		passengers = new ArrayList<Passenger>();
+			for(Passenger passes: passenger){			
+					while (passes.getModeSatisfaction()<0.5){
+					passengers.add(passes);
+			}
+		}
+		return passengers;
+	}
+////Gather Cyclists	
+	public List<Passenger> getCyclists() {
+		Iterable<Passenger> passenger = RunState.getInstance().getMasterContext().getObjects(Passenger.class);
+		passengers = new ArrayList<Passenger>();
+			for(Passenger passes: passenger){
+				if((passes.passengerType instanceof Cyclist)&&(passes.getModeSatisfaction()<=0.45)){
+				passengers.add(passes);
+			}
+		}
+		return passengers;
+	}
+////Gather Public Transport USers
+	public List<Passenger> getPublicTransUsers() {
+		Iterable<Passenger> passenger = RunState.getInstance().getMasterContext().getObjects(Passenger.class);
+		passengers = new ArrayList<Passenger>();
+			for(Passenger passes: passenger){
+				if((passes.passengerType instanceof PublicTransportUser)&&(passes.getModeSatisfaction()<=0.45)){
+				passengers.add(passes);
+			}
+		}
+		return passengers;
+	}
+////Gather Walkers
+	public List<Passenger> getWalkers(){
+		Iterable<Passenger> passenger = RunState.getInstance().getMasterContext().getObjects(Passenger.class);
+		passengers = new ArrayList<Passenger>();
+			for(Passenger passes: passenger){
+				if((passes.passengerType instanceof Walker)&&(passes.getModeSatisfaction()<=0.5)){
+			passengers.add(passes);
+				}
+			}
+		return passengers;
+	}
+////Gather PrivateUsers
+	public List<Passenger> getPrivateUsers(){
+		Iterable<Passenger> passenger = RunState.getInstance().getMasterContext().getObjects(Passenger.class);
+		passengers = new ArrayList<Passenger>();
+			for(Passenger passes: passenger){
+				if((passes.passengerType instanceof PersonalVehicleUser)&&(passes.getModeSatisfaction()<=0.45)){
+			passengers.add(passes);
+				}
+			}
+		return passengers;
+	}
+
+	public void setReliabiltyStatus(boolean b) {
+		this.reliabilityStatus = b;
+	}
+	public boolean getReliabiltyStatus() {
+		return  reliabilityStatus;
+	}
+	public void setJourneyTimeStatus(boolean b) {
+		this.journeyTimeStatus = b;
+	}
+	public boolean getJourneyTimeStatus() {
+		return  journeyTimeStatus;
+	}
+	public void setConvenienceStatus(boolean b) {
+		this.convenienceStatus = b;
+	}
+	public boolean getConvenienceStatus() {
+		return  convenienceStatus;
+	}
+	public void setValueForMoneyStatus(boolean b) {
+		this.valueForMoneyStatus = b;
+	}
+	public boolean getValueForMoneyStatus() {
+		return  valueForMoneyStatus;
+	}
+	public void setComfortStatus(boolean b) {
+		this.comfortStatus = b;
+	}
+	public boolean getComfortStatus() {
+		return  comfortStatus;
+	}
+	public void setMobilityStatus(boolean b) {
+		this.mobilityStatus = b;
+	}
+	public boolean getMobilityStatus() {
+		return  mobilityStatus;
+	}
+	public void setSecurityStatus(boolean b) {
+		this.securityStatus = b;
+	}
+	public boolean getSecurityStatus() {
+		return  securityStatus;
+	}
+
+	public void setCostsStatus(boolean b) {
+		this.costsStatus = b;
+	}
+	public boolean getCostsStatus() {
+		return  costsStatus;
+	}
+/////////////////////////////////////
+	@ScheduledMethod(start =1, interval=1)	
+	public void applyPrivateUsersIntervention(){		
+		rand =new Random();
+		getPrivateUsers();
+		if (getReliabiltyStatus()==true){		
+			if (passengers.size()>0){
+				int numberOfElements = (int) ((int) passengers.size()*0.18);
+					for (int i=0; i<=numberOfElements;i++){
+						int randomIndex =rand.nextInt(passengers.size());
+						Passenger p =passengers.get(randomIndex);					
+							p.getMyPerception().setPersonalVehReliability(intReliability);													
+					}
+			}			
+		}else if (getJourneyTimeStatus()==true){			
+				if (passengers.size()>0){
+					int numberOfElements = (int) ((int) passengers.size()*0.36);
+						for (int i=0; i<=numberOfElements;i++){
+							int randomIndex =rand.nextInt(passengers.size());
+							Passenger p =passengers.get(randomIndex);
+							p.getMyPerception().setPersonalVehReliability(intJourneyTime);
+						}
+				}			
+			}
+	}
+/////////////////////////////////////////////////
+	public void applyPedestrianIntervention(){		
+		rand =new Random();	
+		getWalkers();
+		if (getReliabiltyStatus()){		
+				System.out.println("Reliabillity box is checked");				
+					if (passengers.size()>0){
+						int numberOfElements = (int) ((int) passengers.size()*0.18);
+							for (int i=0; i<=numberOfElements;i++){
+								int randomIndex =rand.nextInt(passengers.size());
+								Passenger p =passengers.get(randomIndex);
+								 System.out.println("The Passenger @ location %s" + grid.getLocation(p).toString());
+								 System.out.println("The preffered mode is " + p.getPrefferedMode());
+								 p.getMyPerception().setWalkingReliability(intReliability);
+								 System.out.println("the real reliability is"+ p.getMyPerception().getPersonalVehReliability()+"New Realiability is"+ getReliability());
+								 
+							}
+					}
+	//		}
+		}else if (getJourneyTimeStatus()){		
+			if(getJourneyTimeStatus()){
+					System.out.println("Journey Time box is checked");					
+						if (passengers.size()>0){
+							int numberOfElements = (int) ((int) passengers.size()*0.36);
+								for (int i=0; i<=numberOfElements;i++){
+									int randomIndex =rand.nextInt(passengers.size());
+									Passenger p = passengers.get(randomIndex);
+									 p.getMyPerception().setWalkingJourneyTime(intJourneyTime);
+																
+								}
+						}
+			}
+		}
+	}
+///////////
+	public double evaluateReliability(Passenger p){	
+		double realValue=0.0; 
+		if(p.getPrefferedMode() instanceof PersonalVehicle){
+			realValue = p.getMyPerception().getPersonalVehReliability();			
+		}else if(p.getPrefferedMode() instanceof Walking){
+			realValue = p.getMyPerception().getWalkingReliability();		
+		}		 
+		intReliability= realValue+getReliability();
+		return intReliability;	
+	}
+	
+	public double evaluateJourneyTime(Passenger p){			
+		double realValue=0.0; 
+		if(p.getPrefferedMode() instanceof PersonalVehicle){
+			realValue = p.getMyPerception().getPersonalVehJourneyTime();			
+		}else if(p.getPrefferedMode() instanceof Walking){
+			realValue = p.getMyPerception().getWalkingJourneyTime();		
+		}		 
+		intJourneyTime= realValue+getJourneyTime();
+			return intJourneyTime;	
+		}
+	
+
+	@Parameter(displayName="Reliability", usageName="Reliability")
+	public double getReliability() {	
+		return intReliability;
+	}	
+	public void setReliability(double reliability){
+		this.intReliability = reliability;
+	}
+	
+	@Parameter(displayName="JourneyTime", usageName="JourneyTime")
+	public double getJourneyTime() {	
+		return intJourneyTime;
+	}	
+	public void setJourneyTime(double journeyTime){
+		this.intJourneyTime = journeyTime;
+	}
+	
+//		@Parameter(displayName="Value For Money", usageName="Value For Money")
+//		public double getValueForMoney() {
+//			return valueForMoney;
+//		}
+//		public void setNewValueForMoney(double newValueForMoney) {
+//			this.valueForMoney = newValueForMoney;
+//		}
+//	///
+//		@Parameter(displayName=" Security", usageName="Security")
+//		public double getSecurity() {
+//			return security;
+//		}
+//		public void setNewSecurity(double newSecurity) {
+//			this.security = newSecurity;
+//		}
+//	///
+//		@Parameter(displayName=" Mobility", usageName="Mobility")
+//		public double getPersonalMobility() {
+//			return mobility;
+//		}
+//		public void setNewMobility(double newMobility) {
+//			this.mobility = newMobility;
+//		}
+//	///	
+//		@Parameter(displayName="Convenience", usageName="Convenience")
+//		public double getConvenience() {
+//			return convenience;
+//		}
+//		public void setNewConvenience(double newConvenience) {
+//			this.convenience = newConvenience;
+//		}
+//	///	
+//		@Parameter(displayName="Comfort", usageName="Comfort")
+//		public double getComfort() {
+//			return comfort;
+//		}
+//		public void setNewComfort(double newComfort) {
+//			this.comfort = newComfort;
+//		}
+//	////
+	public void reset(){		
+		this.reliabilityStatus=false;
+		this.journeyTimeStatus=false;
+		this.convenienceStatus=false;
+		this.valueForMoneyStatus=false;
+		this.comfortStatus=false;
+		this.mobilityStatus=false;
+		this.securityStatus=false;
+	}
+}

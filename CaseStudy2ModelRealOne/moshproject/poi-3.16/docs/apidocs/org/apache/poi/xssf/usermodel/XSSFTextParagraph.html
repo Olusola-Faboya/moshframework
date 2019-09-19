@@ -1,0 +1,847 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+XSSFTextParagraph (POI API Documentation)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="XSSFTextParagraph (POI API Documentation)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/XSSFTextParagraph.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextBox.html" title="class in org.apache.poi.xssf.usermodel"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextRun.html" title="class in org.apache.poi.xssf.usermodel"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../../index.html?org/apache/poi/xssf/usermodel/XSSFTextParagraph.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="XSSFTextParagraph.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+org.apache.poi.xssf.usermodel</FONT>
+<BR>
+Class XSSFTextParagraph</H2>
+<PRE>
+java.lang.Object
+  <IMG SRC="../../../../../resources/inherit.gif" ALT="extended by "><B>org.apache.poi.xssf.usermodel.XSSFTextParagraph</B>
+</PRE>
+<DL>
+<DT><B>All Implemented Interfaces:</B> <DD>java.lang.Iterable&lt;<A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextRun.html" title="class in org.apache.poi.xssf.usermodel">XSSFTextRun</A>&gt;</DD>
+</DL>
+<HR>
+<DL>
+<DT><PRE>public class <B>XSSFTextParagraph</B><DT>extends java.lang.Object<DT>implements java.lang.Iterable&lt;<A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextRun.html" title="class in org.apache.poi.xssf.usermodel">XSSFTextRun</A>&gt;</DL>
+</PRE>
+
+<P>
+Represents a paragraph of text within the containing text body.
+ The paragraph is the highest level text separation mechanism.
+<P>
+
+<P>
+<HR>
+
+<P>
+
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextRun.html" title="class in org.apache.poi.xssf.usermodel">XSSFTextRun</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#addLineBreak()">addLineBreak</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Insert a line break</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextRun.html" title="class in org.apache.poi.xssf.usermodel">XSSFTextRun</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#addNewTextRun()">addNewTextRun</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add a new run of text</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#addTabStop(double)">addTabStop</A></B>(double&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add a single tab stop to be used on a line of text when there are one or more tab characters
+ present within the text.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../org/apache/poi/xssf/usermodel/ListAutoNumber.html" title="enum in org.apache.poi.xssf.usermodel">ListAutoNumber</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#getBulletAutoNumberScheme()">getBulletAutoNumberScheme</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the auto number scheme if this paragraph has automatic numbered bullets, otherwise returns ListAutoNumber.ARABIC_PLAIN</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;int</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#getBulletAutoNumberStart()">getBulletAutoNumberStart</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the starting number if this paragraph has automatic numbered bullets, otherwise returns 0</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;java.lang.String</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#getBulletCharacter()">getBulletCharacter</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;java.lang.String</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#getBulletFont()">getBulletFont</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;java.awt.Color</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#getBulletFontColor()">getBulletFontColor</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;double</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#getBulletFontSize()">getBulletFontSize</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the bullet size that is to be used within a paragraph.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;double</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#getDefaultTabSize()">getDefaultTabSize</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;double</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#getIndent()">getIndent</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;double</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#getLeftMargin()">getLeftMargin</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;int</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#getLevel()">getLevel</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the level of text properties that this paragraph will follow.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;double</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#getLineSpacing()">getLineSpacing</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the vertical line spacing that is to be used within a paragraph.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;org.openxmlformats.schemas.drawingml.x2006.spreadsheetDrawing.CTShape</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#getParentShape()">getParentShape</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;double</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#getRightMargin()">getRightMargin</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;double</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#getSpaceAfter()">getSpaceAfter</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The amount of vertical white space after the paragraph
+ This may be specified in two different ways, percentage spacing and font point spacing:</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;double</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#getSpaceBefore()">getSpaceBefore</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The amount of vertical white space before the paragraph
+ This may be specified in two different ways, percentage spacing and font point spacing:</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;double</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#getTabStop(int)">getTabStop</A></B>(int&nbsp;idx)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;java.lang.String</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#getText()">getText</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../org/apache/poi/xssf/usermodel/TextAlign.html" title="enum in org.apache.poi.xssf.usermodel">TextAlign</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#getTextAlign()">getTextAlign</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the alignment that is applied to the paragraph.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../org/apache/poi/xssf/usermodel/TextFontAlign.html" title="enum in org.apache.poi.xssf.usermodel">TextFontAlign</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#getTextFontAlign()">getTextFontAlign</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns where vertically on a line of text the actual words are positioned.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;java.util.List&lt;<A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextRun.html" title="class in org.apache.poi.xssf.usermodel">XSSFTextRun</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#getTextRuns()">getTextRuns</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;org.openxmlformats.schemas.drawingml.x2006.main.CTTextParagraph</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#getXmlObject()">getXmlObject</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#isBullet()">isBullet</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns whether this paragraph has bullets</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#isBulletAutoNumber()">isBulletAutoNumber</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns whether this paragraph has automatic numbered bullets</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;java.util.Iterator&lt;<A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextRun.html" title="class in org.apache.poi.xssf.usermodel">XSSFTextRun</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#iterator()">iterator</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#setBullet(boolean)">setBullet</A></B>(boolean&nbsp;flag)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set or unset this paragraph as a bullet point</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#setBullet(org.apache.poi.xssf.usermodel.ListAutoNumber)">setBullet</A></B>(<A HREF="../../../../../org/apache/poi/xssf/usermodel/ListAutoNumber.html" title="enum in org.apache.poi.xssf.usermodel">ListAutoNumber</A>&nbsp;scheme)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set this paragraph as an automatic numbered bullet point</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#setBullet(org.apache.poi.xssf.usermodel.ListAutoNumber, int)">setBullet</A></B>(<A HREF="../../../../../org/apache/poi/xssf/usermodel/ListAutoNumber.html" title="enum in org.apache.poi.xssf.usermodel">ListAutoNumber</A>&nbsp;scheme,
+          int&nbsp;startAt)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set this paragraph as an automatic numbered bullet point</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#setBulletCharacter(java.lang.String)">setBulletCharacter</A></B>(java.lang.String&nbsp;str)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#setBulletFont(java.lang.String)">setBulletFont</A></B>(java.lang.String&nbsp;typeface)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#setBulletFontColor(java.awt.Color)">setBulletFontColor</A></B>(java.awt.Color&nbsp;color)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the color to be used on bullet characters within a given paragraph.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#setBulletFontSize(double)">setBulletFontSize</A></B>(double&nbsp;bulletSize)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the bullet size that is to be used within a paragraph.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#setIndent(double)">setIndent</A></B>(double&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Specifies the indent size that will be applied to the first line of text in the paragraph.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#setLeftMargin(double)">setLeftMargin</A></B>(double&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Specifies the left margin of the paragraph.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#setLevel(int)">setLevel</A></B>(int&nbsp;level)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Specifies the particular level text properties that this paragraph will follow.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#setLineSpacing(double)">setLineSpacing</A></B>(double&nbsp;linespacing)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This element specifies the vertical line spacing that is to be used within a paragraph.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#setRightMargin(double)">setRightMargin</A></B>(double&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Specifies the right margin of the paragraph.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#setSpaceAfter(double)">setSpaceAfter</A></B>(double&nbsp;spaceAfter)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the amount of vertical white space that will be present after the paragraph.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#setSpaceBefore(double)">setSpaceBefore</A></B>(double&nbsp;spaceBefore)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the amount of vertical white space that will be present before the paragraph.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#setTextAlign(org.apache.poi.xssf.usermodel.TextAlign)">setTextAlign</A></B>(<A HREF="../../../../../org/apache/poi/xssf/usermodel/TextAlign.html" title="enum in org.apache.poi.xssf.usermodel">TextAlign</A>&nbsp;align)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Specifies the alignment that is to be applied to the paragraph.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#setTextFontAlign(org.apache.poi.xssf.usermodel.TextFontAlign)">setTextFontAlign</A></B>(<A HREF="../../../../../org/apache/poi/xssf/usermodel/TextFontAlign.html" title="enum in org.apache.poi.xssf.usermodel">TextFontAlign</A>&nbsp;align)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Determines where vertically on a line of text the actual words are positioned.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;java.lang.String</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextParagraph.html#toString()">toString</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.Object</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>clone, equals, finalize, getClass, hashCode, notify, notifyAll, wait, wait, wait</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="getText()"><!-- --></A><H3>
+getText</H3>
+<PRE>
+public java.lang.String <B>getText</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getXmlObject()"><!-- --></A><H3>
+getXmlObject</H3>
+<PRE>
+<FONT SIZE="-1"><A HREF="../../../../../org/apache/poi/util/Internal.html" title="annotation in org.apache.poi.util">@Internal</A>
+</FONT>public org.openxmlformats.schemas.drawingml.x2006.main.CTTextParagraph <B>getXmlObject</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getParentShape()"><!-- --></A><H3>
+getParentShape</H3>
+<PRE>
+<FONT SIZE="-1"><A HREF="../../../../../org/apache/poi/util/Internal.html" title="annotation in org.apache.poi.util">@Internal</A>
+</FONT>public org.openxmlformats.schemas.drawingml.x2006.spreadsheetDrawing.CTShape <B>getParentShape</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getTextRuns()"><!-- --></A><H3>
+getTextRuns</H3>
+<PRE>
+public java.util.List&lt;<A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextRun.html" title="class in org.apache.poi.xssf.usermodel">XSSFTextRun</A>&gt; <B>getTextRuns</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="iterator()"><!-- --></A><H3>
+iterator</H3>
+<PRE>
+public java.util.Iterator&lt;<A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextRun.html" title="class in org.apache.poi.xssf.usermodel">XSSFTextRun</A>&gt; <B>iterator</B>()</PRE>
+<DL>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>iterator</CODE> in interface <CODE>java.lang.Iterable&lt;<A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextRun.html" title="class in org.apache.poi.xssf.usermodel">XSSFTextRun</A>&gt;</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="addNewTextRun()"><!-- --></A><H3>
+addNewTextRun</H3>
+<PRE>
+public <A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextRun.html" title="class in org.apache.poi.xssf.usermodel">XSSFTextRun</A> <B>addNewTextRun</B>()</PRE>
+<DL>
+<DD>Add a new run of text
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>a new run of text</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="addLineBreak()"><!-- --></A><H3>
+addLineBreak</H3>
+<PRE>
+public <A HREF="../../../../../org/apache/poi/xssf/usermodel/XSSFTextRun.html" title="class in org.apache.poi.xssf.usermodel">XSSFTextRun</A> <B>addLineBreak</B>()</PRE>
+<DL>
+<DD>Insert a line break
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>text run representing this line break ('\n')</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getTextAlign()"><!-- --></A><H3>
+getTextAlign</H3>
+<PRE>
+public <A HREF="../../../../../org/apache/poi/xssf/usermodel/TextAlign.html" title="enum in org.apache.poi.xssf.usermodel">TextAlign</A> <B>getTextAlign</B>()</PRE>
+<DL>
+<DD>Returns the alignment that is applied to the paragraph.
+
+ If this attribute is omitted, then a value of left is implied.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>alignment that is applied to the paragraph</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setTextAlign(org.apache.poi.xssf.usermodel.TextAlign)"><!-- --></A><H3>
+setTextAlign</H3>
+<PRE>
+public void <B>setTextAlign</B>(<A HREF="../../../../../org/apache/poi/xssf/usermodel/TextAlign.html" title="enum in org.apache.poi.xssf.usermodel">TextAlign</A>&nbsp;align)</PRE>
+<DL>
+<DD>Specifies the alignment that is to be applied to the paragraph.
+ Possible values for this include left, right, centered, justified and distributed,
+ see <A HREF="../../../../../org/apache/poi/xssf/usermodel/TextAlign.html" title="enum in org.apache.poi.xssf.usermodel"><CODE>TextAlign</CODE></A>.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>align</CODE> - text align</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getTextFontAlign()"><!-- --></A><H3>
+getTextFontAlign</H3>
+<PRE>
+public <A HREF="../../../../../org/apache/poi/xssf/usermodel/TextFontAlign.html" title="enum in org.apache.poi.xssf.usermodel">TextFontAlign</A> <B>getTextFontAlign</B>()</PRE>
+<DL>
+<DD>Returns where vertically on a line of text the actual words are positioned. This deals
+ with vertical placement of the characters with respect to the baselines.
+ 
+ If this attribute is omitted, then a value of baseline is implied.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>alignment that is applied to the paragraph</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setTextFontAlign(org.apache.poi.xssf.usermodel.TextFontAlign)"><!-- --></A><H3>
+setTextFontAlign</H3>
+<PRE>
+public void <B>setTextFontAlign</B>(<A HREF="../../../../../org/apache/poi/xssf/usermodel/TextFontAlign.html" title="enum in org.apache.poi.xssf.usermodel">TextFontAlign</A>&nbsp;align)</PRE>
+<DL>
+<DD>Determines where vertically on a line of text the actual words are positioned. This deals
+ with vertical placement of the characters with respect to the baselines. For instance
+ having text anchored to the top baseline, anchored to the bottom baseline, centered in
+ between, etc.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>align</CODE> - text font align</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getBulletFont()"><!-- --></A><H3>
+getBulletFont</H3>
+<PRE>
+public java.lang.String <B>getBulletFont</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the font to be used on bullet characters within a given paragraph</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setBulletFont(java.lang.String)"><!-- --></A><H3>
+setBulletFont</H3>
+<PRE>
+public void <B>setBulletFont</B>(java.lang.String&nbsp;typeface)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getBulletCharacter()"><!-- --></A><H3>
+getBulletCharacter</H3>
+<PRE>
+public java.lang.String <B>getBulletCharacter</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the character to be used in place of the standard bullet point</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setBulletCharacter(java.lang.String)"><!-- --></A><H3>
+setBulletCharacter</H3>
+<PRE>
+public void <B>setBulletCharacter</B>(java.lang.String&nbsp;str)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getBulletFontColor()"><!-- --></A><H3>
+getBulletFontColor</H3>
+<PRE>
+public java.awt.Color <B>getBulletFontColor</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the color of bullet characters within a given paragraph.
+ A <code>null</code> value means to use the text font color.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setBulletFontColor(java.awt.Color)"><!-- --></A><H3>
+setBulletFontColor</H3>
+<PRE>
+public void <B>setBulletFontColor</B>(java.awt.Color&nbsp;color)</PRE>
+<DL>
+<DD>Set the color to be usedÊ|å“5É“+pÃ‡2xÉ¤vÅXÍ¤Ó}Á=sr?ÿy)4HA AIñ÷@†·øìÈ‡À4Á³á´I±pócßó~—^P¦â|=ò©¤£Ë^éFPlºëoÓ>~
+‰n0zÂõà¶É·ğ‹ı[‹±qâòŸt™æëÉBÑ+†—ê\=ÇïŒc5´(íDæøx|œ¿wD*ü,ÛÇ2{ƒ5÷÷±‡5¤‘<k‹õ-M#=UĞ>Ú\	#ÜQ~Îjvñ`ôİdz1yÉR¤…_}~ç<–2ÍI Së5~–¡¨şy‡¸øøˆ”09‚ãĞH]ğ¿ƒ7ûÌKİEëM1k
+)‚<‚²{¯È×¤,Ecí·‹p;¸ğQ&¡sîóZ“
+ˆà„OùnHæ`~ßiÍïŠ
+àİÑ.ñâzW=xW>bsJ?í{¦È2h‹0á’”±LWïäe"}7rç”K.±Zs|ÿûŠ	qrºÔ‚Şà^N?sŠ?/˜®˜BT¯!:ŞÏÄ·0ìfOØFäŒÕû™Åöåç‘Ee%½çT»~ò¦C½ö+œ•cù¿T&Îkî‰
+aÀòJÍ?÷rÄ§äãMÕ)|={ËÈüä35kÉ±2ĞÉ5z
+ì‹v±—Å¯ú„ ¹Zxñ4Á›aZ©úøÅ”Ù5’_Ÿ
+Ö9 L†ó~i[ôìŞ¿&Nj©Ÿâ*Eàš½§YK{v¥`ü/ÛÆQXêìÛ;ê’Îë’Hjlµå¹’ÌÓ‹C¡·dªH\¬£–R\OGÊ,	[ gœÉŠLıÜèX2ìd¼*ğÆ_ˆ²,£o=¨xŠ% Á"ØÑ(. ¢f¥ì</f0©ŒRÛÃ…Ï¥Ò§ÁY³àï!%Í’ƒ\8mÔ«˜x°¸ş8–Ä8£²øtD¡t½zù+°mŠ¹“´+kƒŒBëË¤åÉµ(é€È&ŠFYV“×ûH ~	áÇTƒx»øùH`9¾ãÁˆQ º4ú‹×q ºÆuÔ{Ã€rz?È»¤…~}¾'vÆz1ÀJÍ^.×
+¯¶ı·°…³ù/ˆÖ0BĞ@­ñ¼Bwö¡\â±AÂ¼ï¯Rzû?ß³;¯É½|_ÿæL.é ­ã§“„ÛuÍ±ä…ŠâáCş+ŠUq©²¨Bå÷¢Zcs¡WJ€‰>¸–´2+¶¼ìë¦dÈY¨„à=×‚i‚4û~jvù°>‚‘§ª}¸û¨Ét€qöò·ôw „ÿ$š£ˆËTiApn"êÅSğ^æ?x.‚×§X&fyÉxÌ¼ÑçJœF3KSñzÃ¹¸Íd=— ŸY©üøÆÅHÉÊ|å“5É“+pÃ‡2xÉ¤vÅXÍ¤Ó}Á=sr?ÿy)4HA AIñ÷@†·øìÈ‡À4Á³á´I±pócßó~—^P¦â|=ò©¤£Ë^éFPlºëoÓ>~
+‰n0zÂõà¶É·ğ‹ı[‹±qâòŸt™æëÉBÑ+†—ê\=ÇïŒc5´(íDæøx|œ¿w¶à*ü,ÛÇ2{ƒ5÷÷±‡5¤‘<k‹õ-M#=UĞ>Ú\	#ÜQ~Îjvñ`ôİdz1yÉR¤…_}~ç<–rÍI Së5~–¡¨şy‡¸øøˆ”09‚ãĞH]ğ¿ƒ7ûÌKİEëM1k
+)‚<‚²{¯È×¤,Ecí·‹p;¸ğQ&¡sîóZ“
+ˆà„OùnHæ`~ßiÍïŠ
+àİÑ.ñâzW=xW>bsJ?í9äÈ2h‹0á’”±LWïäe"}7rç”K.±Zs|ÿûŠ	qrºÔ‚Şà^N?sŠ?/˜®˜BT¯!:ŞÏÄ·0ìfOØFäŒÕû™Åöåç‘Ee%½çT»~ò¦C½ö+œ•cù¿T&Îkî‰
+aÀòJÍ?§"Ä§äãMÕ)|={ËÈüä35kÉ±2ĞÉ5zÊ,‹v±—Å¯ú„ ¹Zxñ4Á›aZ©úøÅ”Ù5’_Ÿ
+Ö9 L†ó~i[ôìŞ¿&Nj©Ÿâ*Eàš½§YK{v¥`ü/ÛÆQXêìÛ;ê’Îë’Hjlµå¹’ÌÓ‹C¡·dªH\¬£–R\OGÊ,	[ gœÉŠLıÜèX2ìd¼*ğÆ_ˆ²,£o=¨xŠ% Á"ØÑ(. ¢f§ì</f0©ŒRÛÃ…Ï¥Ò§ÁY³àï!%Í’ƒ\8mÔ«˜x°¸ş8–Ä8£²øtD¡t½zù+°mŠ¹“´+kƒŒBëË¤åÉµ(é€È&ŠFYV“×ûH ~	áÇTƒx»øùH”`9¾ãÁˆQ º4ú‹×q ºÆuÔ{Ã€rz?È»¤…~}¾'vÆz1ÀJÍ^.×
+¯¶ı·°…³ù/ˆÖ0BĞ@­ñ¼Bwö¡\â±AÂ¼ï¯Rzû?ß³;¯É½|_ÿæL.é ­ã§“„ÛuÍ±ä…ŠâáCş+ŠUq©²¨Bå÷¢Zc˜J%8W^‰4nwóùMº+SÑ¬uDŞ,ÇÏ kaî˜<†½#0‚¹|¼ïÜa—fŞÚ4wÖ§…¡;àİFHc¹&¾–A_€H™µ[¥éøM
+ùË³æúz:<Œƒ7©Æğb´Å›’êvÔ¾şL­Øs¿£øÙİ!——áâÄø¢2‰,ŸÂwƒt"äÖü•qßa67Äl<#_iˆÂÊPV'eBs¿«İ’×#.é0bè”U7§˜´ûfå‰‡—ÓŞ­aD·ìä_H{¹,>‘a]I3Ê{…ñœ{'mêİc5h5ÕOÇº¤fõÚ·÷GJ)ì†lÁ|.O8½#Á©iGñm¿óŠ
+«KFBvH¹i <'n”"ß)t2&”´ø¯Ì²8X49§¾ÖqŸÿ3˜Íd›úº¼I½GÀÂ ¨!?Ê‚”" ÖÔRnLÜE`Ê7ˆ„t\7D&Ã¶ı7 Û½Cÿ¿íƒ'ª`SéüÕšGó¼‹ 67™šæZ;‹#Ş`Ç÷€T#<Ö^’´Ü†)Ògäµåİ´fùär»‰Ÿ§)!Å@‹¾)]ówV÷’êlN6¯Î$šU:î\ƒ5­fÚõb>6ÄMcºå¿ºC0Èí	p7j˜Zdê”·¸¸¼Ÿf‡Z’WA{kû·ÍxÄsÜê•ƒ˜|“˜òuu¤ª43[äÊ;gªS ¢jëPp2ª¥Ï×8ßSƒfy2Nù€vî¨|Mè´O¬/¥µ&ÔÕPp¼ÕAï‰u9x€0#–Aâ¼ø€²Œ•:pöß9–œ^™F³ß.@Äşmä#é³âÙ[İàÁPry´íxî1}$Q"EF, {¬Íñ™5[§Ã¾Noæ¾õ	ª¶ÚÈÚ×€E8ëœDMıû1ó¸i3oÎ·Œ®+ò”Ëàºr8öWX}¹.=8ù¢;ÀŒÏ·Éı˜OÄç?‹Q<'ÉÏ¦9´G9¾	±]¯ád†e3:Z\wuW–NMQj#ıËB”ş ´şpûö40Úº«ß™Ìñ\¼÷ÿë-Ó- 1YÕa„°»ú=ÀÂ]Äˆ¢‰7ßÉ„ O—»bÿØ±j„ÖAT¢­†Âì_=ˆıŠ@f+qG¼ü¿ì]ƒw–`B)ğ…Ÿ»ğ½J`fg¥¦÷‹÷×v'ŸÅ7Ä#PÖsR©L…Ôš&t…u±ØK9ÿ",5\"•Aw¾hÃ'jøÃ.PgR2e¥Zªt°k8cØYcƒö~T2üVqˆ(×¯îŒµ\è¦\h‘Ìbå™g+CÄ*K‡¹lŸ@f¾š€‡ãDÒ¨Åf$˜J%8W^‰4nwóùMº+SÑ¬uDŞ,ÇÏ kaî˜<†½#0‚¹|¼ïÜa—fŞÚ4wÖ§…¡;àİFHc¹&¾–A_€H™µ[¥éøM
+ùË³æúz:<Œƒ7©Æğb´Å›’êvÔ¾şL­Øs¿£øÙİ!——áâÄø¢2‰,ŸÂwƒt#äÖü•qßa67Äl<#_iˆÂÊPV'eBs¿«İ’×#.é0bè”U7§˜´ûfå‰‡—ÓŞ­aD·ìä_H{¹,>‘a]I3Ê{…ñœ{'mêİc5h5ÕOÇº¤fõÚ¶÷GJ)ì†lÁ|.O8½#Á©iGñm¿óŠ
+«KFBvH¹i <'n”"ß)t2&”´ø¯Ì²8X49§¾ÖqŸÿ3˜Íd›úº¼I½GÀÂ ¨!?Ê‚”" ÖÔRnLÜE`Ê7ˆ„t\7D&Ã¶ı7 Û½Cÿ¿íƒ'ª`SéüÕšGó¼‹ 67™šæZ;‹#Ş`Ç÷€T#<Ö^’´Ü†)Ògäµåİ´fùär»‰Ÿ§)!Å@‹¾)]ówV÷’êlN6¯Î$šU:î\ƒ5­fÚõb>6ÄMcºå¿ºC0Èí	p7j˜Zdê”·¸¸¼Ÿf‡Z’WA{kû·ÍxÄsÜê•ƒ˜|“˜òuu¤ª43[äÊ;gªS ¢jëPp2ª¥Ï×8ßSƒfy2lÛ€vî¨|Mè´O¬/¥µ&ÔÕPp¼ÕAï‰u9x€0#–Aâ¼ø€²Œ•:pöß9–œ^™F³ß.@Äşmä#é³âÙ[İàÁPry´íxî1}$Q"EF, {¬Íñ™5[§Ã¾Noæ¾õ	ª¶ÚÈÚ×€E8ëœDMıû1ó¸i3oÎ·Œ®+ò”Ëàºr8ö9WX}¹.=8ù¢;ÀŒÏ·Éı˜OÄç?‹Q<'ÉÏ§9´G9¾	±]¯ád†e¡¨û:£sÒÎ‹ÂûÍĞ§yf~Rêdıé*	Q×‚é–b‚%-Çq#£®¿›yœ…(ï€R›F7®$ûd¨@(æ‚²İÎâ•t‡iI… µ¤«ªî¯;s(3iy‚.mÀqs‡¢%îÌg¾‡…Îo˜òô>üÌ'[:›¸ $Ö‡Â±Â*8Ãà#h9¹•ds·ôgäÉL‘¢»X:Ilº±ï×ïÙKM SJ[ÉwÈ8-éR2Ï5´üŸR4nÄW(âB{a*Ã	GZn*½<’V*éˆeÜ2u¹k¾³l–N)3	‚­
+Ê°ûXÏö
+Ø|a=4£%Ùûñèßãr9} A˜ÛAÍ&ÉGS‘+3m~š—‡Bn=ğMg–miºù˜é¹Ş”ÚñàÔüíóm¥Tº£ïjŸS“¡Jèå¥İm…12…6 ÑKÜ¤nÌ€9,ôƒä¦-’¶FÁÅ<?İ\³Î¸ˆ®Tßd³ #–…r°v]xåP9œ2ş×ÖÂ@Ó¯Ú;LD?}|Mmyñ¾'ÓZ¾ì[¦ŒM	™JfiôU¼ãí;3@şÛVâYÚéàuTûÍñõ¤¬+šƒ÷°W×Yní»&X-ÍqùhÎ²ˆ–iy”	1ô¸+¾î“wzR,DöØŒ¹ŸaÓSÁ!"êù¯é×Xˆ&:BdÒlšú¼hÚ™¬Æ‘`tìÄŠ0X?Ñç+¦ó¶Ih(Uå#×ël/M7ÀŞÌ„°y¾8Âà1¨ÿUÖi‚rp4Ç´•p8syN•Ãƒ}-mÁ±s×¢îİ§²Í‚yÍnY2¤nÀğŒö—fÎAÿ&†R±®øŞp*Ä?ø{TõãÛ˜J	Áég9İ~µlûqß‡ûåDd" .·ğH‡¨|Ú_ÇÊ 7ı¡×îÂß:ãÕ­®İWrèó\šh¬éê™¤ÁŒg‰†jn³0–wé!Ù1csÅ‰ªVá…³ÿé2¼u‘”sş×ómY1HfÖŠ5ÌAClí|\ÂZ|Y¶‘›~G¾	¬ZXÏ½Ãfú´7›:gß´FŒ	yy¬êØ˜†6±…ÏˆÖT,_}
+K‡ğóflí*šÈ@ıÇ6~ú,ÏAÈÓõZ lWFÅøÿnL ë&´!k„ÑÉ¼½Ú§Í¦	é•õ”›ó™÷Jæ\!¯à¸Ù£ùZ<TF”™˜]ÕNSha‚@6ç}!Ö¯²ù œ’¹qnŞîø§iìøQ^ï+wdúw±”O¤_m.± åÑh¿©wi±Å$?÷<Ê‹DìôŠ0GÿE·ßZT·¡¨û:£sÒÎ‹ÂûÍĞ§yf~Rêdıé*	Q×‚é–b‚%-Çq#£®¿›yœ…(ï€R›F7®$ûd¨@(æ‚²İÎâ•t‡iI… µ¤«ªî¯;s(3iy‚.mÀqs‡¢%îÌg¾‡…Îo˜òô>üÌ'[:›¸ $Ö‡Â±Â*8Ãà#h9¹•ds·ôgäÉL‘¢»X:Ilº±ï×ïÙKM SJ[ÉwÈ8-éR2Ï5´üŸR4nÄW(âB{a*Ã	GZn*½<’V*éˆeÜ2u¹k¾³l–N)3	‚­
+Ê°ûXÏö
+Ø|a=4£%Ùûñèßãr9} A˜ÛAÍ&ÉGS‘+3m~š—‡Bn=ğMg–miºù˜é¹Ş”ÚñàÔüíóm¥Tº£ïjŸS“¡Jèå¥İm…12…6 ÑKÜ¤nÌ€9,ôƒä¦-’¶FÁÅ<?İ\³Î¸ˆ®Tßd³ #–…r°v]xåP9œ2ş×ÖÂ@Ó¯Ú;LD?}|Mmyñ¾'ÓZ¾ì[¦ŒM	™JfiôU¼ãí;3@şÛVâYÚéàuTûÍñõ¤¬+šƒ÷°W×Yní»&X-ÍqùhÎ²ˆ–iy”	1ô¸+¾î“wzR,DöØŒ¹ŸaÓSÁ!"êù¯é×Xˆ&:BdÒlšú¼hÚ™¬Æ‘`tìÄŠ0X?Ñç+¦ó¶Ih(Uå#×ël/M7ÀŞÌ„°y¾8Âà1¨ÿUÖi‚rp4Ç´•p8syN•Ãƒ}-mÁ±s×¢îİ§²Í‚yÍnY2¤nÀğŒö—fÎAÿ&†R±®øŞp*Ä?ø{TõãÛ˜J	Áég9İ~µlûqß‡ûåDd" .·ğH‡¨|Ú_ÇÊ 7¶ê×îÂß:ãÕ­®İWrèó\šh¬éê™¤ÁŒg‰†jn³0–wé!Ù1csÅ‰ªíZ¹œŠÿq^ºëàdãå‡¤ÏQ:R…«ı¡Ò+64˜¿ŸÿgÂ¨Ë$özş…ÎÒeo™#eiQôfÑRYø³ı°5yİ´‡)ñ¯îrÂ
+>ó$ëµ™átVôí¬æs0Ö[Q9şZ'š¢S¼8@£‚îÈÔşÅ!r =¬ ÌPˆçPâ—Z=ĞºRıR.É¨øT:aÍ»ÆØùL`ÄgÑèÆÔóşı8Ä£¾«¢06V”¤uF³ÊpR•L'½®…ÛÅÓ@›¥ªTKX™|Y?dC¸YEô&U‚}£û#¢xAZ5ş¦qHÖyÑ ^¢ ˜ Ò˜8Û?9~|6÷ˆX5)üµ9k½›EÕŸÁ¶ƒåŠ`éæÛßÔİÌÃ°åŒó @IAÂLwJ<-püùLGDƒ;é§zTÍéÁĞOO§_‘vâ	fòŞkö¹Ğ¬B®b×ÂP_i-!’Zïá–iOV»@B²Nºvñ|^ ÙøâGôIOÀ¯şê–°_çS¡s6
+y³[ -îCâ^â‡C7¤Ùô˜E0)u?_è½‹ Ör,êÒŸß2y4/Î™¥sƒÕb1ÿŸû`è¦ÀÕk!¶Î(JÍ$~0®šé~¯‚ş{j¹W·{Òp¯«sıç›Êm¯Õ9š£š±c@]^WnèòĞeoåâd¦ßNvZ°mj³<¦ºQ=ò„¬#ÿ[š¡
+ÿòE€Q3Z«¹½(kÏ¾øÜÇcøaJÜC·Ÿ >Fáw#ÍWÑ$(oğÂÒ‡Ã<BªqÅñF=ÓÙ‡»Ã©Bû@òB7¾ÙrØ¿ Ñ!¤ şı±0¾ò„ëÍ™ÃôOTçTáq†Í³a†ô·å ¡6öƒÓaïŞÖyZ¾2}îI,~<Áé(Ë[&
+ÒOi€€ö²k<!z­aRÜI7˜ <ŞK÷\íws”ê º)A?H¨³;¢qK«8½ĞëncT‘zéÒU(K*1ÜBo?gûäM$Úïo¢Bï'Ò„0/ÿÒÎÈYï¸Nh.½üÉSr×·Ñù^À¢ÊX¶‚ND1Ú%Ó“iÙ@´&¡fĞù·©8p½E³İ[-ƒ²¡v†³÷ú‰A¤ªá)ğ¦A¿ArNêvÍ|OÀÕ¨ç»5‰Rü“ï;ZMå¦Qar¦
+³;›½½çïœ#‚/[‰4)Ü•ƒ \°¼w —²ºÆ1öEgKÒ2Ø$ëÇ9æ<¤m3F ™6ä¹dßì¶Û`…ö°•Ÿ„æíŸØ§Ux=xÃ¦éKDpó«J=õKVhKsÆíZ¹œŠÿq^ºëàdãå‡¤ÏQ:R…«ı¡Ò+64˜¿ŸÿgÒ¨Ë$özş…ÎÒeo™#eiQôfÑRYø³ı°5yİ´‡)ñ¯îrÂ
+>ó$ëµ™átVôí¬æs0Ö[Q9üZ'š¢S¼8@£‚îÈÔşÅ!r =¬ ÌPˆçPâ—Z=ĞºRıR.É¨øT:aÍ»ÆØùL`ÄgÑèÆÔóşı8Ä"?«¢06V”¤uF³ÊpR•L'½®…ÛÅÓ@›¥ªTKX™|Y?dC¸YEô&U‚}£û#¢xAZ5ş¦qHÖyÑ ^¢ ˜ Ò˜8Û?9~|6÷ˆX5)üµ9k½›EÕŸÁ¶ƒåŠ`éæÛßÔİÌÃ°åŒó @IAÂLwJ<-püùLGDƒ;é§zTÍéÃĞOO§_‘vâ	fòŞkö¹Ğ¬B®b×ÂP_i-!’Zïá–iOV»@B²Nºvñ|^ ÙøâGôIOÀ¯şê–°_çS¡s6
+y³[ -îCâ^â‡C7¤Ùô˜E0)u?_è½‹ Ör,êÒŸß2y4/Î™¥sƒÕb1ÿŸû`è¦ÀÕk!¶Î(JÍ$~0®šé~¯‚ş{j¹W·{Òp¯«sıç›Êm¯Õ9š£š±c@]^WnèòĞeoåâd¦ßNvZ°mj³<¦ºQ=ò„¬#ÿ[š¡
+ÿòE€Q3Z«¹½(kÿøÜÇcøaJÜC·Ÿ >Fáw#ÍWÑ$(oğÂÒ‡Ã<BªqÅñF=ÓÙ‡»Ã©Bû@òB7¾ÙrØ¿ Ñ!¤ şı±0¾ò„ëÍ™ÃôOTçTáq†Í³a†ô·å ¡6öƒÓî’ïŞÖ{Z¾2}îI,~<Áé(Ë[&
+ÒOi€€ö²k<!z­aRÜI7˜ <ŞK÷\íws”ê º)A?H¨³;¢qK«8½ĞëncT‘zéÒ)T³ÒüÔ»%À¨3^Â±X¦—G§ˆ@C<Æ.2$mÆpÖ f !“Œ¹î¹áŸ;[Nf0®¬Äv˜ò>ÛI¶¯ï‘!¥QAÆÃ¡ÜõÄŒÁw½K8¾hJİD¾˜'Šz_e/Ê¤ï0€Ö«UÒ’î¾Ñu£rAîûØ—Qå‘¦õcªv
+\=Š"ªhXZviKÃ~XÚ€(Ó»ëÓ·e«¶{²› .,ÈV“^ğ%Y_ş€økI;¢Ø2·xo»ÁÙA`
+ÛôJ™ ÊÅş'	S¼B1¼™¦½s48ÊSvíˆ™r¡®•‘œ4ÕS›ExFvfí¡àU‘&Awyo˜™}çì]Ú{Øñ7©ß·âÌ:fŞ'dåSs`ø¬ÆÅ*ØTko$Aöƒu¼úu_ú³H¡"³˜ sHÍÿœºÓ@îı–×>vBÜPş†³‘øá•ßøÜ:ÄÎWT	´Ò#VÒÓ0nçqWàºğË\Ğí×F³_,ápåí7{%PV1éƒ®.R1Pu3]¦
+·ÊáÀè°öŒ[ø¿†ÈÚİĞH.ı±¬GN¯©8úª{4hÃºš¸ß[ÁV}÷è¼tL‚¢¶YV(ì³ |ñ>ø£O´#`¹ÊşÊÍõ-ŒV1*ß5â¤:æNN0¬¶P¢÷r«HfoÇÁ›™QOŸ9%ÅŒóÅÁc½àø²øqé³Y73Kˆ³¢ÍËüƒJªÚÒè.Ó$2#^Òl‰¦­×G•_‚±(¤ˆC«f¨Šu
+&Ş·k…¢nîû¬£…Á¾4ï˜Ga&|QªÑ’ï^Ñ%ŸrP.÷ˆ’­æg53ú8JñÖwSëj˜ÊvKî¾EJ‰„ÕîRÛ*{¿ÛHFkö+>'[/˜WaœJÀuMcñÑ<Wj_$s6ˆÿé-‡Ô˜eÙX÷YÑZ<©“ìdÄÑ©ïÁ(€ÎRf’0ìu,DÉ']‘”AœC4ì“‰•äCß¥Óp0	Í¸¥»²	5\VÚ'¶“¿×
+­t0ªƒhÁh|3¼‘5”¯$7‚¯j‘ÂßbÅ4×Ó&eÑ ˆ¬-öğk6$»RzGYIí{ô«ç­XĞ—'µàûN“#9ª”¢k½×‰•í{Ù¨Óa®Û!F¶±ÿÔĞ"£tÂ
+|(ş¤3ˆXëmØzw±K™şcú“pŞé™˜Ê
+o?q`ĞØWQ*hTe’†Ş‘…q'à"pï™X!±µ™®3‘xek‘Õß¬0CêQ.$±Ò}g[HGûeÔ‹ÿŸxu?ãÔq'o8ØYÑ—1§4§Ó¾å@M$áAì)T³ÒüÔ»%À¨3^Ã±X¦—G§ˆ@C<Æ.2$mÆpÖ f !“¤‘î¹áŸ;[Nf0®¬Äv˜ò>ÛI¶¯ï‘!¥QAÆÃ¡ÜõÄŒÁw½K8¾hJİD¾˜'Šz_e/Ê¤ï0€Ö«UÒ’îÑu£rAîûØ—Qå‘¦õcªv
+\=Š"ªhXZviKÃ~XÚ€(Ó»ëÓ·e«¶{²› .,ÈV“^ğ%Y_ş€økI;¢Ø2·xo»ÁÙA`
+ÛôJ™ ÊÅş'	S¼B1¼™¦½s48ÊSvíˆ™r¡®•‘œ4ÕS›ExFvfí¡àU‘&Awyo˜™}çì]Ú{Øñ7©ß·âÌ:fŞ'dåSs`ø¬ÆÅ*ØTko$Aöƒu¼úu_ú³H¡"³˜ sHÍÿœºÓ@îı–×>vBÜPş†³‘øá•ßøÜ:ÄÎWT	´Ò#VÒÓ0nçqWàºğË\Ğí×F³_,ápåí7{%PV1éƒ®.R1Pu3]¦
+·ÊáÀè°öŒ[ø¿†ÈÚİĞH.ı±¬GN¯©8úª{4hÃºš¸ß[ÁV}÷è¼tL‚¢¶YV(ì³ |ñ>ø£O´#`¹ÊşÊÍõ-ŒV1*ß5â¤:æNN0¬¶P¢÷r«HfoÇÁ›™QOŸ9%ÅŒóÅÁc½àø²øqé³Y73Kˆ³¢ÍËüƒJªÚÒè.Ó$2#^Òl‰¦­×G•_‚±(¤ˆC«f¨Šu
+&Ş·k…¢nîû¬£…Á¾4ï˜Ga&|QªÑ’ï^Ñ%ŸrP.÷ˆ’­æg53ú8JñÖwSëj˜ÊvKî¾EJ‰„ÕîRÛ*{¿ÛHFkö+>'[/˜Wa“EÀuMcñÑ<Wj_$s6ˆÿé-‡Ô˜eÙX÷YÑZ<©“ìdÄÑ©ïÁ(G	Rf’0ìu,DÉ']‘”AœC4ì“‰•äCß¥Óp0	Í¸¥»²	5\VÚ'¶“¿×
+­t0ªƒhÁh|3¼‘5”¯$7‚¯j‘ÂßbÅ4×Ó&eÑ ˆ¬-öğk6$»RzGYIí{ô«ç­XĞ—'µàûN“#9ª”¢k½×‰•í{Ù¨Óa®Û!F¶±ÿÔĞ"£>ˆÒ¤/	Jƒ8·>‹®Y=û“AßB}ÀnµIÊËé)Vfo‡¹¿ÍÍüç¨’f(ïu'ü<ı¸(0äyI DJ;oIlKÉrWdüió\‰µ©ø§6‡¨Ü¦Ab(ìÛ&pÿ}ÀH´¤#°Ü±²_®£D	šÄick
+İõUËpAo‘;’ìÏOf†f®¥ó^`E•TÑgÙ/1wÏ})w dbYq?¡û“˜vW›BÌ3å¥Iù„p¯(s€©İÃç¯‹=e“Ÿ†¤môHâËt©Yf"r Åó¸Şé%s2ÌW×§Æb¬% }2È|#¿)rÜW+²Ó:’öH;­y<#“_y4n˜cOÌIèÈğ\¼¡t½ÌÚNÀ‰mÏgÉ2NPñ×¯…§A«2ı%ñÆø`äkDJÊóé;R&ÿ(rRéòàÅõî92J/İ\!Rf<×87¥&#Â\”D–¨ÓÃt8eĞÛl™¯XNvø)Í»°‰:X’»ïqş–"ŠÖ‚{\^GÆjJwï£É’}6º+Îö½ÄsºL«íz­]¦‡*‹¥9ËŞ½T=ğ^¡]Å„­,Ó/qh!¤½ÆŒ¬ÛåÓÙXŸQçZw†ÏKVµWŞf@ïµ§œá²uHNß6Úf«¨=Ì#Ù••à
+mºĞ"déˆ<Tİ³ºë–²“Ë“ÏµLï°‰Ÿ3>(í·d4)~w¸¾7õı,Ú†f!ƒZ‹¥ÖÉRš²¤Şñåzub¦kx]ĞõĞHèp3š+óÇİ
+Â¢zb¸”F°gñYA?[ûàXõnë.Í,%º¸¿~ÿ/ey–ßĞæ]‹»eÁÙ\¶ÁÓµà
+69
+\Ÿ¼­šVp%Y&Ó3_WÑÄ–+et°<É,?4R•ß‡Z	`J§8÷5û©=?PÒş¯20YÛ5ş2½¨€¼ø©;¸Ï©ƒÙÈ3TÖgÆ2%À-74ây"àk:cfÇ·9Ë¬é<O“6Ÿd¤g4e²ˆyXœâqQ|ù$ipµÿŠ=ÎøÀ§ùbZlş†k¹ôÏú½ê³Eµ1õ¦õv‹ièK«
+‚yãIK4Eå?G_=tZqE<«‰'ãŸ"CÂªl‚ÄÄ¥z#ûœ†ÂI
+­z JéµŒ‡U`}š“ça…§F_:=Rÿn²9äÄlöĞ;â-QE$«:ÃøÊÙ*'6óGæ[Ò#ØÜq2?N-	´ouîW|ücs[©·1ù±'I§ˆÄçO4[´KRÀp®$“ƒµd²€Ş{Ş|1ˆVä—â6Q¹æYáqu§&>ˆÒ¤/	Jƒ8·>‹®Y=û“A}ÀnµIÊËé)Vfo‡¹¿ÍÍüç¨’f(ïu'ü<ı¸(0äyI DJ;oIlKÉrWdüió\‰µ©ø§6‡¨Ü¦Ab(ìÛ&pÿ}ÀH´¤#°Ü±²_®£D	šÄick
+İõUËpAo‘;’ìÏOf†f®¥ó^`E•TÑgÙ/1wÏ})w dbYq?¡û“˜vW›BÌ3å¥Iù„p¯(s€©İÃç¯‹=e“Ÿ†¤môHâËt©Yf"r Åó¸Şé%s2ÌW×§Æb¬% }2È|#¿)rÜW+²Ó:’öH;­y<#“_y4n˜cOÌIèÈğ\¼¡t½ÌÚNÀ‰mÏgÉ2NPñ×¯…§A«2ı%ñÆø`äkDJÊóé;R&ÿ(rRéòàÅõî92J/İ\!Rf<×87¥&#Â\”D–¨ÓÃt8eĞÛl™¯XNvø)Í»°‰:X’»ïqş–"ŠÖ‚{\^GÆjJwï£É’}6º+Îö½ÄsºL«íz­]¦‡*‹¥9ËŞ½T=ğ^¡]Å„­<Ó/qh!¤½ÆŒ¬ÛåÓÙXŸQçZw†ÏKVµWŞf@ïµ§œá²uHNß6Úf«¨=Ì#Ù••à
+mºĞ"déˆ<Tİ³ºë–²“Ë“ÏµLï°‰Ÿ3>(í·d4)~w¸¾7õı,Ú†f!ƒZ‹¥ÖÉRš²¤Şñåzub¦kx]ĞõĞHèp3š+óÇİ
+Â¢zb¸”F°gñYA?[ûàXõnë.Í,%º¸¿~ÿ/ey–ßĞæ]‹»eÁÙ\¶ÁÓµà
+69
+\Ÿ¼­šVp%Y&Ó3_WÑÄ–+et°<É,?4R•ß‡Z	`J§8÷5û©=?PÒş¯20YÛ5ş2½¨€¼ø©;¸Ï©ƒÙÈ3TÖgÆ2%À-74âTR»y”Å*V¥ñI9Ë“Öd
+¯`›í.÷¦Lğˆyg£–Óşx¥€™	CNù;9ï@àØío‚H>~)œ"n¨lY
+?Âª+µU
+‚F ÈbÒ­ºvœşcŠZNzÛL¥bËª~¨FË>ëB¡y+ ¶¾Ä‰*š£¬~ùäel®(Fd¸¡y»f÷Map­Ş’Ğ;İ¶¢¦)»*veîãõ0;h¼P¡Y]˜ÛƒòéÍw¬ZÁ|WeúŒ¤àşò:OÙI§·ûÌ9‘ÖËùGwˆ¬ìÀp‘%Ãt7å3i7Ç¿¸òKyËp´Ó’8°­]µ±NMˆ	£K=ĞöY@ûúI>‹‘fĞ
+Ø ½]4­K·ÊËÖ±áä˜înfK	?8, Oä©nœÎ@½ø9{ë3ÏRĞ9»µ6r¬ß·’KöM|Oeğ£Àüj;åY6‡—ãA¦àªmZÏ™=CY¹‹=›Cy¡2]0[¶E€ÊYëFH5ò“"
+‚³Û¿‘‘­9ÇVÖ™y/çf0 E•2.ú³SåX®ØsÁíØ´ãK5å…Ûó¾ z$Ê“_ÔãÎĞ`{æa°Ò~WİÃØ ü
+æ`Ïí®7¶Ët–fÅğƒ¡DQbUá·ñx80@Dà–-Ìÿ¼©¹ö¿;”ëE¨ÔûšùQ¶;’F
+‚ †}'[ ±2Iè÷Ïi»>#õ<%sò|M©Ç9®€.°ÌÑp>F9ZÃ‚hÒÚ€_ŸÇ­¨‡´èÊóÖ¤y¿f× 1B;õî­ê­_˜İÈ»¿Úøûô?;BÁ¡@İû­*·ûJÿğG 6§±?±êEN‰g¹vèiEkI|…\^xù­õm"H{”Šï
+5~ë\]«)oû‰áDáÀCéH2Šà	Œ!Bt3_£Å„’"#JĞY!ÀâZCÆŒ“ääQ[Ù¸ê[æ³Bˆyš°9äÂn4Nu]±ŒõM€1¤3ÜÜV#ô“ºĞ²O3pÃ«”úÕyh²“ô¬(RÎm1vd‚ì)t§™:<¶tÅf:¢ÛÀâ¬u: <)6Óqgî ñåEJIòa¢/¼™‹Ğíp3¥ _ˆCK“ŞPK…NŸHzäsÛÀ¾²\ä1Ã­(â†€EGö7<ì›‡–ßïÙv "ü>&_u-Kà
+	éíŞ=,s¿Ì™âğpx6ğF—ªŒ€èü÷}º&ôÃoö)dûá	5û–{KgPÍyö Ì½¨°¿[+˜ºQ&3Gğ{81€D°–Ìî|¥éó÷¼:ÍTR»y”Å*V¥ñI9Ë“Öd
+¯`›í.÷¦Lğˆyg£–Óşx¥€™	CNù;9ï@àØío‚H>~)œ"n¨lY
+?Âª+µU
+‚F ÈbÒ­ºvœşcŠZNzÛL¥bËª~¨FË>ëB¡y+ ¶¾Ä‰*š£¬~ùäel®(Fd¸¡y»f÷Map­Ş’Ğ;İ¶¢¦)»*veîãõ0;h¼U¤Y]˜ÛƒòéÍw¬ZÁ|WeúŒ¤àşò:OÙI§·ûÌ9‘ÖËùGwˆ¬ìÀp‘%Ãt7å3i7Ç¿¸òKyËp´Ó’8°­]µ±NMˆ	£K=ĞöY@ûúI>‹‘fĞ
+Ø ½]4­K·ÊËÖ±áä˜înfK	?8, Oä©nœÎ@½ø9{ë3ÏRĞ9»µ6r¬ß·’KöM|Oeğ£Àüj;åY6‡—ãA¦àªmZÏ™=CY¹‹=›Cy¡2]0[¶E€ÊYëFH5ò“"
+‚³Û¿‘‘­9ÇVÖ™y/çf0 E•2.ú³SåX®ØsÁíØ´ãK5å…Ûó¾ z$Ê“_ÔãÎĞ`{æa°Ò~WİÃØ ü
+æ`Ïí®7¶Ët–fÅğƒ¡DQbUá·ñx80@Dà–-Ìÿ¼©¹ö¿;”ëE¨ÔûšùQ¶;’F
+‚ †}'[ ±2Iè÷Ïi»>#õ<%3ò|M©Ç9®€.°ÌÑp>F9ZÃ‚hÒÚ€_ŸÇ­¨‡´èÊóÖ¤y¿f× 1B;õî­ê­_˜İÈ»¿Úøûô?;BÁ¡@İû­*·ûJÿğG 6§±?±êEN‰g¹vèiEkI|…\^xù­õm"H{”Šï
+5~ë\]«)oû‰áDáÀCéH2Šà	Œ!Bt3_£Å„’"#JĞY!ÀâZCÆŒ“ääQ[Ù¸ê[æ³Bˆyš°9äÂn4Nu]±Œõj§ZÏUºĞœ‹şpE/½hz¥ÍÔº¤ö‹MlT}ø[±ˆçõ›^´gğíÌÅ
+6ô…Tç»Õ¬ "G‡|WOP[“¬ºÃåênª™ŠÿrüÙVõÌ´Aui¾ÃÚ_…'<Et£/±Eí@>#ƒİeF´mèê	 )íë#!¶wá1xdi OyQ‡I—X@U¨ßÎ¨õ©¦¼¸è+½¬â.Mê•Ğ0›“c¥p"*zŸ<7–QÓu¨	iC¹&êÊ6¢3\ 6«9PÅ+ã/BWJ®:À·”²0jË0ÓdÕr†‘]ı$„7|Ñ&suĞò£jxÙªÆ43v0CaÄı­n*{¯w†ÇPÃåÈø%ˆÂ9ÍûÒKÖîmÿş„É|I¾éwÉI¹Ã?l‚wöV¶õ}æ€ïE¹ÆÜ|6NA#€ië¥îÚ=“âZ;ÿ—ß1ÇÕ È—O‡º17É³IêqH‹Y’
+îh›¹[Bğú¥¢^œœ+0íÚqë/Ä}²ã÷Ÿ;»€÷ä™”5ğĞƒTéf—Ùİ	Jsº·l±*[p‘êÂ ¾/ç¬:¶X[ëú½­ŸRªUO?1…–!7e³ø¦F>mÏ2‹’ %P‚å¸!,ÜÂÆcâ2„ V¶C&ªÁt1Æ1÷a³FÛtŞp¨T54v¶ä´Ò®nÿ÷„‚<~ÎÿÓÇU&Ò)î_Á<N»+ôØèu»RİÓv2qTq´ïVí[h›jÅ€¼·æºÉx7CóÖœíÚ^¼Â.ÎÃKÖp,—İ°Ê'“2÷
+™ ­o™øDl\Ân\ròn¤à=½ÿo§»íC}ºj’¯æeÓØ.Iò@š¯t# Ş°ĞíÅ> ƒë¥Kä(A÷é©»é¦!m´"<x0‡1—a€­sêUÿ4‹6ÆÔÆµ!Ä‹ÀãÔ–À1Ï“ÓerÖ­]n=(ÎËĞç³%€.Î²»Ú$ŒëUÄô2æ0/aéÆà=g†}RÑ¶Wo<îu¼´¢sı:ŞÌÒEÕ{†úQğ¯×¸š-´B¨ö9)ıë4aù‡íuZW5v¤ƒ^Ô±ë[àìŸıØ
+¦­ø¿›i]Y*>[d;4ÔĞ”—v]•j<«•`pw;¡×`k]Á×ñ7Ó¦­ñv¥Ç·ƒg+”ÈŸf£¡ØYØøÃ[¢Èê‡˜}õ¾ ·şY{	pÕ`›·4)ˆÙa5ÇbçG$]4î@¼@:{2‚0!ö¶èa?¹ 9s3DW±gmY){ÚgÄ5ÌH’qålÒôî´ßäÜÆûMÜòj§ZÏUºĞœ‹şpE/½hz¥ÍÔº¤ö‹MlT}ø[±ˆçõ›^´gğíÌÅ
+6ô…Tç»Õ¬ "G‡|WOP[“¬ºÃåênª™ŠÄIüÙVõÌ´Aui¾ÃÚ_…'<Et£/±Eí@>#ƒİeF´mèê	 )íë#!¶wá1xdi OyQ‡I—X@U¨ßÎ¨õ©¦¼¸è+½¬â.Mê•Ğ0›“c¥p"*zŸ<7–QÓu¨	iC¹&êÊ6¢3\ 6«9PÅ+ã/BWJ®:À·”²0jË0ÓdÕr†‘]ı$„7|Ñ&suĞò£jxÙªÆ43v0CaÄı­n*{¯w†ÇPÃåÈø%ˆÂ9ÍûÒKÖîmÿş„É|I¾éwÉI¹Ã?l‚wöV¶õ}æ€ïE¹ÆÜ|6NA#€ië¥îÚ=“âZ;ÿ—ß1ÇÕ È—O‡º17É³IêqH‹Y’
+îh›¹[Bğú¥¢^œœ+0íÚqë/Ä}²ã÷Ÿ;»€÷ä™”5ğĞƒTéf—Ùİ	Jsº·l±*[p‘êÂ ¾/ç¬:¶X[ëú½­ŸRªUO?1…–!7e³ø¦F>mÏ2‹’ %P‚å¸!,ÜÂÆcâ2„ V¶C&ªÁt1Æ1÷a³FÛtŞp¨T54v¶ä´Ò®nÿ÷„‚<~ÎÿÓÇU&Ò)î_Á<N»+ôØèu»RİÓv2qTq´ïVí[h›jÅ€¼·æºÉx7CóÖœíÚ^¼Â.ÎÃKÖp,—İ°Ê'“2÷
+™ ­o™øDl\Ân\ròn¤à=½ÿo§»íC}ºj’¯æeÓØ.Iò@š¯t# Ş°ĞíÅ> ƒë¥Kä(A÷é©»é¦!m´"<x0‡1—a€­sêUÿ4‹6ÆÔÆµ!Ä‹ÀãÔ–À1Ï“ÓerÖ­]n=(ÎËĞçpæTú®Ò‘ğÃk(–5{¯óìµ=¦€Maš‘Gæ&Ónsn§‹˜E¡w¼»,èFàœJëèİÿRËùŸPê>?à™­Ç’½”ÈÄı?í@ ÙÑ‹qÊx>ûàïäÅ‚ıFf[>ğ€½¹*©ñFUÎğÌ€È}£¿‰¡·UÛĞ4en ‡ì]tÉWo/s/\¥RP‘åÅ¥=¹ÓÕ:nâçNiŞ5Ãy?`OêşÈK’3°ö¶3'Dw	§ƒËŠ{ËóÇõ"Öˆ3KúØzcÈ‚zjŒB…D¿»JwóûØQ´’õ¯àÛ¹ê¹„ög›w©d5Úú¶lÔ³´Ş[ô«×Ï®Å­şïC5H¼E@:=ª“ØÊkfä!Ü™„ñøjl-ïºk‚ŞªÓ»™.÷ŞD¨ƒ/0q¹K]Î ÿë¬£­iM^¤)Öó±êÍ6~=Lı|HØØå=:àXCş5ÊŒ#‹[%¼¸ 9ËÖSƒ`ãê9?CAœ]Ö»§˜Ñ0’DC8 5O8kîàï…M¦·İ(}•êk‹òú^˜D1"3èdà‡Œÿ8Â¡|iğCi^ÁÁ);õë‰æôØVËz"Ì ì³¦YV3w{È!”ÿˆñ×Op‹ùºYèàŠb@˜AáûŒÇ¸O°¶Æ’Ã@<Ÿ>Ñi7Åz?ó€µf‡DÍœlĞ†wJmşƒ®ã>.7í§Fñv@»m(v°ˆväÁ,á¬6R ŠzÓ_U¨•uŒ¯É,†m¼d¦ÄCªT§“³$[õù…ešò N|°¼i*õñ)†œ…Rõ¶ÌòQ!HšF[cjÄB|^˜ìë_ÙHKgÇä=²(Ş54ûŞÊöy„ „¿’æëK¹êiÔ ñÂÆ6ugáÅ×ØC˜³ÚEŠ¢Š”È oùG©^(İ.iÍÿx-M²ŒÌÎ~xÌ«Qg~¨Ç™#[°‰0ûImäƒ	£¡I¹½¹56
+‹ñGô‚Öğ3izÁÚi0…xò4µg&»7^9—k—ÄÅ?ÿÙ‰´Èu”ÀÈáçCuDº®h'@´2õ2`¤Yğ1 ±+¶o†½³\–å—²E¤˜«ÚO
+¥ª–PÅy8‰~
+)Î°úöÁa7Ù§Q±xğ¿+ñbÆ«õöûMˆ±"iÄ¬ÑM,$vè‰áŸ±ŸíDİ#éiŸE\
+€¾K›ÛÇ’ÛµÃ5v0—%åĞÏ˜É·í‹£%»¼ÔÀ.›W¯úa*joß}‰ŒŠè^wÓÍ1yDòCµàf¥‡”–<Åzé­ Ó:ß´ÿ†±é¿ŠtúºX(°¶bQXM±şpÄ¹pæTú®Ò‘ğÃk(–5{¯óìµ=¦€Maš‘Gæ&Ónsn§‹˜E¡w¼»,èFàœJëèİÿRËùŸPê>?à™­Ç’½”ÈÄı?í@ ÙÑ‹qÊx>ûàïäÅ‚ıFf[>ğ€½¹*©ñFUÎğÌ€È}£¿‰¡·UÛĞ4en ‡ì]tÉWo/s/\¥RP‘åÅ¥=¹ÓÕ:nâçNiŞ5Ãy?`OêşÈK’3°ö¶3'Dw	§ƒËŠ{ËóÇõ"Öˆ3KúØzcÈ‚zjŒB…D¿»JwóûØQ´’õ¯àÛ¹ê¹„ög›w©d5Úú¶lÔ³´Ş[ô«×Ï®Å­şïC5H¼E@:=ª“ØÊkfä!Ü™„ñøjl-ïºk‚ŞªÓ»™.÷ŞD¨ƒ/0q¹K]Î ÿë¬£­iM^¤)Öó±êÍ6~=Lı|HØØå=:àXCş5ÊŒ#‹[%¼¸ 9ËÖSƒ`ãê9?CAœ]Ö»§˜Ñ0’DC8 5O8kîàï…M¦·İ(}•êk‹òú^˜D1"3èdà‡Œÿ8Â¡|iğCi^ÁÁ);õëğŸôØVËz"Ì ì³¦YV3w{È!”ÿˆñ×Op‹ùºYèàŠb@˜Aáû

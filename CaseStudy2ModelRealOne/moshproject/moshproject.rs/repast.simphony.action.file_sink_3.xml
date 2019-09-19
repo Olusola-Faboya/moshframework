@@ -1,0 +1,15 @@
+<repast.simphony.data2.engine.FileSinkDescriptor>
+  <name>Passenger Behaviour File Sink</name>
+  <dataSet>PassengerBehvaiour Data Set</dataSet>
+  <delimiter>,</delimiter>
+  <format>TABULAR</format>
+  <sourceIds class="linked-hash-set">
+    <string>tick</string>
+    <string>Imitating</string>
+    <string>Inquiring</string>
+    <string>Optimising</string>
+    <string>Repeating</string>
+  </sourceIds>
+  <fileName>Passenger BehaviourOutput.txt</fileName>
+  <addTimeStamp>true</addTimeStamp>
+</repast.simphony.data2.engine.FileSinkDescriptor>

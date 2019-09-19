@@ -1,0 +1,85 @@
+package moshproject.agents.mode;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+public abstract class Mode {
+	List<ModeAttribute> attributeList = new ArrayList<ModeAttribute>();
+	List<ModeAttribute> subAttributeList = new ArrayList<ModeAttribute>();
+	Random rand = new Random();
+	
+	public Mode(){
+
+	}
+	
+	public ModeAttribute getAttribute(String name) {
+		ModeAttribute a = null;
+		
+		for (ModeAttribute attr : attributeList){
+			if (attr.name.equals(name)){
+				a = attr;
+				break;
+			}
+		}
+
+		return a;
+	}
+	
+	public void addAttribute(String name){
+		ModeAttribute modeAttr = new ModeAttribute(name);
+		attributeList.add(modeAttr);
+	}
+	
+	public double setValueToAttribute(String name, double value) {
+		for (ModeAttribute attr : attributeList){
+			if (attr.name.equals(name)){
+				attr.value = value;
+			}
+		}
+		return value;
+		
+	}
+	
+	public double getValueOfAttribute(String name) {
+		double value=0.0;
+		for (ModeAttribute valueAttr:attributeList){
+			if (valueAttr.name.equals(name)){
+				value = valueAttr.value;
+			}
+			
+		}
+		return value;
+	}
+	
+	public double getValueOfSubAttribute(List<ModeAttribute> name) {
+		double value=0.0;
+		for (ModeAttribute valueAttr:attributeList){
+			if (valueAttr.name.equals(name)){
+				value = valueAttr.value;
+			}
+			
+		}
+		return value;
+	}
+	
+	public double evaluateHigherAbstraction(List<ModeAttribute> attributeList){
+		double value=0.0;
+		for(ModeAttribute attribute: attributeList){
+			getValueOfSubAttribute(attributeList);
+		value += attribute.value;
+			
+		}
+		return value/attributeList.size();
+		
+	}
+	
+	//dummy method - implemented in children classes
+	public double addValueToAllAttribute() {
+		return 0;
+	}
+
+	//public abstract void updatePeriodOfTheDay(int period);
+
+
+}

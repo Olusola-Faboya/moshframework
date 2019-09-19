@@ -1,0 +1,609 @@
+package moshproject.agents.passenger;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import org.apache.commons.math3.analysis.function.Abs;
+
+import moshproject.agent.enums.ModeType;
+import moshproject.agent.enums.NeedWeight;
+import moshproject.agent.enums.SocialWeight;
+import moshproject.agents.mode.Cycle;
+import moshproject.agents.mode.Walking;
+import moshproject.agents.mode.PublicTransport;
+import moshproject.agents.mode.PersonalVehicle;
+import moshproject.agents.mode.Mode;
+import repast.simphony.query.space.grid.GridCell;
+import repast.simphony.query.space.grid.GridCellNgh;
+import repast.simphony.random.RandomHelper;
+import repast.simphony.space.continuous.ContinuousSpace;
+import repast.simphony.space.grid.Grid;
+import repast.simphony.space.grid.GridPoint;
+import repast.simphony.util.SimUtilities;
+
+public abstract class PassengerType {
+	
+	public Passenger myPassenger;	
+	private Mode prefMode;
+	private int strongLinks;
+	private int weakLinks;
+	private Mode interracteeMode;
+	
+	//public Map<SocialWeight, Double> SocialWeight;
+	
+	Map<Passenger,Double> interAgentDiff;	 
+	private ArrayList<Passenger> passengerList;	
+	public void setPassengerList(ArrayList<Passenger> passengerList) {
+		this.passengerList = passengerList;
+	}
+	public ArrayList<Passenger> getPassengerList() {return passengerList;}
+
+	private ArrayList<Passenger> selectedPass;		
+	
+	private ArrayList<Passenger> antiComformist;		
+	public ArrayList<Passenger> getAntiComformist() {return antiComformist;	}
+	public void setAntiComformist(ArrayList<Passenger> antiComformist) {this.antiComformist = antiComformist;}
+	
+	private ArrayList<Passenger>comformist;
+	public ArrayList<Passenger> getComformist() {return comformist;	}
+	public void setComformist(ArrayList<Passenger> comformist) {this.comformist = comformist;}
+	
+	private ArrayList<Double>superiority;
+	public ArrayList<Double> getSuperiority() {return superiority;}
+	public void setSuperiority(ArrayList<Double> superiority) {this.superiority = superiority;}
+
+	private ArrayList<Double> socialAgreabilityValue;	
+	public ArrayList<Double> getSocialAgreabilityValue() {return socialAgreabilityValue;}
+	public void setSocialAgreabilityValue(ArrayList<Double> socialAgreabilityValue) {this.socialAgreabilityValue = socialAgreabilityValue;}
+
+	private double changeInExperience;
+	
+	private ContinuousSpace<Object> space;
+	private Grid<Object> grid;
+
+	List<Mode> prefferedModeList = new ArrayList<Mode>();
+	private double socialSatisfaction;
+	private double socialUncertainty;
+	private double changeInEfficiencyExperience;
+	private double changeInComfortabilityExperience;	
+	private double changeInSafetyExperience;
+	public double getSocialSatisfaction() {return socialSatisfaction;}
+	
+	
+	public PassengerType(ContinuousSpace<Object> space, Grid<Object> grid) {
+		this.space = space;
+		this.grid = grid;	
+		strongLinks =4;
+		weakLinks=10;
+		interracteeMode =null;
+	}
+/// Change in Experiences that form the uncertainty
+	public double changeInExperience(){
+		changeInExperience = myPassenger.getLevelOfNeedsSatisfaction()-myPassenger.getPreviousExperience();
+		 myPassenger.setChangeInExperience(changeInExperience);
+		return myPassenger.getChangeInExperience();
+	}	
+	
+	public double changeInEfficiencyExperience(){
+		changeInEfficiencyExperience = myPassenger.getLevelOfEfficiencyNeedsSatisfaction()-myPassenger.getModeEfficiency();
+		 myPassenger.setChangeInEfficiencyExperience(changeInEfficiencyExperience);
+		return myPassenger.getChangeInEfficiencyExperience();
+	}	
+	
+	public double changeInComfortabilityExperience(){
+		changeInComfortabilityExperience = myPassenger.getLevelOfComfortabilityNeedsSatisfaction()-myPassenger.getModeComfortability();
+		 myPassenger.setChangeInComfortabilityExperience(changeInComfortabilityExperience);
+		return myPassenger.getChangeInComfortabilityExperience();
+	}	
+	
+	public double changeInSafetyExperience(){
+		changeInSafetyExperience = myPassenger.getLevelOfSafetyNeedsSatisfaction()-myPassenger.getModeSafety();
+		 myPassenger.setChangeInSafetyExperience(changeInSafetyExperience);
+		return myPassenger.getChangeInSafetyExperience();
+	}	
+///******THIS SECTION EVALUTATES PREVIOUS EXPERINECES	
+	public double updatePreviousExperience(){
+		List<Double> previousExperienceList= myPassenger.getModeSatisfactionList();
+		if(previousExperienceList.size()==0){
+			myPassenger.setPreviousExperience(0.0);
+		}else{													
+			myPassenger.setPreviousExperience(previousExperienceList.get(previousExperienceList.size()-1));						
+		}
+		return myPassenger.getPreviousExperience();	
+	}
+	
+	public double updateExistenceEfficiency(){
+		List<Double> previousEfficiencyList= myPassenger.getModeEffciencyList();
+		if(previousEfficiencyList.size()==0){
+			myPassenger.setdEfficiency(0.0);
+		}else{													
+			myPassenger.setdEfficiency(previousEfficiencyList.get(previousEfficiencyList.size()-1));						
+		}
+		return myPassenger.getdEfficiency();
+	}
+	
+	public double updateExistenceComfortability(){
+		List<Double> previousComfortabilityList= myPassenger.getModeComfortabilityList();
+		if(previousComfortabilityList.size()==0){
+			myPassenger.setdComfortability(0.0);
+		}else{													
+			myPassenger.setdComfortability(previousComfortabilityList.get(previousComfortabilityList.size()-1));						
+		}
+		return myPassenger.getdComfortability();
+	}
+	
+	public double updateExistenceSafety(){
+		List<Double> previousSafetyList= myPassenger.getModeSafetyList();
+		if(previousSafetyList.size()==0){
+			myPassenger.setdSafety(0.0);
+		}else{													
+			myPassenger.setdSafety(previousSafetyList.get(previousSafetyList.size()-1));						
+		}
+		return myPassenger.getdSafety();
+	}
+	
+	//Passenger Behaviours: Imitation, Inquiring, Optimising and Repetition		
+	//Repetition behaviour update	
+	public void repetition() {
+	//	double changeInExperience = myPassenger.getLevelOfNeedsSatisfaction()-myPassenger.getPreviousExperience();	
+		//	myPassenger.setChangeInExperience(changeInExperience());		
+		System.out.println("I will repeat my last choice process");
+	}
+	///Optimising behaviour update	
+	public void optimising() {
+		double changeInExperience = myPassenger.getLevelOfNeedsSatisfaction()-myPassenger.getPreviousExperience();
+//		if(changeInExperience>=0){
+//			double changeInSatisfaction =  myPassenger.getSocialInformation()+changeInExperience();		
+//			myPassenger.setSocialSatisfaction(changeInSatisfaction );
+//		}		
+		double changeInSatisfaction =  myPassenger.getSocialInformation();//+changeInExperience();		
+		myPassenger.setSocialSatisfaction(changeInSatisfaction );
+		//myPassenger.setChangeInExperience(changeInExperience());
+		System.out.println("I'm, Optimising");
+	}
+	//This section returns passenger to interact with during imitation
+	///Imitation behaviour interaction and update
+	private Passenger findStrongLinksInteractee(){		
+		GridPoint pt = grid.getLocation(myPassenger);
+		GridCellNgh<Passenger> nghCreator = new GridCellNgh<Passenger>(grid, pt,Passenger.class,strongLinks,strongLinks);			
+		List<GridCell<Passenger>> gridCells=nghCreator.getNeighborhood(false);
+		SimUtilities.shuffle(gridCells, RandomHelper.getUniform());
+		Passenger passenger =null;
+		passengerList = new ArrayList<Passenger>();		
+		for(GridCell<Passenger> cell:gridCells){
+			if(cell.size()>0){
+				Iterable<Passenger> items = cell.items();
+				Iterator<Passenger> iterator = items.iterator();								
+				while (iterator.hasNext()) {
+					passenger = (Passenger) iterator.next();	
+					if((myPassenger.passengerType == passenger.passengerType))										
+					passengerList.add(passenger);					
+				}					
+			}		
+		}
+		if(passengerList.size()>0){
+			int numberOfElements = (int) (((int) passengerList.size())*myPassenger.getSocialFrequency());//*0.15);
+			//for (int i=0; i<=numberOfElements;i++)
+			try{
+				int index = RandomHelper.nextIntFromTo(0,numberOfElements);
+				while (passenger.getPreviousExperience()>myPassenger.getPreviousExperience()){
+					 passenger = passengerList.get(index);
+				}				
+				 System.out.println("The selected Passenger @ location %s" + grid.getLocation(passenger).toString());				
+			}catch (Exception e){
+				System.out.println("No Passenger match for Imitation" );
+			}
+		}
+		return passenger;
+	}
+		
+	public ArrayList<Passenger> findWeakLinksInteractee(){		
+		GridPoint pt = grid.getLocation(myPassenger);
+		GridCellNgh<Passenger> nghCreator = new GridCellNgh<Passenger>(grid, pt,Passenger.class,weakLinks,weakLinks);			
+		List<GridCell<Passenger>> gridCells=nghCreator.getNeighborhood(false);
+		SimUtilities.shuffle(gridCells, RandomHelper.getUniform());
+		Passenger passenger =null;
+		ArrayList<Passenger> selectedPassengerList = new ArrayList<>();	
+		ArrayList<Passenger> socialFrequencyPassengerList = new ArrayList<>();		
+		 passengerList = new ArrayList<Passenger>();		
+		for(GridCell<Passenger> cell:gridCells){
+			if(cell.size()>0){
+				Iterable<Passenger> items = cell.items();
+				Iterator<Passenger> iterator = items.iterator();								
+				while (iterator.hasNext()) {
+					passenger = (Passenger) iterator.next();						
+					selectedPassengerList.add(passenger);					
+				}					
+			}		
+		}	
+		try{
+			if(selectedPassengerList.size()>0){
+				int numberOfElements = (int) (((int) selectedPassengerList.size()));//*myPassenger.getSocialFrequency());//*0.15);		
+				for (int i =0; i<= numberOfElements; i++){
+				 passenger = selectedPassengerList.get(i);	
+			//	socialFrequencyPassengerList.add(passenger) ;
+				 passengerList.add(passenger);
+				}
+			}
+	//		System.out.println("The inquiring Passenger is @ location %s" + grid.getLocation(passenger).toString());
+		}catch(Exception e){
+		
+	}
+		myPassenger.setSelectedFriends(passengerList);
+		return  passengerList;
+	}
+	
+//	public void printSelctedFriends(){
+//	ArrayList<Passenger>	passList = new ArrayList<Passenger>();
+//	passList=findWeakLinksInteractee();
+//		for (Passenger pass:passList){
+//			System.out.println(" The total list of selected list is"+ pass);			
+//		}
+//	}
+	
+	private Map <Passenger, Double> interAgentDifferences(ArrayList<Passenger> selectedPassLists){
+		interAgentDiff = new HashMap<>();		
+		double IAD =0.0;
+		// selectedPassLists  = findWeakLinksInteractee();
+		 selectedPassLists=getPassengerList();	
+		Passenger passenger = null;
+		try{
+		if (selectedPassLists.size()>0){			
+				for (int i =0; i<= selectedPassLists.size()-1; i++){	
+					passenger = selectedPassLists.get(i);					
+					IAD = 	passenger.getPreviousExperience() - myPassenger.getPreviousExperience();	
+					interAgentDiff.put(passenger, IAD);		
+				}				
+		}			
+		}catch (Exception e){
+			
+		}
+		return interAgentDiff;
+	}
+//	
+	
+	public void socialSimilarity(Map map){			
+	map = interAgentDifferences(getPassengerList());	
+	ArrayList<Passenger> antiComformist= new ArrayList<>();
+	ArrayList<Passenger> comformist= new ArrayList<>();
+	ArrayList<Double> socialAgreabilityValues= new ArrayList<>();
+	ArrayList<Double> superiority= new ArrayList<>();
+	Set passengers = map.keySet();
+	Iterator<Passenger> itr = passengers.iterator();	
+	Passenger passenger;
+	double value;
+		while(itr.hasNext()){
+			passenger = (Passenger)itr.next();
+			value=(passenger.getPreviousExperience()- myPassenger.getPreviousExperience());
+			value = (double) map.get(passenger);
+			socialAgreabilityValues.add(value);				
+		//	System.out.println( passenger + "==>"+ value);
+			if ((value<= myPassenger.getAssumedMaximumDifference())&&(value>0)){
+				 comformist.add(passenger);				 
+			 }else {
+				 antiComformist.add(passenger);				 
+			 }
+			if(passenger.getModeSatisfaction()<myPassenger.getModeSatisfaction()){
+				double supNumber= (double)map.get(passenger);
+				superiority.add(supNumber);
+			}
+		}		
+		myPassenger.setAntiComformist(antiComformist);
+		myPassenger.setComformist(comformist);
+		setSocialAgreabilityValue(socialAgreabilityValues);
+		myPassenger.setSuperiority(superiority);		
+	}
+	
+
+///This method computer the social factors weight and determined the social conformity and superiority
+	public Map<SocialWeight, Double> getSocialSatisfactionFactors(ArrayList<Passenger> passengersList){			
+		Map<SocialWeight, Double> socialFactors = new HashMap<SocialWeight, Double>();		
+		double sameMode =0.0;		
+		double superioritySatisfaction= 0.0;
+		double totalPassenger =0.0;	
+		try{
+			if (passengersList.size()>0){
+				for (Passenger passenger:passengersList){
+				//	System.out.println(" Friend prefered mode"+ passenger. getPrefferedMode()+"mypassenegr mode"+ myPassenger.getPrefferedMode());
+					if ((passenger.getPrefferedMode() instanceof  Cycle)&&(myPassenger.getPrefferedMode() instanceof Cycle)
+						||((passenger.getPrefferedMode() instanceof  Walking)&&(myPassenger.getPrefferedMode() instanceof Walking))
+						||((passenger.getPrefferedMode() instanceof  PublicTransport)&&(myPassenger.getPrefferedMode() instanceof PublicTransport))
+						||((passenger.getPrefferedMode() instanceof  PersonalVehicle)&&(myPassenger.getPrefferedMode() instanceof PersonalVehicle))){
+						++sameMode;
+					}
+					if(passenger.getModeSatisfaction()<myPassenger.getModeSatisfaction()){
+						++superioritySatisfaction;
+					}			
+					++totalPassenger;
+				}
+			}
+		}catch(Exception e){
+			
+		}	
+		try{
+			socialFactors.put(SocialWeight.CONFORMITY, (double) (Double.isNaN(sameMode/totalPassenger)?1:sameMode/totalPassenger));	
+			socialFactors.put(SocialWeight.ANTI_CONFORMITY, (double) (Double.isNaN((totalPassenger-sameMode)/totalPassenger)?1:(totalPassenger-sameMode)/totalPassenger));
+			socialFactors.put(SocialWeight.SUPERIORITY, (double) (Double.isNaN(superioritySatisfaction/totalPassenger)?1:superioritySatisfaction/totalPassenger));			
+			}catch (Exception e) {
+				// TODO: handle exception
+		}
+//		System.out.println("The Social comfomity values is:"+ sameMode);
+//		System.out.println("The Social anticomfomity values is:"+ (Math.abs(totalPassenger-sameMode)));
+//		System.out.println("The Social superior values is:"+ superioritySatisfaction);
+//		System.out.println("The Social total values is:"+ totalPassenger);
+		return socialFactors;
+	}
+	public double getSocialUncertainty(ArrayList<Passenger> passengersList){
+		passengersList = new ArrayList<Passenger>();
+		if(passengersList.size()==0){
+			return 1;
+		}
+		double sameMode =0.0;		
+		try{
+			if (passengersList.size()>0){
+				for (Passenger passenger:passengersList){
+					System.out.println(" Friend prefered mode"+ passenger. getPrefferedMode()+"mypassenegr mode"+ myPassenger.getPrefferedMode());
+					if ((passenger.getPrefferedMode() instanceof  Cycle)&&(myPassenger.getPrefferedMode() instanceof Cycle)
+						||((passenger.getPrefferedMode() instanceof  Walking)&&(myPassenger.getPrefferedMode() instanceof Walking))
+						||((passenger.getPrefferedMode() instanceof  PublicTransport)&&(myPassenger.getPrefferedMode() instanceof PublicTransport))
+						||((passenger.getPrefferedMode() instanceof  PersonalVehicle)&&(myPassenger.getPrefferedMode() instanceof PersonalVehicle))){
+						++sameMode;
+					}					
+				}
+			}
+		}catch(Exception e){
+			
+		}	
+		System.out.println(" The total same mode is"+ sameMode);
+		double socialUncertainty= Double.isNaN((1-sameMode/passengersList.size()))?0:(1-sameMode/passengersList.size());
+		
+		return socialUncertainty;
+	}
+	
+	public double comformistList(ArrayList<Passenger> comformPassenger){
+		double conformity =0.0;
+		try{
+		if (comformPassenger.size()>0){
+			for (Passenger passlist:comformPassenger){
+				conformity= conformity+passlist.modeSatisfaction;
+			//	System.out.println(" Comformist list"+ passlist+"comform total is"+ conformity);				
+			}
+			
+		}			
+			}catch (Exception e) {
+				// TODO: handle exception
+			}
+		double	conformist= Double.isNaN(conformity/comformPassenger.size())?0:conformity/comformPassenger.size();
+	//	System.out.println(" Comformist value is"+ conformist);
+		return conformist;
+	}
+	
+	public double superirorityList(ArrayList<Double> superiorityList){
+		double superiorValue=0.0;
+		try{
+		if (superiorityList.size()>0){
+			for (Double passlist:superiorityList){
+				superiorValue=superiorValue+passlist;
+			//	System.out.println( " Superior list"+passlist);				
+			}
+		}		
+			}catch (Exception e) {
+				// TODO: handle exception
+			}
+		double	superiorityValue= Double.isNaN(Math.abs(superiorValue/superiorityList.size()))?0:Math.abs(superiorValue/superiorityList.size());
+	//	System.out.println(" Sperior lues is"+ superiorityValue);
+		return superiorityValue;
+	}
+	
+	public double antiComformistList(ArrayList<Passenger> antiComform){
+		double antiConformist=0.0;
+		try{
+		if (antiComform.size()>0){
+			for (Passenger passlist:antiComform){
+				antiConformist=antiConformist+passlist.modeSatisfaction;
+			//	System.out.println( " Anticomformist list"+passlist);				
+			}
+		}		
+			}catch (Exception e) {
+				// TODO: handle exception
+			}
+		double	antiConformists= Double.isNaN(antiConformist/antiComform.size())?0:antiConformist/antiComform.size();
+	//	System.out.println(" Anticomform values is"+ antiConformists);
+		return antiConformists;
+	}
+	
+	@SuppressWarnings("unused")
+	public void imitation() {	
+		System.out.println(" Imitation zone");
+		ArrayList<Passenger> passengerList = new ArrayList<>();	
+		ArrayList<Passenger> selectedFriendsList = new ArrayList<>();	
+		Passenger interractee =null;
+		passengerList = getPassengerList();
+				
+		if (passengerList == null) {	
+			System.out.println("No Passenger match for Imitation" );
+			myPassenger.isInteracteeFound();
+			return;
+		}
+			
+		if(passengerList.size()>0){
+			int numberOfElements = (int) (((int) passengerList.size())*myPassenger.getSocialFrequency());//*0.15);	
+			for (int i =0; i<= numberOfElements; i++){
+				 interractee = passengerList.get(i);	
+				selectedFriendsList.add(interractee) ;				
+				}
+			
+			try{
+				int index = RandomHelper.nextIntFromTo(0,numberOfElements);		
+					 interractee = passengerList.get(index);
+					 determineSimilarity(interractee);
+					 while(interractee.getSimilarityValue()> myPassenger.getAssumedMaximumDifference());	
+					 System.out.println("Interractee found");
+					 interractee = passengerList.get(index);
+					 myPassenger.setInteracteeFound(true);	
+					 interracteeMode = interractee.getPrefferedMode();	
+			}catch (Exception e){				
+				
+			}
+		}		
+		 System.out.println("The selected Passenger @ location %s" + interractee);	
+		 myPassenger.setInteracteeFound(true);		
+		 try{
+		 double socialUncertainty =getSocialUncertainty(selectedFriendsList);
+		 System.out.println("+++++++The social uncertainty is:"+ socialUncertainty);
+		 myPassenger.setSocialUncertainty(socialUncertainty);
+		 }catch(Exception e){
+			 
+		 }
+		 System.out.println("The interractee mode is :"+ interracteeMode);
+		
+		System.out.println("The imitation interactee is	:" + interractee);
+			
+	}
+
+	
+///////
+		public double determineSimilarity(Passenger passenger)
+		{				
+			double needSimilarity=0.0;
+			double previousExperience=0.0;						
+					 needSimilarity = Math.max(0, 1 - Math.abs(passenger.dNeedsWeight.get(NeedWeight.EFFICIENCY) - myPassenger.dNeedsWeight.get(NeedWeight.EFFICIENCY)) -
+							Math.abs(passenger.dNeedsWeight.get(NeedWeight.COMFORTABILITY) - myPassenger.dNeedsWeight.get(NeedWeight.COMFORTABILITY)) -
+							Math.abs(passenger.dNeedsWeight.get(NeedWeight.SAFETY) -myPassenger.dNeedsWeight.get(NeedWeight.SAFETY)));
+					
+					 previousExperience = 1-Math.abs(passenger.getPreviousExperience()- myPassenger.getPreviousExperience());				
+			double totalsimilarity = ( needSimilarity + previousExperience)/2;
+			System.out.println("The total similarity is "+ totalsimilarity);
+			myPassenger.setSimilarityValue(totalsimilarity);
+			return totalsimilarity;
+		}
+	
+	
+	////This section evaluates Inquiring process	
+	//Note try to use constant as in stupid model here to generate set of passenger to deal with.
+	
+		
+//	private boolean checkSocialAgreeability(){
+//		ArrayList<Double> differenceList = new ArrayList<Double>();
+//		differenceList= myPassenger.getSocialAgreeabilityValue();
+//		if (differenceList != null) {
+//			for(Double diff: differenceList){
+//				System.out.println("the social agreability values"+diff);
+//				if ((diff<= myPassenger.getAssumedMaximumDifference())&&(diff>0));
+//				
+//			}				
+//		}
+//		return true;				
+//	}	
+	///Inquiring behaviour interaction and update
+	private Passenger findInquiringInteractee(){//this is for 			
+		Passenger passenger=null;
+		ArrayList<Passenger> passengerList = new ArrayList<Passenger>();
+		//if (checkSocialAgreeability());
+		passengerList= getComformist();	
+			try{
+				if(passengerList.size()>0){
+					int numberOfElements = (int) (((int) passengerList.size()));//*myPassenger.getSocialFrequency());//*0.15);
+					int index = RandomHelper.nextIntFromTo(0,numberOfElements);
+					while (passenger.getPreviousExperience()>myPassenger.getPreviousExperience()){
+						 passenger = passengerList.get(index);
+					}
+				//	 passenger = passengerList.get(index);		
+				}
+				System.out.println("The inquiring Passenger is @ location %s" + grid.getLocation(passenger).toString());
+			}catch(Exception e){
+			
+		}
+			return passenger;			
+	}
+	
+	
+	public void inquiring() {		
+		Passenger interactee = findInquiringInteractee();			
+		if (interactee == null) {
+			myPassenger.isInquiryInteracteeFound();
+		//	System.out.println("No Inquiry interractee");
+			return;
+		}else {
+			myPassenger.setInquiryInteracteeFound(true);		
+		//	System.out.println("There is inquiry interractee");				
+	//	double changeInExperience =myPassenger.getLevelOfNeedsSatisfaction()-myPassenger.getPreviousExperience();
+	//	double changeInSocialExperience = interactee.getPreviousExperience() - myPassenger.getPreviousExperience();		
+			interracteeMode = interactee.prefferedMode;
+		//	myPassenger.setChangeInExperience( changeInExperience );
+			myPassenger.setSocialUncertainty(getSocialUncertainty(passengerList));
+			myPassenger.setSocialSatisfaction(socialSatisfaction() );
+			myPassenger.setInterracteePrefferedMode(interracteeMode);	
+//			if (myPassenger.prefferedMode!= interracteeMode){
+//				myPassenger.setPrefferedMode(interracteeMode);
+//			}		
+		//	myPassenger.adoptInterracteeMode();
+			System.out.println("The inquiring interactee is" + interracteeMode);
+		//	System.out.println("The social uncertainty is "+ socialUncertainty);
+		}			
+		System.out.println("I'm Inquiring");		
+	}		
+	
+//	private double socialUncertainty(ArrayList<Passenger> listOfFriends){		
+//	//	listOfFriends = getPassengerList();
+//		for (Passenger pass:listOfFriends){
+//			System.out.println(" The total list of selected list is"+ pass);			
+//		}
+//		if(listOfFriends.size()==0)
+//		return 1;
+//		double sameMode=0.0;
+//		for(Passenger pass: listOfFriends){
+//			System.out.println(" My passenger mode is :" +myPassenger.getPrefferedMode()+ "pass mode is :"+ pass.getPrefferedMode());
+//			if((pass.getPrefferedMode() instanceof Cycle && myPassenger.getPrefferedMode() instanceof Cycle)||(pass.getPrefferedMode() instanceof PersonalVehicle && myPassenger.getPrefferedMode() instanceof PersonalVehicle)
+//					||(pass.getPrefferedMode() instanceof Walking && myPassenger.getPrefferedMode() instanceof Walking)||(
+//							pass.getPrefferedMode() instanceof PublicTransport && myPassenger.getPrefferedMode() instanceof PublicTransport)){
+//				++sameMode;		
+//			}
+//			//if(pass.getPrefferedMode()==myPassenger.getPrefferedMode());
+//			
+//		}
+//		System.out.println(" The total same mode is"+ sameMode);	
+//		return 1-(sameMode/listOfFriends.size());		
+//	}
+
+//	private double socialUncertainty(){		
+//		ArrayList<Passenger> antiComformPassenger = new ArrayList<>();
+//		ArrayList<Passenger> comformPassenger = new ArrayList<>();
+//		antiComformPassenger= getAntiComformist();
+//		comformPassenger=getComformist();			
+//			double population = (antiComformPassenger.size()+comformPassenger.size());
+//			double	antiComformistPercent = (antiComformPassenger.size()/population);
+//		//	double	comformistPercent = (comformPassenger.size()/population);
+//			try{
+//				if (antiComformistPercent>0.25){
+//					socialUncertainty= antiComformistPercent;
+//				}
+//		}catch(Exception e){
+//			
+//		}
+//			return socialUncertainty;		
+//	}
+	
+	private double socialSatisfaction(){		
+		ArrayList<Passenger> antiComformPassenger = new ArrayList<>();
+		ArrayList<Passenger> comformPassenger = new ArrayList<>();
+		antiComformPassenger= getAntiComformist();
+		comformPassenger=getComformist();			
+			double population = (antiComformPassenger.size()+comformPassenger.size());
+			double	antiComformistPercent = (antiComformPassenger.size()/population);
+		//	double	comformistPercent = (comformPassenger.size()/population);
+			try{
+				if(antiComformPassenger.size()<comformPassenger.size()){
+					socialSatisfaction=(comformPassenger.size()/population);
+				}
+		}catch(Exception e){
+			
+		}
+			return socialSatisfaction;		
+	}
+	
+}

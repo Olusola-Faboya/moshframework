@@ -1,0 +1,12 @@
+#
+#Tue Aug 21 18:16:13 BST 2018
+output.directory=C\:\\Users\\Olusola\\Desktop\\moshprojectFinalModel\\moshproject\\output1
+host.0.type=LOCAL
+batch.param.file=C\:\\Users\\Olusola\\Desktop\\moshprojectFinalModel\\moshproject\\batch\\batch_params.xml
+key.directory=C\:\\Users\\Olusola/.ssh
+model.directory=C\:\\Users\\Olusola\\Desktop\\moshprojectFinalModel\\moshproject
+vm.arguments=-Xmx512M
+param.file=C\:\\Users\\Olusola\\Desktop\\moshprojectFinalModel\\moshproject\\moshproject.rs\\parameters.xml
+host.0.instances=2
+poll.frequency=1.0
+scenario.directory=C\:\\Users\\Olusola\\Desktop\\moshprojectFinalModel\\moshproject\\moshproject.rs

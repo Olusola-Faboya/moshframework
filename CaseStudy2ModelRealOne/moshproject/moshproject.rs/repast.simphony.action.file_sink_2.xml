@@ -1,0 +1,15 @@
+<repast.simphony.data2.engine.FileSinkDescriptor>
+  <name>Travellers counts File Sink</name>
+  <dataSet>Passenger_Counts Data Set</dataSet>
+  <delimiter>,</delimiter>
+  <format>TABULAR</format>
+  <sourceIds class="linked-hash-set">
+    <string>tick</string>
+    <string>Scooters</string>
+    <string>Cyclists</string>
+    <string>Non-Active Travellers</string>
+    <string>Pedestrians</string>
+  </sourceIds>
+  <fileName>Travellers CountsOutput.txt</fileName>
+  <addTimeStamp>true</addTimeStamp>
+</repast.simphony.data2.engine.FileSinkDescriptor>

@@ -1,0 +1,171 @@
+package moshproject.agents.intervener;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import moshproject.agents.passenger.Cyclist;
+import moshproject.agents.passenger.Passenger;
+import repast.simphony.engine.environment.RunState;
+import repast.simphony.parameter.Parameter;
+import repast.simphony.space.continuous.ContinuousSpace;
+import repast.simphony.space.grid.Grid;
+
+public class Intervener {
+	private ContinuousSpace<Object> space;
+	private Grid<Object> grid;
+	
+	//Intervention intervention;
+	List<Passenger> passengers;
+	Passenger passes;
+	double efficiency;
+	double comfortability;
+	double safety;
+	
+	Passenger passe;
+	public Intervener(ContinuousSpace<Object> space, Grid<Object> grid) {	
+		this.space = space;
+		this.grid = grid;
+		this.efficiency=0;
+		this.comfortability=0;
+		this.safety=0;	
+	}	
+	public void initialize() {
+		// TODO Auto-generated method stub		
+	}	
+	public List<Passenger> getAllPassengers() {
+		Iterable<Passenger> passenger = RunState.getInstance().getMasterContext().getObjects(Passenger.class);
+		passengers = new ArrayList<Passenger>();
+			for(Passenger passes: passenger){
+			passengers.add(passes);
+			}
+		return passengers;
+	}
+	
+	
+	public List<Passenger> getCyclists() {
+		Iterable<Passenger> passenger = RunState.getInstance().getMasterContext().getObjects(Passenger.class);
+		passengers = new ArrayList<Passenger>();
+			for(Passenger passes: passenger){
+				if((passes.passengerType instanceof Cyclist))
+			passengers.add(passes);
+			}
+		return passengers;
+	}
+	
+	//@ScheduledMethod(start =1, interval=1)	
+	public void applyIntervention(){	
+		getAllPassengers();		
+		for ( Passenger p : passengers ) {
+			p.getPrefferedMode().setValueToAttribute("careForNeed", evaluateCaterForNeed(p));
+			p.getPrefferedMode().setValueToAttribute("informationAvailability",evaluateInformationAvailability(p));
+			p.getPrefferedMode().setValueToAttribute("security",evaluateSecurity(p));
+			p.getPrefferedMode().setValueToAttribute("costs",evaluateCosts(p));
+		}
+			
+	}
+	
+	//@ScheduledMethod(start =1, interval=1)
+	public void reset(){	
+		efficiency=0;
+		comfortability=0;
+		safety=0;		
+	}
+		
+	@Parameter(displayName="Efficiency", usageName="Efficiency")
+	public double getEfficiency() {
+		return efficiency;
+	}
+
+	public void setEfficiency(double effciency) {
+		this.efficiency= efficiency;				
+	}
+	
+	public double evaluateCaterForNeed(Passenger p) {
+		double initialIntervention=0; double careForNeedIntervention=0;
+		if(p.getPrefferedMode() instanceof ModeTrain){				
+			double	intervenerCaterForNeed=getCaterForNeed();				
+			initialIntervention = intervenerCaterForNeed/10;
+			careForNeedIntervention = (p.getCaterForNeed()+initialIntervention);		
+		}			
+		return careForNeedIntervention;
+	}
+	
+	public double evaluateInformationAvailability(Passenger p){			
+		double initialIntervention=0; double inforAvailabilityIntervention=0;		
+			if(p.getPrefferedMode() instanceof ModeTrain){				
+				double	intervenerInforAvailability=getInforAvailability();					
+						initialIntervention = intervenerInforAvailability/10;			
+					inforAvailabilityIntervention = (p.getInformationAvailability()+initialIntervention);		
+			}						
+		return inforAvailabilityIntervention;	
+	}
+	public double evaluateSecurity(Passenger p){			
+		double initialIntervention=0; double securityIntervention=0;		
+			if(p.getPrefferedMode() instanceof ModeTrain){				
+				double	intervenerSecurity=getSecurity();					
+						initialIntervention = intervenerSecurity/10;			
+					securityIntervention = (p.getSecurity()+initialIntervention);		
+			}						
+		return securityIntervention;	
+	}
+	
+	public double evaluateCosts(Passenger p){			
+		double initialIntervention=0; double costsIntervention=0;		
+			if(p.getPrefferedMode() instanceof ModeCar){				
+				double	intervenerCosts=getParkingspaceTax()+getFares();					
+						initialIntervention = intervenerCosts/10;						
+					costsIntervention = (p.getCosts()-initialIntervention);
+					if(costsIntervention<0){
+						costsIntervention=0.01;
+					}					
+			}	else if (p.getPrefferedMode() instanceof ModeTrain){
+				double	intervenerCosts=getFares();					
+				initialIntervention = intervenerCosts/10;						
+			costsIntervention = (p.getCosts()+initialIntervention);				
+			}
+			return costsIntervention;	
+		}
+
+	@Parameter(displayName=" Information Availability", usageName="InforAvailability")
+	public double getInforAvailability() {
+		return InforAvailability;
+	}
+
+	public void setNewInforAvailability(double newInforAvailability) {
+		this.InforAvailability = newInforAvailability;
+	}
+	@Parameter(displayName=" Emotion and Affective", usageName="Emotion")
+	public double getEmotion() {
+		return Emotion;
+	}
+
+	public void setNewEmotion(double newEmotion) {
+		this.Emotion = newEmotion;
+	}
+	@Parameter(displayName=" Security", usageName="Security")
+	public double getSecurity() {
+		return Security;
+	}
+
+	public void setNewSecurity(double newSecurity) {
+		this.Security = newSecurity;
+	}
+
+	@Parameter(displayName=" costs", usageName="Costs")
+	public double getFares() {
+		return Costs;
+	}
+
+	public void setNewFares(double newCosts) {
+		this.Costs = newCosts;
+	}
+	
+	@Parameter(displayName=" Parking Space Restriction", usageName="parkingSpaceTax")
+	public double getParkingspaceTax() {
+		return parkingSpaceTax;
+	}
+
+	public void setNewParkingspaceTax(double parkingspaceTax) {
+		this.parkingSpaceTax = parkingspaceTax;
+	}
+}

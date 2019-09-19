@@ -1,0 +1,23 @@
+<repast.simphony.data2.engine.FileSinkDescriptor>
+  <name>AllModeUnpleasantLevelAPCCounts File Sink</name>
+  <dataSet>AllModeUnpleasantLevelAPCCount Data Set</dataSet>
+  <delimiter>,</delimiter>
+  <format>TABULAR</format>
+  <sourceIds class="linked-hash-set">
+    <string>tick</string>
+    <string>Cycle Unpleasant Affective</string>
+    <string>Private Unpleasant Affective</string>
+    <string>Public Unpleasant Affective</string>
+    <string>Walking Unpleasant Affective</string>
+    <string>Cycle Unpleasant Physical</string>
+    <string>Private Unpleasant Physical</string>
+    <string>Public Unpleasant Physical</string>
+    <string>Walking Unpleasant Physical</string>
+    <string>Cycle Unpleasant Cognitive</string>
+    <string>Private Unpleasant Cognitive</string>
+    <string>Public Unpleasant Cognitive</string>
+    <string>Walking Unpleasant Cognitive</string>
+  </sourceIds>
+  <fileName>AllModeUnpleasantLevelAPCCoun.txt</fileName>
+  <addTimeStamp>true</addTimeStamp>
+</repast.simphony.data2.engine.FileSinkDescriptor>

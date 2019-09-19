@@ -1,0 +1,15 @@
+package moshproject.agents.passenger;
+
+import java.util.Random;
+
+public abstract class Passengers {
+	Random  rand = new Random();
+	double socialFlexibility;
+	double subsistenceSatisfaction;
+	double subsistencerigour;
+	double socialRigour;
+	double socialAgreeability;
+	double socialFrequency;
+	double uncertainty;
+
+}

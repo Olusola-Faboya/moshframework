@@ -1,0 +1,314 @@
+package moshproject.agent.mode.attributes;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Vector;
+
+import moshproject.agents.mode.Cycle;
+import moshproject.agents.mode.Mode;
+import moshproject.agents.mode.PersonalVehicle;
+import moshproject.agents.mode.PublicTransport;
+import moshproject.agents.mode.Walking;
+import moshproject.agents.passenger.Passenger;
+import moshproject.common.Constants;
+import moshproject.common.FuzzyDecisionVariables;
+import moshproject.fuzzycollections.ThreeVariablesDecisionGenerator;
+
+public class DistanceToMainMode {
+	Passenger passenger;
+	Mode prefferedMode;
+	FuzzyDecisionVariables pca; 
+	
+	ThreeVariablesDecisionGenerator  evaluateThreeVariablesSatisfaction;
+	Map<String, List<Double>> otherVariables;		
+	ArrayList<Double> weigthValues;	
+	private Vector distanceToMainModeDecisionVariables;
+	private double distanceToMainModeAffective;
+	private double distanceToMainModeCognitive;
+	private double distanceToMainModePhysical;
+	private double distanceToMainMode;
+	private double privateDistanceToDestination;
+	private double publicDistanceToDestination;
+	private double publicDistanceToMainModeAffective;
+	private double privateDistanceToMainModeAffective;
+	private double publicDistanceToMainModeCognitive;
+	private double privateDistanceToMainModeCognitive;
+	private double publicDistanceToMainModePhysical;
+	private double privateDistanceToMainModePhysical;
+	private ArrayList<Double> distanceToMainModeCognitiveList;
+		
+	public DistanceToMainMode (Mode prefferedMode) {
+		this.prefferedMode =prefferedMode;
+		updateDistanceToMainMode();
+	}
+	
+	private double updateDistanceToMainModeAffective() {			
+		if (prefferedMode instanceof PersonalVehicle)	{
+			//distanceToMainModeAffective = prefferedMode.getValueOfAttribute(Constants.distanceToMainModeAffective);					
+		}else if (prefferedMode instanceof PublicTransport){
+			distanceToMainModeAffective = prefferedMode.getValueOfAttribute(Constants.distanceToMainModeAffective);											
+		}else if (prefferedMode instanceof Cycle){
+			distanceToMainModeAffective = prefferedMode.getValueOfAttribute(Constants.distanceToMainModeAffective);								
+		}else if (prefferedMode instanceof Walking){
+			distanceToMainModeAffective = prefferedMode.getValueOfAttribute(Constants.distanceToMainModeAffective);												
+		}			
+		return distanceToMainModeAffective;			
+	}		
+	public double getDistanceToMainModeAffective() {
+		return distanceToMainModeAffective;
+	}
+
+	public double getPublicTransDistanceToMainModeAffective(){
+		if(prefferedMode instanceof PublicTransport){
+			publicDistanceToMainModeAffective = this.getDistanceToMainModeAffective();
+		}				
+		return publicDistanceToMainModeAffective;
+	}
+	
+	public double getPrivateDistanceToMainModeAffective(){
+		if(prefferedMode instanceof PersonalVehicle){
+			privateDistanceToMainModeAffective = this.getDistanceToMainModeAffective();
+		}				
+		return privateDistanceToMainModeAffective;
+	}
+	
+	private double updateDistanceToMainModeCognitive() {			
+		if (prefferedMode instanceof PersonalVehicle)	{
+			//distanceToMainModePhysical = prefferedMode.getValueOfAttribute(Constants.distanceToMainModePerception);					
+		}else if (prefferedMode instanceof PublicTransport){
+			distanceToMainModeCognitive = prefferedMode.getValueOfAttribute(Constants.distanceToMainModePerception);											
+		}else if (prefferedMode instanceof Cycle){
+			distanceToMainModeCognitive = prefferedMode.getValueOfAttribute(Constants.distanceToMainModePerception);								
+		}else if (prefferedMode instanceof Walking){
+			distanceToMainModeCognitive = prefferedMode.getValueOfAttribute(Constants.distanceToMainModePerception);													
+		}			
+		return distanceToMainModeCognitive;			
+	}	
+	public double getDistanceToMainModeCognitive() {
+		return distanceToMainModeCognitive;
+	}
+	public double getPublicTransDistanceToMainModeCognitive(){
+		if(prefferedMode instanceof PublicTransport){
+			publicDistanceToMainModeCognitive = this.getDistanceToMainModeCognitive();
+		}				
+		return publicDistanceToMainModeCognitive;
+	}
+	
+	public double getPrivateDistanceToMainModeCognitive(){
+		if(prefferedMode instanceof PersonalVehicle){
+			privateDistanceToMainModeCognitive = this.getDistanceToMainModeCognitive();
+		}				
+		return privateDistanceToMainModeCognitive;
+	}
+	
+
+	private double updateDistanceToMainModePhysical() {			
+		if (prefferedMode instanceof PersonalVehicle)	{
+			//distanceToMainModePhysical = prefferedMode.getValueOfAttribute(Constants.distanceToMainModePerception);					
+		}else if (prefferedMode instanceof PublicTransport){
+			distanceToMainModePhysical = prefferedMode.getValueOfAttribute(Constants.distanceToMainModePerception);											
+		}else if (prefferedMode instanceof Cycle){
+			distanceToMainModePhysical = prefferedMode.getValueOfAttribute(Constants.distanceToMainModePerception);								
+		}else if (prefferedMode instanceof Walking){
+			distanceToMainModePhysical = prefferedMode.getValueOfAttribute(Constants.distanceToMainModePerception);													
+		}			
+		return distanceToMainModePhysical;			
+	}	
+	public double getDistanceToMainModePhysical() {
+		return distanceToMainModePhysical;
+	}
+
+	
+	public double getPublicTransDistanceToMainModePhysical(){
+		if(prefferedMode instanceof PublicTransport){
+			publicDistanceToMainModePhysical = this.getDistanceToMainModePhysical();
+		}				
+		return publicDistanceToMainModePhysical;
+	}
+	
+	public double getPrivateDistanceToMainModePhysical(){
+		if(prefferedMode instanceof PersonalVehicle){
+			privateDistanceToMainModePhysical = this.getDistanceToMainModeCognitive();
+		}				
+		return privateDistanceToMainModePhysical;
+	}
+	
+//	public double updateDistanceToMainMode(){	
+//		evaluateThreeVariablesSatisfaction= new ThreeVariablesDecisionGenerator();		
+//		if(prefferedMode instanceof PersonalVehicle){
+//			updateDistanceToMainModeAffective();
+//			updateDistanceToMainModeCognitive();
+//			updateDistanceToMainModePhysical();
+//		}else if (prefferedMode instanceof PublicTransport){
+//			updateDistanceToMainModeAffective();
+//			updateDistanceToMainModeCognitive();
+//			updateDistanceToMainModePhysical();
+//		}
+//			distanceToMainMode =	evaluateThreeVariablesSatisfaction.getTip(updateDistanceToMainModePhysical(),updateDistanceToMainModeCognitive(),updateDistanceToMainModeAffective());
+//	return distanceToMainMode;
+//	}
+
+	public double getDistanceToMainMode() {
+		return distanceToMainMode;
+	}
+	public double getPrivateDistanceToDestination(){
+		if(prefferedMode instanceof PersonalVehicle){
+			privateDistanceToDestination = this.getDistanceToMainMode();
+		}
+//		System.out.println("private Mode reliability is:"+privateModeReliability);
+		return (double) privateDistanceToDestination;
+	}			
+	public double getPublicDistanceToDestination(){
+		if(prefferedMode instanceof PublicTransport){
+			publicDistanceToDestination = this.getDistanceToMainMode();
+		}
+//		System.out.println("public Mode Realiability is:"+publicModeReliability);
+		return (double) publicDistanceToDestination;
+	}
+//////////////////////////Fuzzy part	
+	public Vector distanceToMainModeValues(){	
+		evaluateThreeVariablesSatisfaction= new ThreeVariablesDecisionGenerator();		
+		if(prefferedMode instanceof PersonalVehicle){
+			updateDistanceToMainModeAffective();
+			updateDistanceToMainModeCognitive();
+			updateDistanceToMainModePhysical();
+		}else if (prefferedMode instanceof PublicTransport){
+			updateDistanceToMainModeAffective();
+			updateDistanceToMainModeCognitive();
+			updateDistanceToMainModePhysical();
+		}
+		distanceToMainModeDecisionVariables =	evaluateThreeVariablesSatisfaction.getTip(updateDistanceToMainModePhysical(),updateDistanceToMainModeCognitive(),updateDistanceToMainModeAffective());
+		return distanceToMainModeDecisionVariables;
+	}
+	public Vector getDistanceToMainModeDecisionVariables() {
+		return distanceToMainModeDecisionVariables;
+	}
+
+	///This method returns either fuzzy method or the ordinary method
+	public double updateModeReliability(){				
+		distanceToMainModeValues();	
+		distanceToMainMode =(double) getDistanceToMainModeDecisionVariables().get(0);
+		System.out.println( " The Distance to main Mode is:"+ distanceToMainMode);		
+		return distanceToMainMode ;
+	}	
+////This method returns the List of all levels of cognitive i.e. pleasant, unpleasant, and neither nor pleasant
+	public ArrayList<Double> firedDistanceToMainModeCognitive() {
+		distanceToMainModeCognitiveList = new ArrayList<>();
+		otherVariables = (Map<String, List<Double>>) getDistanceToMainModeDecisionVariables().get(1);
+		distanceToMainModeCognitiveList = (ArrayList<Double>)pca.uNboundledMapPCACognitive(otherVariables);
+		System.out.println("The Distance to Main Mode Cognitive Values:");
+		for (Double antecedents :distanceToMainModeCognitiveList){
+			System.out.println(antecedents);
+		} 				 
+		return distanceToMainModeCognitiveList;			
+	}
+		
+///////The following are the list of individual level of PCA-COGNITIVE
+	public ArrayList<Double> firedModeReliabilityUnpleasantCognitive() {				
+		reliabilityUnpleasentCognitiveList = new ArrayList<>();
+		otherVariables = (Map<String, List<Double>>) getModeReliabilityDecisionVariables().get(1);				
+		reliabilityUnpleasentCognitiveList = (ArrayList<Double>)pca.uNboundledMapUnpleasantCognitive(otherVariables);
+		System.out.println("The Unpleasant Reliability Cognitive Values:");
+		for (Double antecedents :reliabilityUnpleasentCognitiveList){
+			System.out.println(antecedents);
+		} 			 
+		return reliabilityUnpleasentCognitiveList	;			
+	}
+
+	public ArrayList<Double> firedModeReliabilityNeitherNorPleasantCognitive() {				
+		reliabilityNeitherNorPleasantCognitiveList = new ArrayList<>();
+		otherVariables = (Map<String, List<Double>>) getModeReliabilityDecisionVariables().get(1);				
+		reliabilityNeitherNorPleasantCognitiveList = (ArrayList<Double>)pca.uNboundledMapNeitherNorPleasantCognitive(otherVariables);
+		System.out.println("The Neither pleasant nor unpleasant Reliability Cognitive Values:");
+		for (Double antecedents :reliabilityNeitherNorPleasantCognitiveList){
+			System.out.println(antecedents);
+		} 				 
+		return reliabilityNeitherNorPleasantCognitiveList	;			
+	}
+	
+	public ArrayList<Double> firedModeReliabilityPleasantCognitive() {				
+		reliabilityPleasantCognitiveList = new ArrayList<>();
+		otherVariables = (Map<String, List<Double>>) getModeReliabilityDecisionVariables().get(1);				
+		reliabilityPleasantCognitiveList = (ArrayList<Double>)pca.uNboundledMapPleasantCognitive(otherVariables);
+		System.out.println("The Pleasant Reliability Cognitive Values:");
+		for (Double antecedents :reliabilityPleasantCognitiveList){
+			System.out.println(antecedents);
+		} 				 
+		return reliabilityPleasantCognitiveList	;			
+	}
+		
+///////The following are the list of individual level of PCA-PHYSICAL
+	public ArrayList<Double> firedModeReliabilityUnpleasantPhysical() {				
+		reliabilityUnpleasentPhysicalList = new ArrayList<>();
+		otherVariables = (Map<String, List<Double>>) getModeReliabilityDecisionVariables().get(1);				
+		reliabilityUnpleasentPhysicalList = (ArrayList<Double>)pca.uNboundledMapUnpleasantPhysical(otherVariables);
+		System.out.println("The Unpleasant Reliability Physical Values:");
+		for (Double antecedents :reliabilityUnpleasentPhysicalList){
+		System.out.println(antecedents);
+		} 			 
+		return reliabilityUnpleasentPhysicalList;			
+	}
+		
+	public ArrayList<Double> firedModeReliabilityNeitherNorPleasantPhysical() {				
+		reliabilityNeitherNorPleasantPhysicalList = new ArrayList<>();
+		otherVariables = (Map<String, List<Double>>) getModeReliabilityDecisionVariables().get(1);				
+		reliabilityNeitherNorPleasantPhysicalList = (ArrayList<Double>)pca.uNboundledMapNeitherNorPleasantPhysical(otherVariables);
+		System.out.println("The Neither pleasant nor unpleasant Reliability Physical Values:");
+		for (Double antecedents :reliabilityNeitherNorPleasantPhysicalList){
+		System.out.println(antecedents);
+		} 				 
+		return reliabilityNeitherNorPleasantPhysicalList;			
+	}
+			
+	public ArrayList<Double> firedModeReliabilityPleasantPhysical() {				
+		reliabilityPleasantPhysicalList = new ArrayList<>();
+		otherVariables = (Map<String, List<Double>>) getModeReliabilityDecisionVariables().get(1);				
+		reliabilityPleasantPhysicalList = (ArrayList<Double>)pca.uNboundledMapPleasantPhysical(otherVariables);
+		System.out.println("The Pleasant Reliability Physical Values:");
+		for (Double antecedents :reliabilityPleasantPhysicalList){
+		System.out.println(antecedents);
+		} 				 
+		return reliabilityPleasantPhysicalList	;			
+	}
+			
+///////The following are the list of individual level of PCA-AFFECTIVE
+	public ArrayList<Double> firedModeReliabilityUnpleasantAffective() {				
+		reliabilityUnpleasentAffectiveList = new ArrayList<>();
+		otherVariables = (Map<String, List<Double>>) getModeReliabilityDecisionVariables().get(1);				
+		reliabilityUnpleasentAffectiveList = (ArrayList<Double>)pca.uNboundledMapUnpleasantAffective(otherVariables);
+		System.out.println("The Unpleasant Reliability Affective Values:");
+		for (Double antecedents :reliabilityUnpleasentAffectiveList){
+		System.out.println(antecedents);
+		} 			 
+		return reliabilityUnpleasentAffectiveList;			
+	}
+						
+	public ArrayList<Double> firedModeReliabilityNeitherNorPleasantAffective() {				
+		reliabilityNeitherNorPleasantAffectiveList = new ArrayList<>();
+		otherVariables = (Map<String, List<Double>>) getModeReliabilityDecisionVariables().get(1);				
+		reliabilityNeitherNorPleasantAffectiveList  = (ArrayList<Double>)pca.uNboundledMapNeitherNorPleasantAffective(otherVariables);
+		System.out.println("The Neither pleasant nor unpleasant Reliability Affective Values:");
+		for (Double antecedents :reliabilityNeitherNorPleasantAffectiveList ){
+		System.out.println(antecedents);
+		} 				 
+		return reliabilityNeitherNorPleasantAffectiveList ;			
+	}
+							
+	public ArrayList<Double> firedModeReliabilityPleasantAffective() {				
+		reliabilityPleasantAffectiveList = new ArrayList<>();
+		otherVariables = (Map<String, List<Double>>) getModeReliabilityDecisionVariables().get(1);				
+		reliabilityPleasantAffectiveList = (ArrayList<Double>)pca.uNboundledMapPleasantAffective(otherVariables);
+		System.out.println("The Pleasant Reliability Affective Values:");
+		for (Double antecedents :reliabilityPleasantAffectiveList){
+		System.out.println(antecedents);
+		} 				 
+		return reliabilityPleasantAffectiveList	;			
+	}
+	
+	
+	
+	
+	
+	}
+}

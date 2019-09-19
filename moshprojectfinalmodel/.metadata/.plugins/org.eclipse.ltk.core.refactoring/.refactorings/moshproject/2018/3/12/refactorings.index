@@ -1,0 +1,13 @@
+1521901886265	Rename field 'EaseOfGettingOnOffCognitiveList'
+1521903729720	Rename field 'delaysUnpleasentAffectiveList'
+1521903747314	Rename field 'delaysUnpleasentPhysicalList'
+1521966534251	Delete elements
+1521976070996	Rename method 'getEaseOfAccessingInformationDecisionVariables'
+1521987005747	Rename method 'firedRelaibilitycounts'
+1521987087181	Rename method 'firedEaseOfAccessInfocounts'
+1521987710924	Rename local variable 'privateCogCount'
+1521987727152	Rename local variable 'publicCogCount'
+1521991001772	Rename local variable 'privateRelAffCount'
+1521991013950	Rename local variable 'publicRelAffCount'
+1522002764132	Delete elements
+1522007505068	Delete elements

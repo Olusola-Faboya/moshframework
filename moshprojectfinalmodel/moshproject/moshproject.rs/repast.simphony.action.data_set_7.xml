@@ -1,0 +1,130 @@
+<repast.simphony.data2.engine.DataSetDescriptor>
+  <name>ALLModeNeitherPleasantNorUnPleasantLevelAPCCountData Set</name>
+  <type>AGGREGATE</type>
+  <inclTick>true</inclTick>
+  <inclBatchRun>false</inclBatchRun>
+  <inclRandomSeed>false</inclRandomSeed>
+  <scheduleParams>
+    <start>1.0</start>
+    <interval>1.0</interval>
+    <priority>-Infinity</priority>
+    <pType>LAST</pType>
+    <duration>-1.0</duration>
+    <frequency>REPEAT</frequency>
+    <hashCode>732168361</hashCode>
+  </scheduleParams>
+  <atEnd>false</atEnd>
+  <methodDataSources class="linked-hash-map">
+    <entry>
+      <string>Cycle Pleasant Nor Pleasant Affective</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Cycle Pleasant Nor Pleasant Affective</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getCycleSatisfactionNeitherNorPleasantAffectiveCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Private Pleasant Nor Pleasant Affective</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Private Pleasant Nor Pleasant Affective</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getPrivateSatisfactionNeitherNorPleasantAffectiveCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Public Pleasant Nor Pleasant Affective</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Public Pleasant Nor Pleasant Affective</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getPublicSatisfactionNeitherNorPleasantAffectiveCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Wlaking Pleasant Nor Pleasant Affective</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Wlaking Pleasant Nor Pleasant Affective</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getWalkingSatisfactionNeitherNorPleasantAffectiveCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Cycle Pleasant Nor Pleasant Physical</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Cycle Pleasant Nor Pleasant Physical</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getCycleSatisfactionNeitherNorPleasantPhysicalCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Private Pleasant Nor Pleasant Physical</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Private Pleasant Nor Pleasant Physical</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getPrivateSatisfactionNeitherNorPleasantPhysicalCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Public Pleasant Nor Pleasant Physical</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Public Pleasant Nor Pleasant Physical</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getPublicSatisfactionNeitherNorPleasantPhysicalCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Walking Pleasant Nor Pleasant Physical</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Walking Pleasant Nor Pleasant Physical</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getWalkingSatisfactionNeitherNorPleasantPhysicalCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Cycle Pleasant Nor Pleasant Cognitive</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Cycle Pleasant Nor Pleasant Cognitive</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getCycleSatisfactionNeitherNorPleasantCognitiveCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Private Pleasant Nor Pleasant Cognitive</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Private Pleasant Nor Pleasant Cognitive</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getPrivateSatisfactionNeitherNorPleasantCognitiveCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Public Pleasant Nor Pleasant Cognitive</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Public Pleasant Nor Pleasant Cognitive</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getPublicSatisfactionNeitherNorPleasantCognitiveCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Walking Pleasant Nor Pleasant Cognitive</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Walking Pleasant Nor Pleasant Cognitive</id>
+        <className>moshproject.agents.passenger.Passenger</className>
+        <methodName>getWalkingSatisfactionNeitherNorPleasantCognitiveCounts</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+  </methodDataSources>
+  <countSources class="linked-hash-map"/>
+  <customNADataSources class="linked-hash-map"/>
+  <customAggDataSources class="linked-hash-map"/>
+</repast.simphony.data2.engine.DataSetDescriptor>
